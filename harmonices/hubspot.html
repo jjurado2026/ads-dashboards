@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>HubSpot — Harmonices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/styles-base.css">
+  <style>
+    :root {
+      --color-primary: #143B48;
+      --color-primary-light: #1E5A6B;
+      --color-bg: #FFFFFF;
+      --color-card-bg: #F8F9FA;
+      --color-text: #1A1A1A;
+      --color-text-muted: #6B7280;
+      --color-positive: #0D6E3F;
+      --color-negative: #B91C1C;
+      --color-border: #E5E7EB;
+      --font-family: 'Montserrat', sans-serif;
+      --border-radius: 8px;
+    }
+
+    .kpi-card { border: 1px solid var(--color-border); box-shadow: none; }
+    .chart-card { border: 1px solid var(--color-border); box-shadow: none; }
+
+    /* Nav bar */
+    .page-nav {
+      display: flex; align-items: center; gap: 16px;
+      padding: 12px 32px; background: var(--color-primary); color: #fff;
+      font-family: var(--font-family); flex-wrap: wrap;
+    }
+    .nav-brand { font-size: 1.1rem; font-weight: 800; color: #fff; text-decoration: none; margin-right: 24px; }
+    .nav-links { display: flex; gap: 4px; flex: 1; }
+    .nav-link {
+      padding: 6px 16px; border-radius: var(--border-radius);
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600; transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .nav-link.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .nav-controls .month-selector {
+      padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--border-radius);
+      background: rgba(255,255,255,0.1); color: #fff; font-family: var(--font-family); font-size: 0.82rem; cursor: pointer;
+    }
+    .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
+    .nav-controls .btn-export {
+      padding: 5px 14px; background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: var(--border-radius);
+      font-family: var(--font-family); font-size: 0.82rem; font-weight: 600; cursor: pointer;
+    }
+    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
+
+    .section-divider {
+      margin: 48px 0 32px; padding: 14px 0; border-bottom: 2px solid var(--color-primary);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-divider h2 { font-size: 1.15rem; font-weight: 700; color: var(--color-primary); letter-spacing: 0.5px; text-transform: uppercase; }
+    .section-divider .section-icon { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+    .date-range-badge {
+      font-size: 0.78rem; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-weight: 500;
+    }
+
+    /* HubSpot grids */
+    .hubspot-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+    .hubspot-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+    @media (max-width: 768px) {
+      .hubspot-grid-2, .hubspot-grid-3 { grid-template-columns: 1fr; }
+      .page-nav { padding: 12px 16px; }
+    }
+
+    @media print { .page-nav { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-brand">Harmonices</a>
+    <div class="nav-links">
+      <a href="google.html" class="nav-link">Google Ads</a>
+      <a href="meta.html" class="nav-link">Meta Ads</a>
+      <a href="historico.html" class="nav-link">Historico</a>
+      <a href="hubspot.html" class="nav-link active">HubSpot</a>
+    </div>
+    <div class="nav-controls">
+      <span class="date-range-badge" id="date-range"></span>
+      <select id="month-selector" class="month-selector"></select>
+      <button id="btn-export-pdf" class="btn-export">PDF</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper" id="dashboard-content">
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: #F97316;"></span>
+      <h2>HubSpot — Pipeline</h2>
+    </div>
+
+    <!-- Row 1: Current month deals + Stock total -->
+    <div class="hubspot-grid-2">
+      <div class="chart-card">
+        <h3>Negocios Mes Actual</h3>
+        <div class="chart-container"><canvas id="chart-hs-current"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Negocios Stock Total</h3>
+        <div class="chart-container"><canvas id="chart-hs-stock"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Row 2: Visitas + Leads validos -->
+    <div class="hubspot-grid-2">
+      <div class="chart-card">
+        <h3>Visitas Realizadas (Mensual)</h3>
+        <div class="chart-container"><canvas id="chart-hs-visitas"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Leads Validos Actuales (Mensual)</h3>
+        <div class="chart-container"><canvas id="chart-hs-leads-valid"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Row 3: Individual stage histories -->
+    <div class="hubspot-grid-3">
+      <div class="chart-card">
+        <h3>Interesado Futuro</h3>
+        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-int-futuro"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Interesado Caliente</h3>
+        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-int-caliente"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Reservado (Pagado)</h3>
+        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-reservado"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Table: Leads por etapa y campana -->
+    <section style="margin-bottom:28px;">
+      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">Leads por Etapa y Campana</h4>
+      <div class="table-wrapper" id="table-hs-leads-source"></div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <span id="last-updated"></span> · Datos actualizados diariamente
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script type="module">
+    import {
+      initDashboard, renderSortableTable
+    } from '../shared/dashboard-v2.js';
+    import { createMonthlyBar, createStackedBar } from '../shared/charts-v2.js';
+
+    const TEAL     = '#143B48';
+    const TEAL_MED = '#1E5A6B';
+    const ORANGE   = '#F97316';
+    const PURPLE   = '#7C3AED';
+    const RED      = '#DC2626';
+    const MONTH_KEY = 'harmonices_selected_month';
+
+    const stageColors = {
+      lead_entrante: TEAL,
+      exploratorio: TEAL_MED,
+      interesado_futuro: ORANGE,
+      interesado_caliente: '#0EA5E9',
+      reservado_pagado: PURPLE,
+      descartado: RED
+    };
+
+    function stageName(key) {
+      const map = {
+        lead_entrante: 'Lead entrante',
+        exploratorio: 'Exploratorio',
+        interesado_futuro: 'Int. futuro',
+        interesado_caliente: 'Int. caliente',
+        reservado_pagado: 'Reservado',
+        descartado: 'Descartado'
+      };
+      return map[key] || key;
+    }
+
+    function destroyChart(id) {
+      const existing = Chart.getChart(id);
+      if (existing) existing.destroy();
+    }
+
+    function renderDealsBar(canvasId, data, colorMap) {
+      destroyChart(canvasId);
+      const canvas = document.getElementById(canvasId);
+      if (!canvas || !data) return;
+
+      const entries = Object.entries(data);
+      const labels = entries.map(([k]) => stageName(k));
+      const values = entries.map(([, v]) => v);
+      const colors = entries.map(([k]) => colorMap[k] || TEAL);
+
+      new Chart(canvas, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            data: values,
+            backgroundColor: colors.map(c => c + 'CC'),
+            borderRadius: 4,
+            barPercentage: 0.65,
+            categoryPercentage: 0.85
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} negocios` } } },
+          scales: {
+            x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 30 } },
+            y: { beginAtZero: true, grid: { color: '#E5E7EB' }, ticks: { font: { size: 10 }, stepSize: 1 } }
+          }
+        }
+      });
+    }
+
+    function onDataLoaded(data) {
+      if (!data.hubspot) return;
+      const hs = data.hubspot;
+
+      if (hs.deals_current_month) renderDealsBar('chart-hs-current', hs.deals_current_month, stageColors);
+      if (hs.deals_stock_total) renderDealsBar('chart-hs-stock', hs.deals_stock_total, stageColors);
+
+      if (hs.visitas_monthly) {
+        createMonthlyBar('chart-hs-visitas', hs.visitas_monthly, { color: TEAL, label: 'Visitas' });
+      }
+
+      if (hs.leads_valid_monthly) {
+        createStackedBar('chart-hs-leads-valid', hs.leads_valid_monthly, {
+          datasets: [
+            { key: 'interesado_futuro',   label: 'Int. futuro',   color: ORANGE },
+            { key: 'interesado_caliente', label: 'Int. caliente', color: TEAL },
+            { key: 'reservado_pagado',    label: 'Reservado',     color: PURPLE }
+          ]
+        });
+      }
+
+      if (hs.stage_history) {
+        if (hs.stage_history.interesado_futuro) {
+          createMonthlyBar('chart-hs-int-futuro', hs.stage_history.interesado_futuro, { color: ORANGE, label: 'Int. futuro' });
+        }
+        if (hs.stage_history.interesado_caliente) {
+          createMonthlyBar('chart-hs-int-caliente', hs.stage_history.interesado_caliente, { color: TEAL, label: 'Int. caliente' });
+        }
+        if (hs.stage_history.reservado_pagado) {
+          createMonthlyBar('chart-hs-reservado', hs.stage_history.reservado_pagado, { color: PURPLE, label: 'Reservado' });
+        }
+      }
+
+      if (hs.leads_by_source) {
+        renderSortableTable('table-hs-leads-source', [
+          { key: 'source', label: 'Fuente / Campana', unit: 'text' },
+          { key: 'interesado_futuro', label: 'Int. Futuro', unit: 'count', align: 'right', defaultDesc: true },
+          { key: 'interesado_caliente', label: 'Int. Caliente', unit: 'count', align: 'right' },
+          { key: 'reservado_pagado', label: 'Reservado (Pagado)', unit: 'count', align: 'right' }
+        ], hs.leads_by_source);
+      }
+    }
+
+    initDashboard({
+      clientId: 'harmonices',
+      clientName: 'Harmonices',
+      dataBasePath: '../data/harmonices',
+      onDataLoaded
+    }).then(() => {
+      const selector = document.getElementById('month-selector');
+      if (selector) {
+        const saved = localStorage.getItem(MONTH_KEY);
+        if (saved && [...selector.options].some(o => o.value === saved)) {
+          selector.value = saved;
+          selector.dispatchEvent(new Event('change'));
+        }
+        selector.addEventListener('change', () => {
+          localStorage.setItem(MONTH_KEY, selector.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Historico — Harmonices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/styles-base.css">
+  <style>
+    :root {
+      --color-primary: #143B48;
+      --color-primary-light: #1E5A6B;
+      --color-bg: #FFFFFF;
+      --color-card-bg: #F8F9FA;
+      --color-text: #1A1A1A;
+      --color-text-muted: #6B7280;
+      --color-positive: #0D6E3F;
+      --color-negative: #B91C1C;
+      --color-google: #34A853;
+      --color-meta: #1877F2;
+      --color-border: #E5E7EB;
+      --font-family: 'Montserrat', sans-serif;
+      --border-radius: 8px;
+    }
+
+    .kpi-card { border: 1px solid var(--color-border); box-shadow: none; }
+    .chart-card { border: 1px solid var(--color-border); box-shadow: none; }
+
+    /* Nav bar */
+    .page-nav {
+      display: flex; align-items: center; gap: 16px;
+      padding: 12px 32px; background: var(--color-primary); color: #fff;
+      font-family: var(--font-family); flex-wrap: wrap;
+    }
+    .nav-brand { font-size: 1.1rem; font-weight: 800; color: #fff; text-decoration: none; margin-right: 24px; }
+    .nav-links { display: flex; gap: 4px; flex: 1; }
+    .nav-link {
+      padding: 6px 16px; border-radius: var(--border-radius);
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600; transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .nav-link.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .nav-controls .month-selector {
+      padding: 5px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--border-radius);
+      background: rgba(255,255,255,0.1); color: #fff; font-family: var(--font-family); font-size: 0.82rem; cursor: pointer;
+    }
+    .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
+    .nav-controls .btn-export {
+      padding: 5px 14px; background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: var(--border-radius);
+      font-family: var(--font-family); font-size: 0.82rem; font-weight: 600; cursor: pointer;
+    }
+    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
+
+    .section-divider {
+      margin: 48px 0 32px; padding: 14px 0; border-bottom: 2px solid var(--color-primary);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-divider h2 { font-size: 1.15rem; font-weight: 700; color: var(--color-primary); letter-spacing: 0.5px; text-transform: uppercase; }
+    .section-divider .section-icon { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+    .date-range-badge {
+      font-size: 0.78rem; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-weight: 500;
+    }
+
+    /* Inline bars for historical */
+    .inline-bar-wrapper { display: flex; align-items: center; gap: 8px; min-width: 100px; }
+    .inline-bar { height: 8px; border-radius: 4px; display: inline-block; min-width: 2px; }
+    .inline-value { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 768px) { .page-nav { padding: 12px 16px; } }
+    @media print { .page-nav { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="index.html" class="nav-brand">Harmonices</a>
+    <div class="nav-links">
+      <a href="google.html" class="nav-link">Google Ads</a>
+      <a href="meta.html" class="nav-link">Meta Ads</a>
+      <a href="historico.html" class="nav-link active">Historico</a>
+      <a href="hubspot.html" class="nav-link">HubSpot</a>
+    </div>
+    <div class="nav-controls">
+      <span class="date-range-badge" id="date-range"></span>
+      <select id="month-selector" class="month-selector"></select>
+      <button id="btn-export-pdf" class="btn-export">PDF</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper" id="dashboard-content">
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: var(--color-primary);"></span>
+      <h2>Historico</h2>
+    </div>
+
+    <section style="margin-bottom:28px;">
+      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-google);margin-right:6px;vertical-align:middle;"></span>
+        Google Ads — Historico Mensual
+      </h4>
+      <div class="table-wrapper" id="table-history-google"></div>
+    </section>
+
+    <section style="margin-bottom:28px;">
+      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-meta);margin-right:6px;vertical-align:middle;"></span>
+        Meta Ads — Historico Mensual
+      </h4>
+      <div class="table-wrapper" id="table-history-meta"></div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <span id="last-updated"></span> · Datos actualizados diariamente
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script type="module">
+    import {
+      initDashboard, formatCurrency, formatPct, formatCount, formatMonthLabel
+    } from '../shared/dashboard-v2.js';
+
+    const GREEN  = '#34A853';
+    const BLUE   = '#1877F2';
+    const MONTH_KEY = 'harmonices_selected_month';
+
+    function renderHistoryTable(containerId, history, barCols, barColorMap) {
+      const container = document.getElementById(containerId);
+      if (!container || !history || !history.length) return;
+
+      const maxVals = {};
+      barCols.forEach(key => {
+        maxVals[key] = Math.max(...history.map(h => h[key] || 0), 1);
+      });
+
+      const columns = [
+        { key: 'month',       label: 'Mes',         format: formatMonthLabel },
+        { key: 'impresiones', label: 'Impresiones',  format: formatCount },
+        { key: 'clics',       label: 'Clics',        format: formatCount },
+        { key: 'ctr',         label: 'CTR',           format: v => formatPct(v) },
+        { key: 'cpc',         label: 'CPC',           format: formatCurrency },
+        { key: 'leads',       label: 'Leads',         format: formatCount },
+        { key: 'cpl',         label: 'CPL',            format: formatCurrency },
+        { key: 'inversion',   label: 'Inversion',     format: formatCurrency }
+      ];
+
+      const reversed = [...history].reverse();
+      let html = '<table class="data-table"><thead><tr>';
+      columns.forEach(col => {
+        const align = col.key !== 'month' ? 'text-align:right' : '';
+        html += `<th style="${align}">${col.label}</th>`;
+      });
+      html += '</tr></thead><tbody>';
+
+      reversed.forEach(row => {
+        html += '<tr>';
+        columns.forEach(col => {
+          const val = row[col.key];
+          const formatted = col.format ? col.format(val) : (val ?? '\u2014');
+          const align = col.key !== 'month' ? 'text-align:right' : '';
+          if (barCols.includes(col.key) && val != null) {
+            const pct = Math.min((val / maxVals[col.key]) * 100, 100);
+            const color = barColorMap[col.key] || '#143B48';
+            html += `<td style="${align}">
+              <div class="inline-bar-wrapper">
+                <span class="inline-bar" style="width:${pct.toFixed(0)}%;background:${color}"></span>
+                <span class="inline-value">${formatted}</span>
+              </div>
+            </td>`;
+          } else {
+            html += `<td style="${align}">${formatted}</td>`;
+          }
+        });
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+
+    function onDataLoaded(data) {
+      if (!data.history) return;
+      if (data.history.google_ads) {
+        renderHistoryTable('table-history-google', data.history.google_ads,
+          ['leads', 'cpl'], { leads: GREEN, cpl: '#D97706' });
+      }
+      if (data.history.meta_ads) {
+        renderHistoryTable('table-history-meta', data.history.meta_ads,
+          ['leads', 'cpl'], { leads: BLUE, cpl: '#D97706' });
+      }
+    }
+
+    initDashboard({
+      clientId: 'harmonices',
+      clientName: 'Harmonices',
+      dataBasePath: '../data/harmonices',
+      onDataLoaded
+    }).then(() => {
+      const selector = document.getElementById('month-selector');
+      if (selector) {
+        const saved = localStorage.getItem(MONTH_KEY);
+        if (saved && [...selector.options].some(o => o.value === saved)) {
+          selector.value = saved;
+          selector.dispatchEvent(new Event('change'));
+        }
+        selector.addEventListener('change', () => {
+          localStorage.setItem(MONTH_KEY, selector.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard Publicidad — Trees Coliving</title>
+  <title>Trees Coliving — Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../shared/styles-base.css">
   <style>
     :root {
       --color-primary: #2D5016;
@@ -25,258 +24,60 @@
       --border-radius: 16px;
     }
 
-    /* ── Section Headers ── */
-    .section-header {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      padding: 14px 24px;
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 36px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .section-header.meta {
-      background: var(--color-meta);
-    }
-
-    .section-header.hubspot {
-      background: var(--color-hubspot);
-    }
-
-    .section-header .section-icon {
-      font-size: 1.2rem;
-    }
-
-    /* ── Section Body ── */
-    .section-body {
-      background: var(--color-card-bg);
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-      padding: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      margin-bottom: 8px;
-    }
-
-    /* ── KPI Grid (7 cards in a row) ── */
-    .kpi-grid-7 {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .kpi-card {
+    body {
+      font-family: var(--font-family);
       background: var(--color-bg);
-      border-radius: 12px;
-      padding: 16px 12px;
-      text-align: center;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .kpi-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .kpi-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--color-text-muted);
-      margin-bottom: 6px;
-    }
-
-    .kpi-value {
-      font-size: 1.4rem;
-      font-weight: 800;
       color: var(--color-text);
-      line-height: 1.1;
-    }
-
-    .kpi-delta {
-      margin-top: 4px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-
-    .delta.positive { color: var(--color-positive); }
-    .delta.negative { color: var(--color-negative); }
-    .delta.neutral { color: var(--color-text-muted); }
-
-    /* ── Charts ── */
-    .chart-row {
-      display: grid;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .chart-row.cols-1 { grid-template-columns: 1fr; }
-    .chart-row.cols-2 { grid-template-columns: 1fr 1fr; }
-    .chart-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-
-    .chart-box {
-      background: var(--color-bg);
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .chart-box h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--color-primary);
-      margin-bottom: 12px;
-    }
-
-    .chart-container {
-      position: relative;
-      height: 280px;
-    }
-
-    .chart-container.short {
-      height: 200px;
-    }
-
-    .chart-container.tall {
-      height: 340px;
-    }
-
-    /* ── Tables ── */
-    .table-section {
-      margin-top: 24px;
-    }
-
-    .table-section h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      margin-bottom: 12px;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.82rem;
-    }
-
-    .data-table th {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      padding: 10px 12px;
-      text-align: left;
-      font-weight: 600;
-      white-space: nowrap;
-      user-select: none;
-      font-size: 0.78rem;
-    }
-
-    .data-table th:hover { opacity: 0.9; }
-
-    .data-table td {
-      padding: 9px 12px;
-      border-bottom: 1px solid #E5E7EB;
-      white-space: nowrap;
-    }
-
-    .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
-    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
-
-    .data-table.meta th { background: var(--color-meta); }
-    .data-table.hubspot th { background: var(--color-hubspot); }
-
-    /* ── Inline Bars (for historical tables) ── */
-    .inline-bar-wrapper {
+      line-height: 1.5;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      min-width: 120px;
+      justify-content: center;
     }
 
-    .inline-bar {
-      display: inline-block;
-      height: 16px;
-      border-radius: 3px;
-      background: var(--color-primary);
-      min-width: 2px;
-      transition: width 0.3s ease;
+    .landing-wrapper {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 32px;
+      text-align: center;
     }
 
-    .inline-value {
-      font-weight: 600;
-      font-size: 0.8rem;
-      white-space: nowrap;
+    .landing-brand {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 4px;
     }
 
-    /* ── Creative Thumbnail ── */
-    .creative-thumb {
-      width: 64px;
-      height: 64px;
-      object-fit: cover;
-      border-radius: 8px;
-      background: var(--color-bg);
+    .landing-subtitle {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+      margin-bottom: 12px;
     }
 
-    .creative-thumb-placeholder {
-      width: 64px;
-      height: 64px;
-      border-radius: 8px;
-      background: var(--color-bg);
+    .landing-month-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-text-muted);
-      font-size: 0.65rem;
-      text-align: center;
-    }
-
-    /* ── Header Overrides ── */
-    .dashboard-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 8px;
-      padding-bottom: 20px;
-      border-bottom: 3px solid var(--color-primary);
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .header-brand {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--color-primary);
-      line-height: 1.1;
-    }
-
-    .header-subtitle {
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-      font-weight: 500;
-    }
-
-    .header-controls {
-      display: flex;
-      align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .landing-month-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .month-selector {
@@ -291,408 +92,173 @@
       cursor: pointer;
     }
 
-    #date-range {
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .nav-card {
+      background: var(--color-card-bg);
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      text-decoration: none;
+      color: var(--color-text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      border-top: 5px solid var(--color-primary);
+    }
+
+    .nav-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .nav-card.google { border-top-color: var(--color-google); }
+    .nav-card.meta { border-top-color: var(--color-meta); }
+    .nav-card.historico { border-top-color: #5B6E4F; }
+    .nav-card.hubspot { border-top-color: var(--color-hubspot); }
+
+    .nav-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .nav-card.google .nav-card-icon { background: var(--color-google); }
+    .nav-card.meta .nav-card-icon { background: var(--color-meta); }
+    .nav-card.historico .nav-card-icon { background: #5B6E4F; }
+    .nav-card.hubspot .nav-card-icon { background: var(--color-hubspot); }
+
+    .nav-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .nav-card-desc {
       font-size: 0.82rem;
       color: var(--color-text-muted);
-      font-weight: 500;
+      line-height: 1.4;
     }
 
-    .btn-export {
-      padding: 8px 20px;
-      background: var(--color-primary);
-      color: #FFFFFF;
-      border: none;
-      border-radius: 10px;
-      font-family: var(--font-family);
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .btn-export:hover { opacity: 0.85; }
-    .btn-export:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    /* ── Footer ── */
-    .dashboard-footer {
-      margin-top: 40px;
-      padding: 20px 0;
-      border-top: 2px solid #E5E7EB;
+    .landing-footer {
+      margin-top: 48px;
       font-size: 0.8rem;
       color: var(--color-text-muted);
-      text-align: center;
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 1200px) {
-      .kpi-grid-7 {
-        grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 600px) {
+      .nav-grid {
+        grid-template-columns: 1fr;
       }
-      .chart-row.cols-3 {
-        grid-template-columns: 1fr 1fr;
+      .landing-brand {
+        font-size: 1.8rem;
       }
-    }
-
-    @media (max-width: 768px) {
-      .dashboard-wrapper { padding: 12px; }
-      .dashboard-header { flex-direction: column; align-items: flex-start; }
-      .kpi-grid-7 { grid-template-columns: repeat(2, 1fr); }
-      .chart-row.cols-2,
-      .chart-row.cols-3 { grid-template-columns: 1fr; }
-      .chart-container { height: 220px; }
-      .kpi-value { font-size: 1.2rem; }
-      .section-body { padding: 16px; }
-    }
-
-    @media (max-width: 480px) {
-      .kpi-grid-7 { grid-template-columns: 1fr 1fr; }
-    }
-
-    /* ── PDF Mode ── */
-    .pdf-mode {
-      width: 1200px !important;
-      max-width: none !important;
-    }
-
-    .pdf-mode .no-print { display: none !important; }
-
-    .pdf-mode .section-body,
-    .pdf-mode .chart-box {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    @media print {
-      .no-print { display: none !important; }
-      .section-body, .chart-box { break-inside: avoid; page-break-inside: avoid; }
     }
   </style>
 </head>
 <body>
-  <div class="dashboard-wrapper" id="dashboard-content">
+  <div class="landing-wrapper">
+    <div class="landing-brand">Trees Coliving</div>
+    <div class="landing-subtitle">Dashboard de Publicidad Digital</div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- HEADER                                      -->
-    <!-- ═══════════════════════════════════════════ -->
-    <header class="dashboard-header">
-      <div class="header-left">
-        <div>
-          <div class="header-brand">Trees Coliving</div>
-          <div class="header-subtitle">Dashboard de Publicidad Digital</div>
-        </div>
-      </div>
-      <div class="header-controls no-print">
-        <select id="month-selector" class="month-selector"></select>
-        <span id="date-range"></span>
-        <button id="btn-export-pdf" class="btn-export">Exportar PDF</button>
-      </div>
-    </header>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SECTION 1: GOOGLE ADS - ESPANA              -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section-header">
-      <span class="section-icon">G</span> GOOGLE ADS — ESPANA
-    </div>
-    <div class="section-body">
-      <div class="kpi-grid-7" id="google-kpis"></div>
-
-      <div class="chart-row cols-1">
-        <div class="chart-box">
-          <h4>Leads y CPL Diarios</h4>
-          <div class="chart-container"><canvas id="chart-google-daily"></canvas></div>
-        </div>
-      </div>
-
-      <div class="chart-row cols-2">
-        <div class="chart-box">
-          <h4>Conversiones por Sexo</h4>
-          <div class="chart-container short"><canvas id="chart-google-gender"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <h4>Conversiones por Edad</h4>
-          <div class="chart-container short"><canvas id="chart-google-age"></canvas></div>
-        </div>
-      </div>
-
-      <div class="table-section">
-        <h4>Conversiones por Campanas</h4>
-        <div class="table-wrapper" id="table-google-campaigns"></div>
-      </div>
-
-      <div class="table-section">
-        <h4>Conversiones por Palabras Clave</h4>
-        <div class="table-wrapper" id="table-google-keywords"></div>
-      </div>
+    <div class="landing-month-row">
+      <span class="landing-month-label">Mes:</span>
+      <select id="month-selector" class="month-selector"></select>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SECTION 2: META ADS - ESPANA                -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section-header meta">
-      <span class="section-icon">M</span> META ADS — ESPANA
-    </div>
-    <div class="section-body">
-      <div class="kpi-grid-7" id="meta-kpis"></div>
-
-      <div class="chart-row cols-1">
-        <div class="chart-box">
-          <h4>Leads y CPL Diarios</h4>
-          <div class="chart-container"><canvas id="chart-meta-daily"></canvas></div>
-        </div>
-      </div>
-
-      <div class="table-section">
-        <h4>Campanas</h4>
-        <div class="table-wrapper" id="table-meta-campaigns"></div>
-      </div>
-
-      <div class="table-section">
-        <h4>Campanas por Plataforma</h4>
-        <div class="table-wrapper" id="table-meta-platforms"></div>
-      </div>
-
-      <div class="table-section">
-        <h4>Creatividades</h4>
-        <div class="table-wrapper" id="table-meta-creatives"></div>
-      </div>
+    <div class="nav-grid">
+      <a href="google.html" class="nav-card google" id="link-google">
+        <div class="nav-card-icon">G</div>
+        <div class="nav-card-title">Google Ads</div>
+        <div class="nav-card-desc">KPIs, tendencias diarias, campanas y keywords</div>
+      </a>
+      <a href="meta.html" class="nav-card meta" id="link-meta">
+        <div class="nav-card-icon">M</div>
+        <div class="nav-card-title">Meta Ads</div>
+        <div class="nav-card-desc">KPIs, campanas, plataformas y creatividades</div>
+      </a>
+      <a href="historico.html" class="nav-card historico" id="link-historico">
+        <div class="nav-card-icon">&#9776;</div>
+        <div class="nav-card-title">Historico</div>
+        <div class="nav-card-desc">Evolucion mensual de Google Ads y Meta Ads</div>
+      </a>
+      <a href="hubspot.html" class="nav-card hubspot" id="link-hubspot">
+        <div class="nav-card-icon">H</div>
+        <div class="nav-card-title">HubSpot</div>
+        <div class="nav-card-desc">Pipeline, etapas y leads por fuente</div>
+      </a>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SECTION 3: HISTORICO                        -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section-header" style="background:#5B6E4F;">
-      <span class="section-icon">&#9776;</span> HISTORICO
-    </div>
-    <div class="section-body">
-      <div class="table-section">
-        <h4>Google Ads — Historico Mensual</h4>
-        <div class="table-wrapper" id="table-google-history"></div>
-      </div>
-
-      <div class="table-section" style="margin-top:32px;">
-        <h4>Meta Ads — Historico Mensual</h4>
-        <div class="table-wrapper" id="table-meta-history"></div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SECTION 4: HUBSPOT - PIPELINE               -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section-header hubspot">
-      <span class="section-icon">H</span> HUBSPOT — PIPELINE
-    </div>
-    <div class="section-body">
-      <div class="chart-row cols-1">
-        <div class="chart-box">
-          <h4>Leads Validos Mensuales</h4>
-          <div class="chart-container tall"><canvas id="chart-hubspot-stacked"></canvas></div>
-        </div>
-      </div>
-
-      <div class="chart-row cols-3">
-        <div class="chart-box">
-          <h4>Interesados Historico</h4>
-          <div class="chart-container short"><canvas id="chart-hs-interesados"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <h4>Lista de Espera Historico</h4>
-          <div class="chart-container short"><canvas id="chart-hs-lista"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <h4>Firmados Historico</h4>
-          <div class="chart-container short"><canvas id="chart-hs-firmados"></canvas></div>
-        </div>
-      </div>
-
-      <div class="chart-row cols-2">
-        <div class="chart-box">
-          <h4>Sin Disponibilidad Historico</h4>
-          <div class="chart-container short"><canvas id="chart-hs-sindispo"></canvas></div>
-        </div>
-        <div class="chart-box">
-          <h4>Descartados Historico</h4>
-          <div class="chart-container short"><canvas id="chart-hs-descartados"></canvas></div>
-        </div>
-      </div>
-
-      <div class="table-section">
-        <h4>Leads por Etapa y Fuente</h4>
-        <div class="table-wrapper" id="table-hubspot-sources"></div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- FOOTER                                      -->
-    <!-- ═══════════════════════════════════════════ -->
-    <footer class="dashboard-footer">
-      <span id="last-updated"></span> &middot; Datos actualizados diariamente
-    </footer>
-
+    <div class="landing-footer">Trees Coliving &middot; Dashboard de Publicidad</div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script type="module">
-    import { initDashboard, renderKpiCards, renderSortableTable, renderHistoricalTable, formatCurrency, formatPct, formatCount } from '../shared/dashboard-v2.js';
-    import { createDailyCombo, createHorizontalBar, createStackedBar, createMonthlyBar } from '../shared/charts-v2.js';
+    import { formatMonthFull } from '../shared/utils.js';
 
-    // Campaign table columns (shared pattern)
-    const campaignCols = [
-      { key: 'name', label: 'Campana', unit: 'text' },
-      { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
-      { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
-      { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-      { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
-      { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-      { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-      { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
-    ];
+    const STORAGE_KEY = 'trees_selected_month';
 
-    function renderAll(data) {
-      // ── Google Ads ──
-      renderKpiCards('google-kpis', data.google_ads.kpis);
+    async function init() {
+      // Load manifest
+      let manifest;
+      try {
+        const res = await fetch('../data/trees/manifest.json');
+        manifest = await res.json();
+      } catch (e) {
+        console.error('Could not load manifest:', e);
+        return;
+      }
 
-      createDailyCombo('chart-google-daily', data.google_ads.daily, {
-        barColor: '#34A853',
-        lineColor: '#6B6B6B'
+      const selector = document.getElementById('month-selector');
+      manifest.months.slice().reverse().forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m;
+        opt.textContent = formatMonthFull(m);
+        selector.appendChild(opt);
       });
 
-      createHorizontalBar('chart-google-gender', data.google_ads.demographics.gender, {
-        color: '#34A853',
-        label: 'Leads'
+      // Restore from URL param, localStorage, or default to latest
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlMonth = urlParams.get('month');
+      const storedMonth = localStorage.getItem(STORAGE_KEY);
+      const initialMonth = (urlMonth && manifest.months.includes(urlMonth)) ? urlMonth
+                         : (storedMonth && manifest.months.includes(storedMonth)) ? storedMonth
+                         : manifest.latestMonth;
+
+      selector.value = initialMonth;
+      localStorage.setItem(STORAGE_KEY, initialMonth);
+
+      selector.addEventListener('change', () => {
+        localStorage.setItem(STORAGE_KEY, selector.value);
+        // Update URL without reload
+        const url = new URL(window.location);
+        url.searchParams.set('month', selector.value);
+        history.replaceState(null, '', url);
       });
 
-      createHorizontalBar('chart-google-age', data.google_ads.demographics.age, {
-        color: '#2D5016',
-        label: 'Leads'
-      });
-
-      renderSortableTable('table-google-campaigns', campaignCols, data.google_ads.campaigns);
-
-      renderSortableTable('table-google-keywords', [
-        { key: 'keyword', label: 'Keyword', unit: 'text' },
-        { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
-        { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
-        { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-        { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
-        { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-        { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-        { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
-      ], data.google_ads.keywords);
-
-      // ── Meta Ads ──
-      renderKpiCards('meta-kpis', data.meta_ads.kpis);
-
-      createDailyCombo('chart-meta-daily', data.meta_ads.daily, {
-        barColor: '#1877F2',
-        lineColor: '#6B6B6B'
-      });
-
-      renderSortableTable('table-meta-campaigns', campaignCols, data.meta_ads.campaigns);
-
-      renderSortableTable('table-meta-platforms', [
-        { key: 'name', label: 'Campana', unit: 'text' },
-        { key: 'platform', label: 'Plataforma', unit: 'text' },
-        { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
-        { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
-        { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-        { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
-        { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-        { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-        { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
-      ], data.meta_ads.campaigns_by_platform);
-
-      // Creatives table with thumbnail
-      renderSortableTable('table-meta-creatives', [
-        { key: 'name', label: 'Ad Name', unit: 'text' },
-        {
-          key: 'image_url', label: 'Thumbnail', unit: 'text',
-          render: row => {
-            if (row.image_url) {
-              return `<img src="${row.image_url}" alt="${row.name}" class="creative-thumb" loading="lazy" onerror="this.outerHTML='<div class=\\'creative-thumb-placeholder\\'>Sin imagen</div>'">`;
-            }
-            return '<div class="creative-thumb-placeholder">Sin imagen</div>';
-          }
-        },
-        { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
-        { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
-        { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-        { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
-        { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-        { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-        { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
-      ], data.meta_ads.creatives);
-
-      // ── Historical Tables ──
-      renderHistoricalTable('table-google-history', data.google_ads.monthly_history, {
-        barColumns: ['leads', 'cpl'],
-        barColors: { leads: '#34A853', cpl: '#D97706' }
-      });
-
-      renderHistoricalTable('table-meta-history', data.meta_ads.monthly_history, {
-        barColumns: ['leads', 'cpl'],
-        barColors: { leads: '#1877F2', cpl: '#D97706' }
-      });
-
-      // ── HubSpot ──
-      const hs = data.hubspot;
-
-      createStackedBar('chart-hubspot-stacked', hs.leads_valid_monthly, {
-        datasets: [
-          { key: 'lista_espera', label: 'Lista Espera', color: '#D97706' },
-          { key: 'firmado', label: 'Firmado', color: '#0D9488' },
-          { key: 'sin_disponibilidad', label: 'Sin Disponibilidad', color: '#7C3AED' }
-        ]
-      });
-
-      // Individual histories — derive from deals_by_stage_history
-      const stageHistory = hs.deals_by_stage_history || [];
-
-      createMonthlyBar('chart-hs-interesados',
-        stageHistory.map(h => ({ month: h.month, count: h.interesado })),
-        { color: '#2D5016', label: 'Interesados' }
-      );
-
-      createMonthlyBar('chart-hs-lista',
-        stageHistory.map(h => ({ month: h.month, count: h.lista_espera })),
-        { color: '#D97706', label: 'Lista Espera' }
-      );
-
-      createMonthlyBar('chart-hs-firmados',
-        stageHistory.map(h => ({ month: h.month, count: h.firmado })),
-        { color: '#0D9488', label: 'Firmados' }
-      );
-
-      createMonthlyBar('chart-hs-sindispo',
-        stageHistory.map(h => ({ month: h.month, count: h.sin_disponibilidad })),
-        { color: '#7C3AED', label: 'Sin Disponibilidad' }
-      );
-
-      createMonthlyBar('chart-hs-descartados',
-        stageHistory.map(h => ({ month: h.month, count: h.descartado })),
-        { color: '#B91C1C', label: 'Descartados' }
-      );
-
-      // HubSpot sources table
-      renderSortableTable('table-hubspot-sources', [
-        { key: 'source', label: 'Fuente', unit: 'text' },
-        { key: 'lista_espera', label: 'Lista de Espera', unit: 'count', align: 'right' },
-        { key: 'firmado', label: 'Firmado', unit: 'count', align: 'right' },
-        { key: 'sin_disponibilidad', label: 'Sin Disponibilidad', unit: 'count', align: 'right' }
-      ], hs.leads_by_source);
-
-      // Apply table color classes
-      document.querySelectorAll('#table-meta-campaigns .data-table, #table-meta-platforms .data-table, #table-meta-creatives .data-table, #table-meta-history .data-table').forEach(t => t.classList.add('meta'));
-      document.querySelectorAll('#table-hubspot-sources .data-table').forEach(t => t.classList.add('hubspot'));
+      // Append month param to nav links
+      function updateLinks() {
+        const month = selector.value;
+        document.querySelectorAll('.nav-card').forEach(a => {
+          const base = a.getAttribute('href').split('?')[0];
+          a.href = `${base}?month=${month}`;
+        });
+      }
+      updateLinks();
+      selector.addEventListener('change', updateLinks);
     }
 
-    // Boot
-    initDashboard({
-      clientId: 'trees',
-      clientName: 'Trees Coliving',
-      dataBasePath: '../data/trees',
-      onDataLoaded: renderAll
-    });
+    init();
   </script>
 </body>
 </html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Google Ads — Trees Coliving</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/styles-base.css">
+  <style>
+    :root {
+      --color-primary: #2D5016;
+      --color-primary-light: #4A7A2E;
+      --color-bg: #F5F0E8;
+      --color-card-bg: #FFFFFF;
+      --color-text: #1A1A1A;
+      --color-text-muted: #6B6B6B;
+      --color-positive: #2D5016;
+      --color-negative: #B91C1C;
+      --color-meta: #1877F2;
+      --color-google: #34A853;
+      --color-hubspot: #FF7A59;
+      --font-family: 'Nunito', sans-serif;
+      --border-radius: 16px;
+    }
+
+    /* ── Nav Bar ── */
+    .page-nav {
+      background: var(--color-card-bg);
+      border-bottom: 3px solid var(--color-primary);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .nav-brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      text-decoration: none;
+      padding: 14px 20px 14px 0;
+      margin-right: 8px;
+      border-right: 2px solid #E5E7EB;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex: 1;
+    }
+
+    .nav-link {
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -3px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--color-text);
+    }
+
+    .nav-link.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+    }
+
+    .month-selector {
+      padding: 6px 12px;
+      border: 2px solid var(--color-primary);
+      border-radius: 8px;
+      background: var(--color-card-bg);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #date-range {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .btn-export {
+      padding: 6px 16px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--font-family);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-export:hover { opacity: 0.85; }
+    .btn-export:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── Page Header ── */
+    .page-header {
+      background: var(--color-google);
+      color: #FFFFFF;
+      padding: 20px 24px;
+      border-radius: var(--border-radius);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-header-icon {
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .page-header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── KPI Grid ── */
+    .kpi-grid-7 {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--color-card-bg);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .kpi-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-muted);
+      margin-bottom: 6px;
+    }
+
+    .kpi-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-text);
+      line-height: 1.1;
+    }
+
+    .kpi-delta {
+      margin-top: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .delta.positive { color: var(--color-positive); }
+    .delta.negative { color: var(--color-negative); }
+    .delta.neutral { color: var(--color-text-muted); }
+
+    /* ── Charts ── */
+    .chart-row {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .chart-row.cols-1 { grid-template-columns: 1fr; }
+
+    .chart-box {
+      background: var(--color-card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .chart-box h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-google);
+      margin-bottom: 12px;
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px;
+    }
+
+    /* ── Tables ── */
+    .table-section {
+      margin-top: 28px;
+    }
+
+    .table-section h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 12px;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    .data-table th {
+      background: var(--color-google);
+      color: #FFFFFF;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+      user-select: none;
+      font-size: 0.78rem;
+    }
+
+    .data-table th:hover { opacity: 0.9; }
+
+    .data-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #E5E7EB;
+      white-space: nowrap;
+    }
+
+    .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+
+    /* ── Footer ── */
+    .dashboard-footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 2px solid #E5E7EB;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1200px) {
+      .kpi-grid-7 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-wrapper { padding: 16px; }
+      .page-nav { padding: 0 16px; flex-wrap: wrap; }
+      .nav-controls { width: 100%; justify-content: flex-end; padding-bottom: 8px; }
+      .kpi-grid-7 { grid-template-columns: repeat(2, 1fr); }
+      .chart-container { height: 220px; }
+      .kpi-value { font-size: 1.2rem; }
+    }
+
+    @media (max-width: 480px) {
+      .kpi-grid-7 { grid-template-columns: 1fr 1fr; }
+      .nav-links { flex-wrap: wrap; }
+    }
+
+    /* ── PDF ── */
+    .pdf-mode { width: 1200px !important; max-width: none !important; }
+    .pdf-mode .no-print { display: none !important; }
+    .pdf-mode .chart-box { break-inside: avoid; page-break-inside: avoid; }
+
+    @media print {
+      .no-print { display: none !important; }
+      .chart-box { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ── Navigation ── -->
+  <nav class="page-nav no-print">
+    <a href="index.html" class="nav-brand">Trees Coliving</a>
+    <div class="nav-links">
+      <a href="google.html" class="nav-link active">Google Ads</a>
+      <a href="meta.html" class="nav-link">Meta Ads</a>
+      <a href="historico.html" class="nav-link">Historico</a>
+      <a href="hubspot.html" class="nav-link">HubSpot</a>
+    </div>
+    <div class="nav-controls">
+      <select id="month-selector" class="month-selector"></select>
+      <span id="date-range"></span>
+      <button id="btn-export-pdf" class="btn-export">PDF</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper" id="dashboard-content">
+    <div class="page-header">
+      <span class="page-header-icon">G</span>
+      <span class="page-header-title">Google Ads &mdash; Espana</span>
+    </div>
+
+    <div class="kpi-grid-7" id="google-kpis"></div>
+
+    <div class="chart-row cols-1">
+      <div class="chart-box">
+        <h4>Leads y CPL Diarios</h4>
+        <div class="chart-container"><canvas id="chart-google-daily"></canvas></div>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <h4>Campanas</h4>
+      <div class="table-wrapper" id="table-google-campaigns"></div>
+    </div>
+
+    <div class="table-section">
+      <h4>Keywords</h4>
+      <div class="table-wrapper" id="table-google-keywords"></div>
+    </div>
+
+    <footer class="dashboard-footer">
+      <span id="last-updated"></span> &middot; Datos actualizados diariamente
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script type="module">
+    import { initDashboard, renderKpiCards, renderSortableTable } from '../shared/dashboard-v2.js';
+    import { createDailyCombo } from '../shared/charts-v2.js';
+
+    const STORAGE_KEY = 'trees_selected_month';
+
+    const campaignCols = [
+      { key: 'name', label: 'Campana', unit: 'text' },
+      { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
+      { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
+      { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+      { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
+      { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+      { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+      { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
+    ];
+
+    function renderGoogle(data) {
+      const g = data.google_ads;
+
+      renderKpiCards('google-kpis', g.kpis);
+
+      createDailyCombo('chart-google-daily', g.daily, {
+        barColor: '#34A853',
+        lineColor: '#6B6B6B'
+      });
+
+      renderSortableTable('table-google-campaigns', campaignCols, g.campaigns);
+
+      renderSortableTable('table-google-keywords', [
+        { key: 'keyword', label: 'Keyword', unit: 'text' },
+        { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
+        { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
+        { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+        { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
+        { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+        { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+        { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
+      ], g.keywords);
+    }
+
+    // Override month from localStorage / URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlMonth = urlParams.get('month');
+    const storedMonth = localStorage.getItem(STORAGE_KEY);
+
+    initDashboard({
+      clientId: 'trees',
+      clientName: 'Trees Coliving',
+      dataBasePath: '../data/trees',
+      onDataLoaded: renderGoogle
+    }).then(() => {
+      // Sync month selector with stored preference
+      const selector = document.getElementById('month-selector');
+      if (selector) {
+        const preferred = urlMonth || storedMonth;
+        if (preferred && [...selector.options].some(o => o.value === preferred)) {
+          selector.value = preferred;
+          selector.dispatchEvent(new Event('change'));
+        }
+        // Save on change
+        selector.addEventListener('change', () => {
+          localStorage.setItem(STORAGE_KEY, selector.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

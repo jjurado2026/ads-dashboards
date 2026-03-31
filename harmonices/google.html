@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Google Ads — Harmonices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/styles-base.css">
+  <style>
+    :root {
+      --color-primary: #143B48;
+      --color-primary-light: #1E5A6B;
+      --color-bg: #FFFFFF;
+      --color-card-bg: #F8F9FA;
+      --color-text: #1A1A1A;
+      --color-text-muted: #6B7280;
+      --color-positive: #0D6E3F;
+      --color-negative: #B91C1C;
+      --color-google: #34A853;
+      --color-border: #E5E7EB;
+      --font-family: 'Montserrat', sans-serif;
+      --border-radius: 8px;
+    }
+
+    /* Harmonices overrides */
+    .kpi-card { border: 1px solid var(--color-border); box-shadow: none; }
+    .kpi-card:hover { box-shadow: 0 2px 8px rgba(20,59,72,0.08); transform: translateY(-1px); }
+    .chart-card { border: 1px solid var(--color-border); box-shadow: none; }
+
+    /* Nav bar */
+    .page-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 32px;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-family);
+      flex-wrap: wrap;
+    }
+    .nav-brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      margin-right: 24px;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 4px; flex: 1; }
+    .nav-link {
+      padding: 6px 16px;
+      border-radius: var(--border-radius);
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .nav-link.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .nav-controls .month-selector {
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--border-radius);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: var(--font-family);
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+    .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
+    .nav-controls .btn-export {
+      padding: 5px 14px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--border-radius);
+      font-family: var(--font-family);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
+
+    /* 7-card KPI grid */
+    .kpi-grid-7 {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 1200px) { .kpi-grid-7 { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 768px) {
+      .kpi-grid-7 { grid-template-columns: repeat(2, 1fr); }
+      .page-nav { padding: 12px 16px; }
+    }
+
+    /* Section divider */
+    .section-divider {
+      margin: 48px 0 32px;
+      padding: 14px 0;
+      border-bottom: 2px solid var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-divider h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section-divider .section-icon {
+      width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+    }
+
+    /* Date range badge */
+    .date-range-badge {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    @media print {
+      .page-nav { display: none; }
+      .tab-content { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="page-nav">
+    <a href="index.html" class="nav-brand">Harmonices</a>
+    <div class="nav-links">
+      <a href="google.html" class="nav-link active">Google Ads</a>
+      <a href="meta.html" class="nav-link">Meta Ads</a>
+      <a href="historico.html" class="nav-link">Historico</a>
+      <a href="hubspot.html" class="nav-link">HubSpot</a>
+    </div>
+    <div class="nav-controls">
+      <span class="date-range-badge" id="date-range"></span>
+      <select id="month-selector" class="month-selector"></select>
+      <button id="btn-export-pdf" class="btn-export">PDF</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper" id="dashboard-content">
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: var(--color-google);"></span>
+      <h2>Google Ads — Espana</h2>
+    </div>
+
+    <section class="kpi-section">
+      <div class="kpi-grid-7" id="kpis-google"></div>
+    </section>
+
+    <div class="charts-grid">
+      <div class="chart-card" style="grid-column: 1 / -1;">
+        <h3>Rendimiento Diario: Leads + CPL</h3>
+        <div class="chart-container"><canvas id="chart-google-daily"></canvas></div>
+      </div>
+    </div>
+
+    <section class="tabs" style="margin-bottom:28px;">
+      <div class="tab-buttons no-print">
+        <button class="tab-btn active" data-tab="tab-google-campaigns" data-group="google">Campanas</button>
+        <button class="tab-btn" data-tab="tab-google-keywords" data-group="google">Keywords</button>
+      </div>
+      <div id="tab-google-campaigns" class="tab-content active" data-group="google">
+        <div class="table-wrapper" id="table-google-campaigns"></div>
+      </div>
+      <div id="tab-google-keywords" class="tab-content" data-group="google">
+        <div class="table-wrapper" id="table-google-keywords"></div>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <span id="last-updated"></span> · Datos actualizados diariamente
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script type="module">
+    import {
+      initDashboard, renderKpiCards, renderSortableTable,
+      formatCurrency, formatPct, formatCount, formatMonthLabel
+    } from '../shared/dashboard-v2.js';
+    import { createDailyCombo } from '../shared/charts-v2.js';
+
+    const GREEN = '#34A853';
+    const GRAY  = '#6B7280';
+
+    // Persist month across pages
+    const MONTH_KEY = 'harmonices_selected_month';
+
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        const target = btn.dataset.tab;
+        document.querySelectorAll(`.tab-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+        document.querySelectorAll(`.tab-content[data-group="${group}"]`).forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        const el = document.getElementById(target);
+        if (el) el.classList.add('active');
+      });
+    });
+
+    function renderPlatformKpis(containerId, platform) {
+      const container = document.getElementById(containerId);
+      if (!container || !platform) return;
+      const metrics = [
+        { key: 'impresiones', label: 'Impresiones', fmt: formatCount, invert: false },
+        { key: 'clics',       label: 'Clics',       fmt: formatCount, invert: false },
+        { key: 'ctr',         label: 'CTR',          fmt: v => formatPct(v), invert: false },
+        { key: 'cpc',         label: 'CPC',          fmt: formatCurrency, invert: true },
+        { key: 'leads',       label: 'Leads',        fmt: formatCount, invert: false },
+        { key: 'cpl',         label: 'CPL',          fmt: formatCurrency, invert: true },
+        { key: 'inversion',   label: 'Inversion',    fmt: formatCurrency, invert: false }
+      ];
+      container.innerHTML = metrics.map(m => {
+        const kpi = platform[m.key];
+        if (!kpi) return '';
+        const val = m.fmt(kpi.value);
+        const prev = kpi.previous;
+        let deltaHtml = '<span class="delta neutral">\u2014</span>';
+        if (prev != null && prev !== 0) {
+          const pctChange = ((kpi.value - prev) / prev) * 100;
+          const abs = Math.abs(pctChange).toFixed(1);
+          const arrow = pctChange > 0.5 ? '&uarr;' : pctChange < -0.5 ? '&darr;' : '';
+          let cls = 'neutral';
+          if (pctChange > 0.5) cls = m.invert ? 'negative' : 'positive';
+          else if (pctChange < -0.5) cls = m.invert ? 'positive' : 'negative';
+          if (arrow) deltaHtml = `<span class="delta ${cls}">${arrow} ${abs}%</span>`;
+        }
+        return `
+          <div class="kpi-card">
+            <div class="kpi-label">${m.label}</div>
+            <div class="kpi-value">${val}</div>
+            <div class="kpi-delta">${deltaHtml}</div>
+          </div>`;
+      }).join('');
+    }
+
+    function onDataLoaded(data) {
+      if (!data.google_ads) return;
+      const g = data.google_ads;
+      renderPlatformKpis('kpis-google', g.kpis);
+      if (g.daily) createDailyCombo('chart-google-daily', g.daily, { barColor: GREEN, lineColor: GRAY });
+      if (g.campaigns) {
+        renderSortableTable('table-google-campaigns', [
+          { key: 'name', label: 'Campana', unit: 'text' },
+          { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+          { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+          { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+          { key: 'spend', label: 'Inversion', unit: 'eur', align: 'right' }
+        ], g.campaigns);
+      }
+      if (g.keywords) {
+        renderSortableTable('table-google-keywords', [
+          { key: 'keyword', label: 'Keyword', unit: 'text' },
+          { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+          { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+          { key: 'impressions', label: 'Impresiones', unit: 'count', align: 'right' },
+          { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' }
+        ], g.keywords);
+      }
+    }
+
+    // Override month selector to persist
+    const origInit = initDashboard;
+    initDashboard({
+      clientId: 'harmonices',
+      clientName: 'Harmonices',
+      dataBasePath: '../data/harmonices',
+      onDataLoaded
+    }).then(() => {
+      const selector = document.getElementById('month-selector');
+      if (selector) {
+        const saved = localStorage.getItem(MONTH_KEY);
+        if (saved && [...selector.options].some(o => o.value === saved)) {
+          selector.value = saved;
+          selector.dispatchEvent(new Event('change'));
+        }
+        selector.addEventListener('change', () => {
+          localStorage.setItem(MONTH_KEY, selector.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
