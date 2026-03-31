@@ -3,7 +3,7 @@
     "clientId": "harmonices",
     "clientName": "Harmonices",
     "month": "2026-03",
-    "generatedAt": "2026-03-31T16:33:44.907532Z",
+    "generatedAt": "2026-03-31T17:02:55.391966Z",
     "dateRange": {
       "from": "2026-03-01",
       "to": "2026-03-31"
@@ -12,10 +12,10 @@
   "google_ads": {
     "kpis": {
       "impresiones": {
-        "value": 328021
+        "value": 328187
       },
       "clics": {
-        "value": 12624
+        "value": 12633
       },
       "ctr": {
         "value": 3.85
@@ -27,10 +27,10 @@
         "value": 123
       },
       "cpl": {
-        "value": 11.52
+        "value": 11.53
       },
       "inversion": {
-        "value": 1416.83
+        "value": 1418.04
       }
     },
     "daily": [
@@ -238,7 +238,7 @@
         "date": "2026-03-26",
         "leads": 2,
         "cpl": 21.54,
-        "impresiones": 4259,
+        "impresiones": 4258,
         "clics": 307,
         "inversion": 43.07
       },
@@ -270,17 +270,17 @@
         "date": "2026-03-30",
         "leads": 2,
         "cpl": 23.43,
-        "impresiones": 7692,
+        "impresiones": 7691,
         "clics": 302,
         "inversion": 46.87
       },
       {
         "date": "2026-03-31",
         "leads": 1,
-        "cpl": 32.39,
-        "impresiones": 5037,
-        "clics": 185,
-        "inversion": 32.39
+        "cpl": 33.6,
+        "impresiones": 5205,
+        "clics": 194,
+        "inversion": 33.6
       }
     ],
     "demographics": {
@@ -638,17 +638,428 @@
     },
     "campaigns": [
       {
+        "name": "BUSQ-COLIVING-COHOUSING",
+        "impresiones": 1617,
+        "clics": 300,
+        "ctr": 18.55,
+        "cpc": 0.4,
+        "leads": 2,
+        "cpl": 59.71,
+        "inversion": 119.43
+      },
+      {
         "name": "PMAX-HARMONICES-COLIVING #2",
-        "impresiones": 326404,
-        "clics": 12324,
+        "impresiones": 326570,
+        "clics": 12333,
         "ctr": 3.78,
         "cpc": 0.11,
         "leads": 121,
-        "cpl": 10.72,
-        "inversion": 1297.4
+        "cpl": 10.73,
+        "inversion": 1298.61
       }
     ],
-    "keywords": [],
+    "keywords": [
+      {
+        "keyword": "cohousing madrid",
+        "impresiones": 184,
+        "clics": 45,
+        "ctr": 24.46,
+        "cpc": 0.41,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 18.31
+      },
+      {
+        "keyword": "senior living madrid",
+        "impresiones": 162,
+        "clics": 35,
+        "ctr": 21.6,
+        "cpc": 0.51,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 17.7
+      },
+      {
+        "keyword": "cohousing senior madrid precios",
+        "impresiones": 155,
+        "clics": 24,
+        "ctr": 15.48,
+        "cpc": 0.47,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 11.36
+      },
+      {
+        "keyword": "coliving senior madrid",
+        "impresiones": 118,
+        "clics": 23,
+        "ctr": 19.49,
+        "cpc": 0.36,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 8.3
+      },
+      {
+        "keyword": "cohousing senior",
+        "impresiones": 103,
+        "clics": 17,
+        "ctr": 16.5,
+        "cpc": 0.41,
+        "leads": 1,
+        "cpl": 6.91,
+        "inversion": 6.91
+      },
+      {
+        "keyword": "senior living madrid precios",
+        "impresiones": 74,
+        "clics": 11,
+        "ctr": 14.86,
+        "cpc": 0.6,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 6.65
+      },
+      {
+        "keyword": "coliving madrid mayores",
+        "impresiones": 66,
+        "clics": 20,
+        "ctr": 30.3,
+        "cpc": 0.3,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 5.94
+      },
+      {
+        "keyword": "comunidades para jubilados",
+        "impresiones": 54,
+        "clics": 10,
+        "ctr": 18.52,
+        "cpc": 0.35,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 3.52
+      },
+      {
+        "keyword": "coliving para mayores",
+        "impresiones": 50,
+        "clics": 6,
+        "ctr": 12.0,
+        "cpc": 0.23,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.35
+      },
+      {
+        "keyword": "senior living en españa",
+        "impresiones": 47,
+        "clics": 5,
+        "ctr": 10.64,
+        "cpc": 0.37,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.87
+      },
+      {
+        "keyword": "cohousing mayores madrid",
+        "impresiones": 46,
+        "clics": 9,
+        "ctr": 19.57,
+        "cpc": 0.36,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 3.28
+      },
+      {
+        "keyword": "cohousing senior madrid",
+        "impresiones": 43,
+        "clics": 9,
+        "ctr": 20.93,
+        "cpc": 0.33,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.96
+      },
+      {
+        "keyword": "cohousing para mayores",
+        "impresiones": 42,
+        "clics": 6,
+        "ctr": 14.29,
+        "cpc": 0.29,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.73
+      },
+      {
+        "keyword": "coliving senior",
+        "impresiones": 41,
+        "clics": 4,
+        "ctr": 9.76,
+        "cpc": 0.36,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.46
+      },
+      {
+        "keyword": "cohousing mayores",
+        "impresiones": 38,
+        "clics": 6,
+        "ctr": 15.79,
+        "cpc": 0.28,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.7
+      },
+      {
+        "keyword": "coliving para jubilados",
+        "impresiones": 35,
+        "clics": 7,
+        "ctr": 20.0,
+        "cpc": 0.53,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 3.74
+      },
+      {
+        "keyword": "co living madrid",
+        "impresiones": 33,
+        "clics": 8,
+        "ctr": 24.24,
+        "cpc": 0.37,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.92
+      },
+      {
+        "keyword": "coliving mayores",
+        "impresiones": 31,
+        "clics": 5,
+        "ctr": 16.13,
+        "cpc": 0.28,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.39
+      },
+      {
+        "keyword": "coliving senior españa",
+        "impresiones": 30,
+        "clics": 4,
+        "ctr": 13.33,
+        "cpc": 0.26,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.06
+      },
+      {
+        "keyword": "cohousing senior en españa",
+        "impresiones": 24,
+        "clics": 3,
+        "ctr": 12.5,
+        "cpc": 0.3,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.9
+      },
+      {
+        "keyword": "senior coliving",
+        "impresiones": 23,
+        "clics": 2,
+        "ctr": 8.7,
+        "cpc": 0.51,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.02
+      },
+      {
+        "keyword": "coliving madrid adultos",
+        "impresiones": 23,
+        "clics": 4,
+        "ctr": 17.39,
+        "cpc": 0.39,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.55
+      },
+      {
+        "keyword": "cohousing senior españa",
+        "impresiones": 21,
+        "clics": 5,
+        "ctr": 23.81,
+        "cpc": 0.3,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.52
+      },
+      {
+        "keyword": "cohousing de mayores",
+        "impresiones": 21,
+        "clics": 3,
+        "ctr": 14.29,
+        "cpc": 0.2,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.59
+      },
+      {
+        "keyword": "cooperativas de mayores",
+        "impresiones": 19,
+        "clics": 6,
+        "ctr": 31.58,
+        "cpc": 0.42,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.52
+      },
+      {
+        "keyword": "senior living precio",
+        "impresiones": 17,
+        "clics": 3,
+        "ctr": 17.65,
+        "cpc": 0.38,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.13
+      },
+      {
+        "keyword": "comunidad de retiro para mayores activos",
+        "impresiones": 16,
+        "clics": 2,
+        "ctr": 12.5,
+        "cpc": 0.16,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.32
+      },
+      {
+        "keyword": "cooperativas para mayores",
+        "impresiones": 15,
+        "clics": 2,
+        "ctr": 13.33,
+        "cpc": 0.2,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.39
+      },
+      {
+        "keyword": "casas compartidas para mayores",
+        "impresiones": 15,
+        "clics": 3,
+        "ctr": 20.0,
+        "cpc": 0.44,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.32
+      },
+      {
+        "keyword": "cohousing senior en madrid",
+        "impresiones": 14,
+        "clics": 4,
+        "ctr": 28.57,
+        "cpc": 0.46,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.84
+      },
+      {
+        "keyword": "senior living españa",
+        "impresiones": 12,
+        "clics": 3,
+        "ctr": 25.0,
+        "cpc": 0.58,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.74
+      },
+      {
+        "keyword": "comunidades de personas mayores",
+        "impresiones": 8,
+        "clics": 2,
+        "ctr": 25.0,
+        "cpc": 0.34,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.67
+      },
+      {
+        "keyword": "cohousing sierra de madrid",
+        "impresiones": 8,
+        "clics": 0,
+        "ctr": 0.0,
+        "cpc": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.0
+      },
+      {
+        "keyword": "vivir en comunidad personas mayores",
+        "impresiones": 7,
+        "clics": 1,
+        "ctr": 14.29,
+        "cpc": 0.69,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.69
+      },
+      {
+        "keyword": "senior housing",
+        "impresiones": 6,
+        "clics": 0,
+        "ctr": 0.0,
+        "cpc": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.0
+      },
+      {
+        "keyword": "cohousing senior precio",
+        "impresiones": 5,
+        "clics": 1,
+        "ctr": 20.0,
+        "cpc": 0.17,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.17
+      },
+      {
+        "keyword": "cohousing jubilados",
+        "impresiones": 4,
+        "clics": 2,
+        "ctr": 50.0,
+        "cpc": 0.45,
+        "leads": 1,
+        "cpl": 0.89,
+        "inversion": 0.89
+      },
+      {
+        "keyword": "cooperativas para jubilados",
+        "impresiones": 3,
+        "clics": 0,
+        "ctr": 0.0,
+        "cpc": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.0
+      },
+      {
+        "keyword": "cohousing tercera edad",
+        "impresiones": 2,
+        "clics": 0,
+        "ctr": 0.0,
+        "cpc": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.0
+      },
+      {
+        "keyword": "senior home",
+        "impresiones": 2,
+        "clics": 0,
+        "ctr": 0.0,
+        "cpc": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.0
+      }
+    ],
     "monthly_history": [
       {
         "month": "2025-01-01",
@@ -792,41 +1203,41 @@
       },
       {
         "month": "2026-03-01",
-        "impresiones": 328021,
-        "clics": 12624,
+        "impresiones": 328187,
+        "clics": 12633,
         "ctr": 3.85,
         "cpc": 0.11,
         "leads": 123,
-        "cpl": 11.52,
-        "inversion": 1416.83
+        "cpl": 11.53,
+        "inversion": 1418.04
       }
     ]
   },
   "meta_ads": {
     "kpis": {
       "impresiones": {
-        "value": 21461
+        "value": 21481
       },
       "clics": {
-        "value": 1894
+        "value": 1895
       },
       "ctr": {
-        "value": 8.83
+        "value": 8.82
       },
       "cpc": {
         "value": 0.16
       },
       "leads": {
-        "value": 54
+        "value": 56
       },
       "cpl": {
-        "value": 5.65
+        "value": 5.45
       },
       "inversion": {
-        "value": 304.98
+        "value": 305.23
       },
       "alcance": {
-        "value": 11456
+        "value": 11467
       }
     },
     "daily": [
@@ -1072,78 +1483,55 @@
       },
       {
         "date": "2026-03-31",
-        "leads": 2,
-        "cpl": 4.29,
-        "impresiones": 610,
-        "clics": 72,
-        "inversion": 8.59
+        "leads": 4,
+        "cpl": 2.21,
+        "impresiones": 630,
+        "clics": 73,
+        "inversion": 8.84
       }
     ],
     "campaigns": [
       {
         "name": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "impresiones": 21461,
-        "clics": 1894,
-        "ctr": 8.825311,
-        "cpc": 0.161024,
-        "leads": 54,
-        "cpl": 5.65,
-        "inversion": 304.98,
-        "alcance": 11456
+        "impresiones": 21481,
+        "clics": 1895,
+        "ctr": 8.821749,
+        "cpc": 0.161071,
+        "leads": 56,
+        "cpl": 5.45,
+        "inversion": 305.23,
+        "alcance": 11467
       }
     ],
     "campaigns_by_platform": [
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "platform": "audience_network",
-        "impresiones": 153,
-        "clics": 56,
-        "leads": 0,
-        "cpl": 0.0,
-        "inversion": 1.44
-      },
-      {
-        "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "platform": "facebook",
-        "impresiones": 12880,
+        "platform": "Facebook",
+        "impresiones": 12895,
         "clics": 1400,
-        "leads": 34,
-        "cpl": 5.15,
-        "inversion": 174.99
+        "ctr": 10.86,
+        "cpc": 0.13,
+        "leads": 36,
+        "cpl": 4.87,
+        "inversion": 175.16
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "platform": "instagram",
-        "impresiones": 8414,
+        "platform": "Instagram",
+        "impresiones": 8418,
         "clics": 438,
+        "ctr": 5.2,
+        "cpc": 0.29,
         "leads": 20,
-        "cpl": 6.42,
-        "inversion": 128.44
-      },
-      {
-        "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "platform": "messenger",
-        "impresiones": 2,
-        "clics": 0,
-        "leads": 0,
-        "cpl": 0.0,
-        "inversion": 0.0
-      },
-      {
-        "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "platform": "threads",
-        "impresiones": 12,
-        "clics": 0,
-        "leads": 0,
-        "cpl": 0.0,
-        "inversion": 0.11
+        "cpl": 6.43,
+        "inversion": 128.51
       }
     ],
     "creatives": [
       {
         "name": "Video sept 25",
         "ad_id": "120235373002690407",
-        "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwGWmtYZ&_nc_oc=AdpEwFZY2h_TWtZS3XDYG_lAfpj0wajwa7CEtgW4iKlKL_sfszixFd75iNREUXuKI5o&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AAwGEdEEAAAA&_nc_gid=aw6WByjy4Md2sFVV25w7sQ&_nc_tpa=Q5bMBQGS10aLZFEArQJfwoZiwTTT7OKiXnTWU7DTl41TYcvf87p5oKbIJE21yNIIj6gKjhiPCMoYI4hICg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AfxlryBpPgUZwxHin_RdfzTZc4MGxMbV8ZzPGH6JnodLvw&oe=69D1D5AB",
+        "image_url": "https://scontent-atl3-1.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwGIansf&_nc_oc=Adot_KnwPPw9Wphpzo-Rb6_gkHgo-4uNRPz49o4O-AzA8XDQfiJnV9jb--9sxJCj4Bo&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=7B9syu77gZQnpnmwKhfWKw&_nc_tpa=Q5bMBQFJr9P6Sel2gRWKbDrBi1YxEnsmuoJtkfjUI-XeGRuDQHK6Ymw6orNnYzPpWGOOuhT9aDGjVdMxOw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AfydNwG0-XzMvz2TP6OIuUPIkIRVuARI0WrjrxUgfG7cVg&oe=69D1D5AB",
         "impresiones": 16571,
         "clics": 1382,
         "ctr": 8.339871,
@@ -1154,21 +1542,21 @@
       {
         "name": "Video nov 25",
         "ad_id": "120235642542760407",
-        "image_url": "https://external-iad6-1.xx.fbcdn.net/emg1/v/t13/14160184173235658627?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIqfa5FwaAXLvtYUpLfHK6SfLgTZi9nNe4Sez7igGKMCXZKaK4kmGdot6oDkwfWEFMoOzs35JJx_SiFvri2IoWzFxhw8FAAo6mEuwWSa9JBEt8qIcIjygLpkj9DDH7AybGRvSZ4sAbL6o1hE-X97Wnm&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=2i1-nReNVZw7K0euOzvM_Q&_nc_oc=Adp6RlARWifm1Emka0LZWVi5NFo-YJI-8KUI6BYXWTS50VFWDih0fSyrlZu_pSH_DyU&ccb=13-1&oh=06_Q3-9AVEM1CaoCdmlL2WFGpqPSO_LE3rsLFHYAdpxGw_-4R03&oe=69CDC67E&_nc_sid=58080a",
-        "impresiones": 4308,
-        "clics": 460,
-        "ctr": 10.677809,
-        "leads": 10,
-        "cpl": 6.32,
-        "inversion": 63.24
+        "image_url": "https://external-atl3-2.xx.fbcdn.net/emg1/v/t13/3826863263450671292?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIzFc7PxnWeP98zCfITkw36M670d5ztxaXwzuvGcyC-nodQmAF-8jxZwcnQZ7Dj30N_NTBHuzk4sLeKk95mq9LTt9oHNabFDAhKz5PyQBKeTfyKsfxDWFWT-TUfWfuj-hcIVYM_BZ4-ogPyOFVutGmk&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=8rtJxH6oJbxIuuQHJfhjGQ&_nc_oc=AdoIqtsihC1tWKGEg2_1rsywV0sHCi-nAE9bTlYPMIvAPqiZhs1EvBgXtf-u5Ay4dd4&ccb=13-1&oh=06_Q3-9AXxY1H3pbsM7XOBudTHPwtmyYWWdVrXZw-qR35w3aOnA&oe=69CDCCCA&_nc_sid=58080a",
+        "impresiones": 4327,
+        "clics": 461,
+        "ctr": 10.654033,
+        "leads": 12,
+        "cpl": 5.29,
+        "inversion": 63.49
       },
       {
         "name": "Carrusel nov 25",
         "ad_id": "120235643175770407",
-        "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwH61I2B&_nc_oc=AdrqPKTc36OI6VHYvRxmbyj4ITIarMAYLE_mc9YlcCsSUJMmjAnHmqsjqnsfqV566vo&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=DryEkNDfzObO63PDDZBJFQ&_nc_tpa=Q5bMBQF79o7PcGAAXxHNw9PhI9XUF_TA1se7QW-qkZNqr72wXSXqqUOx1MKcwjh0aaBbXjNIK_V9LsUlDw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AfxLWZU99dNJe467innedTmslPZq0YHYp3XnjyA37OdRLA&oe=69D1B84B",
-        "impresiones": 582,
+        "image_url": "https://scontent-atl3-2.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwExPT41&_nc_oc=AdpL2JRgIsld308tvf_vw_k15pPL-HAQhBySU5F-ERNvVj0jFbCYbri_5rwVGlWwU6I&_nc_zt=1&_nc_ht=scontent-atl3-2.xx&edm=AAwGEdEEAAAA&_nc_gid=urf5ZpzGZqaTRtyu4Tybaw&_nc_tpa=Q5bMBQGugNMPwWNlPWhqiuz4QG2IEshoIEk7m8DrRmDeCOO2iwwfLUPPVRjjLusczwlNZYDYB_IIq4Ro9g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AfwgWQH9mw2E5ccuOEP6e0D9qad_5A7F9d_j3fwUT7KFMw&oe=69D1B84B",
+        "impresiones": 583,
         "clics": 52,
-        "ctr": 8.934708,
+        "ctr": 8.919383,
         "leads": 4,
         "cpl": 2.46,
         "inversion": 9.83
@@ -1287,14 +1675,14 @@
       },
       {
         "month": "2026-03",
-        "impresiones": 21461,
-        "clics": 1894,
-        "ctr": 8.825311,
-        "cpc": 0.161024,
-        "leads": 54,
-        "cpl": 5.65,
-        "inversion": 304.98,
-        "alcance": 11456
+        "impresiones": 21481,
+        "clics": 1895,
+        "ctr": 8.821749,
+        "cpc": 0.161071,
+        "leads": 56,
+        "cpl": 5.45,
+        "inversion": 305.23,
+        "alcance": 11467
       }
     ]
   },
