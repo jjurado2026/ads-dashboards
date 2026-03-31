@@ -3,27 +3,809 @@
     "clientId": "harmonices",
     "clientName": "Harmonices",
     "month": "2026-03",
-    "generatedAt": "2026-03-31T16:23:39.887860Z",
+    "generatedAt": "2026-03-31T16:26:33.020237Z",
     "dateRange": {
       "from": "2026-03-01",
       "to": "2026-03-31"
     }
   },
   "google_ads": {
-    "kpis": {},
-    "daily": [],
+    "kpis": {
+      "impresiones": {
+        "value": 327977
+      },
+      "clics": {
+        "value": 12623
+      },
+      "ctr": {
+        "value": 3.85
+      },
+      "cpc": {
+        "value": 0.11
+      },
+      "leads": {
+        "value": 123
+      },
+      "cpl": {
+        "value": 11.52
+      },
+      "inversion": {
+        "value": 1416.76
+      }
+    },
+    "daily": [
+      {
+        "date": "2026-03-01",
+        "leads": 6,
+        "cpl": 13.52,
+        "impresiones": 29790,
+        "clics": 924,
+        "inversion": 81.11
+      },
+      {
+        "date": "2026-03-02",
+        "leads": 7,
+        "cpl": 6.65,
+        "impresiones": 7759,
+        "clics": 435,
+        "inversion": 46.58
+      },
+      {
+        "date": "2026-03-03",
+        "leads": 4,
+        "cpl": 11.0,
+        "impresiones": 14440,
+        "clics": 424,
+        "inversion": 44.0
+      },
+      {
+        "date": "2026-03-04",
+        "leads": 2,
+        "cpl": 22.12,
+        "impresiones": 10760,
+        "clics": 441,
+        "inversion": 44.24
+      },
+      {
+        "date": "2026-03-05",
+        "leads": 2,
+        "cpl": 21.38,
+        "impresiones": 13492,
+        "clics": 427,
+        "inversion": 42.76
+      },
+      {
+        "date": "2026-03-06",
+        "leads": 5,
+        "cpl": 7.51,
+        "impresiones": 17848,
+        "clics": 381,
+        "inversion": 37.56
+      },
+      {
+        "date": "2026-03-07",
+        "leads": 4,
+        "cpl": 12.56,
+        "impresiones": 12895,
+        "clics": 442,
+        "inversion": 50.25
+      },
+      {
+        "date": "2026-03-08",
+        "leads": 4,
+        "cpl": 11.02,
+        "impresiones": 8785,
+        "clics": 432,
+        "inversion": 44.07
+      },
+      {
+        "date": "2026-03-09",
+        "leads": 1,
+        "cpl": 42.57,
+        "impresiones": 13618,
+        "clics": 436,
+        "inversion": 42.57
+      },
+      {
+        "date": "2026-03-10",
+        "leads": 2,
+        "cpl": 20.89,
+        "impresiones": 14282,
+        "clics": 488,
+        "inversion": 41.78
+      },
+      {
+        "date": "2026-03-11",
+        "leads": 1,
+        "cpl": 42.54,
+        "impresiones": 9369,
+        "clics": 405,
+        "inversion": 42.54
+      },
+      {
+        "date": "2026-03-12",
+        "leads": 1,
+        "cpl": 41.01,
+        "impresiones": 13010,
+        "clics": 420,
+        "inversion": 41.01
+      },
+      {
+        "date": "2026-03-13",
+        "leads": 10,
+        "cpl": 4.42,
+        "impresiones": 13323,
+        "clics": 437,
+        "inversion": 44.19
+      },
+      {
+        "date": "2026-03-14",
+        "leads": 4,
+        "cpl": 11.53,
+        "impresiones": 13656,
+        "clics": 460,
+        "inversion": 46.11
+      },
+      {
+        "date": "2026-03-15",
+        "leads": 2,
+        "cpl": 16.97,
+        "impresiones": 5789,
+        "clics": 263,
+        "inversion": 33.93
+      },
+      {
+        "date": "2026-03-16",
+        "leads": 2,
+        "cpl": 16.72,
+        "impresiones": 12059,
+        "clics": 365,
+        "inversion": 33.44
+      },
+      {
+        "date": "2026-03-17",
+        "leads": 7,
+        "cpl": 9.48,
+        "impresiones": 16104,
+        "clics": 600,
+        "inversion": 66.39
+      },
+      {
+        "date": "2026-03-18",
+        "leads": 5,
+        "cpl": 8.54,
+        "impresiones": 10472,
+        "clics": 402,
+        "inversion": 42.72
+      },
+      {
+        "date": "2026-03-19",
+        "leads": 2,
+        "cpl": 23.42,
+        "impresiones": 8569,
+        "clics": 342,
+        "inversion": 46.85
+      },
+      {
+        "date": "2026-03-20",
+        "leads": 7,
+        "cpl": 6.7,
+        "impresiones": 5792,
+        "clics": 364,
+        "inversion": 46.87
+      },
+      {
+        "date": "2026-03-21",
+        "leads": 2,
+        "cpl": 19.42,
+        "impresiones": 6689,
+        "clics": 236,
+        "inversion": 38.84
+      },
+      {
+        "date": "2026-03-22",
+        "leads": 3,
+        "cpl": 10.23,
+        "impresiones": 6493,
+        "clics": 278,
+        "inversion": 30.7
+      },
+      {
+        "date": "2026-03-23",
+        "leads": 8,
+        "cpl": 4.98,
+        "impresiones": 7632,
+        "clics": 289,
+        "inversion": 39.86
+      },
+      {
+        "date": "2026-03-24",
+        "leads": 7,
+        "cpl": 8.65,
+        "impresiones": 12249,
+        "clics": 630,
+        "inversion": 60.58
+      },
+      {
+        "date": "2026-03-25",
+        "leads": 1,
+        "cpl": 51.68,
+        "impresiones": 7959,
+        "clics": 466,
+        "inversion": 51.68
+      },
+      {
+        "date": "2026-03-26",
+        "leads": 2,
+        "cpl": 21.54,
+        "impresiones": 4259,
+        "clics": 307,
+        "inversion": 43.07
+      },
+      {
+        "date": "2026-03-27",
+        "leads": 5,
+        "cpl": 10.73,
+        "impresiones": 4109,
+        "clics": 322,
+        "inversion": 53.63
+      },
+      {
+        "date": "2026-03-28",
+        "leads": 5,
+        "cpl": 11.92,
+        "impresiones": 8641,
+        "clics": 396,
+        "inversion": 59.59
+      },
+      {
+        "date": "2026-03-29",
+        "leads": 2,
+        "cpl": 20.33,
+        "impresiones": 5449,
+        "clics": 325,
+        "inversion": 40.66
+      },
+      {
+        "date": "2026-03-30",
+        "leads": 2,
+        "cpl": 23.43,
+        "impresiones": 7692,
+        "clics": 302,
+        "inversion": 46.87
+      },
+      {
+        "date": "2026-03-31",
+        "leads": 1,
+        "cpl": 32.32,
+        "impresiones": 4993,
+        "clics": 184,
+        "inversion": 32.32
+      }
+    ],
     "demographics": {
-      "gender": [],
+      "gender": [
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 1
+        },
+        {
+          "label": "11",
+          "leads": 1
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        }
+      ],
       "age": []
     },
-    "campaigns": [],
+    "campaigns": [
+      {
+        "name": "PMAX-HARMONICES-COLIVING #2",
+        "impresiones": 326360,
+        "clics": 12323,
+        "ctr": 3.78,
+        "cpc": 0.11,
+        "leads": 121,
+        "cpl": 10.72,
+        "inversion": 1297.33
+      }
+    ],
     "keywords": [],
-    "monthly_history": []
+    "monthly_history": [
+      {
+        "month": "2025-01-01",
+        "impresiones": 48651,
+        "clics": 5500,
+        "ctr": 11.31,
+        "cpc": 0.18,
+        "leads": 28,
+        "cpl": 35.47,
+        "inversion": 993.03
+      },
+      {
+        "month": "2025-02-01",
+        "impresiones": 33266,
+        "clics": 3302,
+        "ctr": 9.93,
+        "cpc": 0.34,
+        "leads": 34,
+        "cpl": 32.65,
+        "inversion": 1109.94
+      },
+      {
+        "month": "2025-03-01",
+        "impresiones": 28956,
+        "clics": 3233,
+        "ctr": 11.17,
+        "cpc": 0.42,
+        "leads": 28,
+        "cpl": 48.87,
+        "inversion": 1368.38
+      },
+      {
+        "month": "2025-04-01",
+        "impresiones": 29409,
+        "clics": 2724,
+        "ctr": 9.26,
+        "cpc": 0.51,
+        "leads": 89,
+        "cpl": 15.61,
+        "inversion": 1389.57
+      },
+      {
+        "month": "2025-05-01",
+        "impresiones": 28021,
+        "clics": 4035,
+        "ctr": 14.4,
+        "cpc": 0.38,
+        "leads": 106,
+        "cpl": 14.35,
+        "inversion": 1520.97
+      },
+      {
+        "month": "2025-06-01",
+        "impresiones": 63968,
+        "clics": 6288,
+        "ctr": 9.83,
+        "cpc": 0.2,
+        "leads": 147,
+        "cpl": 8.38,
+        "inversion": 1231.41
+      },
+      {
+        "month": "2025-07-01",
+        "impresiones": 67317,
+        "clics": 6803,
+        "ctr": 10.11,
+        "cpc": 0.18,
+        "leads": 195,
+        "cpl": 6.12,
+        "inversion": 1192.69
+      },
+      {
+        "month": "2025-08-01",
+        "impresiones": 189844,
+        "clics": 8657,
+        "ctr": 4.56,
+        "cpc": 0.14,
+        "leads": 217,
+        "cpl": 5.61,
+        "inversion": 1216.38
+      },
+      {
+        "month": "2025-09-01",
+        "impresiones": 268431,
+        "clics": 8401,
+        "ctr": 3.13,
+        "cpc": 0.14,
+        "leads": 235,
+        "cpl": 5.03,
+        "inversion": 1182.79
+      },
+      {
+        "month": "2025-10-01",
+        "impresiones": 205840,
+        "clics": 8665,
+        "ctr": 4.21,
+        "cpc": 0.14,
+        "leads": 149,
+        "cpl": 7.99,
+        "inversion": 1191.22
+      },
+      {
+        "month": "2025-11-01",
+        "impresiones": 251982,
+        "clics": 9078,
+        "ctr": 3.6,
+        "cpc": 0.14,
+        "leads": 99,
+        "cpl": 12.78,
+        "inversion": 1265.32
+      },
+      {
+        "month": "2025-12-01",
+        "impresiones": 376170,
+        "clics": 10151,
+        "ctr": 2.7,
+        "cpc": 0.13,
+        "leads": 122,
+        "cpl": 10.98,
+        "inversion": 1340.13
+      },
+      {
+        "month": "2026-01-01",
+        "impresiones": 191195,
+        "clics": 10926,
+        "ctr": 5.71,
+        "cpc": 0.13,
+        "leads": 150,
+        "cpl": 9.81,
+        "inversion": 1471.49
+      },
+      {
+        "month": "2026-02-01",
+        "impresiones": 256633,
+        "clics": 11018,
+        "ctr": 4.29,
+        "cpc": 0.12,
+        "leads": 116,
+        "cpl": 11.65,
+        "inversion": 1351.17
+      },
+      {
+        "month": "2026-03-01",
+        "impresiones": 327977,
+        "clics": 12623,
+        "ctr": 3.85,
+        "cpc": 0.11,
+        "leads": 123,
+        "cpl": 11.52,
+        "inversion": 1416.76
+      }
+    ]
   },
   "meta_ads": {
     "kpis": {
       "impresiones": {
-        "value": 21457
+        "value": 21460
       },
       "clics": {
         "value": 1894
@@ -41,7 +823,7 @@
         "value": 5.65
       },
       "inversion": {
-        "value": 304.94
+        "value": 304.97
       },
       "alcance": {
         "value": 11456
@@ -292,7 +1074,7 @@
         "date": "2026-03-31",
         "leads": 2,
         "cpl": 4.28,
-        "impresiones": 605,
+        "impresiones": 606,
         "clics": 72,
         "inversion": 8.55
       }
@@ -300,13 +1082,13 @@
     "campaigns": [
       {
         "name": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "impresiones": 21457,
+        "impresiones": 21460,
         "clics": 1894,
-        "ctr": 8.826956,
-        "cpc": 0.161003,
+        "ctr": 8.825722,
+        "cpc": 0.161019,
         "leads": 54,
         "cpl": 5.65,
-        "inversion": 304.94,
+        "inversion": 304.97,
         "alcance": 11456
       }
     ],
@@ -323,20 +1105,20 @@
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "facebook",
-        "impresiones": 12878,
+        "impresiones": 12880,
         "clics": 1399,
         "leads": 34,
-        "cpl": 5.15,
-        "inversion": 174.94
+        "cpl": 5.14,
+        "inversion": 174.9
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "instagram",
-        "impresiones": 8412,
+        "impresiones": 8413,
         "clics": 439,
         "leads": 20,
         "cpl": 6.42,
-        "inversion": 128.45
+        "inversion": 128.42
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
@@ -361,7 +1143,7 @@
       {
         "name": "Video sept 25",
         "ad_id": "120235373002690407",
-        "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwEEbOrq&_nc_oc=AdoB4VCg7-Y8kNSJijvWqh1LkT9TaIkX9Jt4MeWvr1z765Jc3otOPx5vLh8-Vb13hcc&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=NvRGNyyLDeTsj96y5XDTGg&_nc_tpa=Q5bMBQFlvo4AC0eJxA_R8YhJz6aZeF0vxHiH9zjyVQ3GFY0R0mtbgHva-2m0m9O4CMdwdOvjuHMjhWM58Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_Afwgn9gEFLBivnazEL30W0EDmGMm9AJln4Y94C8pz1YaEg&oe=69D1D5AB",
+        "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwGU3J9j&_nc_oc=AdpL6ktrCbxtDYZhIIuYe4-xtSFdP-HtWvChanynwnuyv6uECahd3epYI-12KytR76c&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AAwGEdEEAAAA&_nc_gid=VCyTjfzn5Ukni-ZP3zpi-g&_nc_tpa=Q5bMBQFzBoiIVMf3gE4I_V6xosXjjTAP9CMZyXEOHQR5P8NC8Gfbjz0MXHPTOdXGBse5tzXKz9_bsW7c3w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AfzHh7Ke1i8YnV6yFiRSOt0wqI0Q8Ff8lCD6kY7YlYQkDg&oe=69D1D5AB",
         "impresiones": 16571,
         "clics": 1382,
         "ctr": 8.339871,
@@ -372,18 +1154,18 @@
       {
         "name": "Video nov 25",
         "ad_id": "120235642542760407",
-        "image_url": "https://external-sjc3-1.xx.fbcdn.net/emg1/v/t13/1756361502046950598?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJAMOxBCuoLvddgYWrA17wmTW-ci2pkDpM-BJhh2z-LqUZGXofFAUzuEtshUUaMWXSKGmk5KrNUAnRv0lQyZmoEUjfNg32_eWzd2ey2IYexcXmrRD7TY4hWTBVTy5wz_zgzvThDiJkqCUOAtKxi-8OZ&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=PdbiRsxaz2jnX1aSKm1-VA&_nc_oc=Adpz4PdGwQHMV01SOrQRfk08q4g4u4nvRhGir1tKDXX5uj7hqWIISpE5X2k33cKCrzw&ccb=13-1&oh=06_Q3-9AaqHlXQB-aNzhx_Ie4m3b4R77nZhE4IzrKSb8sAyqWL6&oe=69CDC900&_nc_sid=58080a",
-        "impresiones": 4304,
+        "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/3738265619850771864?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJVI7AYWMuZB4ODQ1WYdo6z2w86cfA3xK4YZZLxrMl5sxW_zj_rov_pbOw3GFc7MZWCzRxANL_QY-9tmZd0FSX0E1elPgVSJZHCOeyWJiMhe-ifeWAhDvsFi0NdUTorVwkYrzOAFY0XzAGtDDi9HTaQ&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=tBUkYH-BLGwp1mKx4jRr7Q&_nc_oc=AdqPGdkKhlStRPKVf4YA1dmu-VMeP3QRSKlspX41wdc2K89lBrXmts2C0att2AiCSKU&ccb=13-1&oh=06_Q3-9Ab-dEK4wJ7u1bFIfbtUggJliYSbS9DoEZYqvaSurUPwX&oe=69CDD92B&_nc_sid=58080a",
+        "impresiones": 4307,
         "clics": 460,
-        "ctr": 10.687732,
+        "ctr": 10.680288,
         "leads": 10,
         "cpl": 6.32,
-        "inversion": 63.2
+        "inversion": 63.23
       },
       {
         "name": "Carrusel nov 25",
         "ad_id": "120235643175770407",
-        "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwGFWwOJ&_nc_oc=AdpK-fltyvLmmkliB3KGUE5OVAOIAbvvtT3Pt6fWZ6qr836VTbQ3EHOi14cSfLjKd6Y&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AAwGEdEEAAAA&_nc_gid=0a-rmpaSZu34gpGve2gE6Q&_nc_tpa=Q5bMBQGiGOuqjcODTU_kBPaRmdB3sXRan0DWUkYgyIdePjSqrUhp01fjaciQJj8dHNgnYgltekp7e3qHlw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AfwivLPS9BWKA1BMOnh0fV8GVEn3HUwf_FRZMI6ROQ1x_w&oe=69D1B84B",
+        "image_url": "https://scontent-ord5-3.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwF5EFfF&_nc_oc=AdoTgiSvIkLC5-CXxf8TSK_fAcAkOAfei0vC2RhyULo9ingTMtZove1Z4dAVmu2fTLE&_nc_zt=1&_nc_ht=scontent-ord5-3.xx&edm=AAwGEdEEAAAA&_nc_gid=fZba4s_-TQpQaU59Ysh3MQ&_nc_tpa=Q5bMBQHjuR7JYO54l4hkLd2JhjRI2Td1seJHaSGg2eF8GC-W_TdZeuZLJMxwUDf_c1uYUPB6H5ejMDQL0g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Afzt1wCgNLirBPIw7fTyIIlwyLclB9w4zQ640dgXluWLvg&oe=69D1B84B",
         "impresiones": 582,
         "clics": 52,
         "ctr": 8.934708,
@@ -505,13 +1287,13 @@
       },
       {
         "month": "2026-03",
-        "impresiones": 21456,
+        "impresiones": 21460,
         "clics": 1894,
-        "ctr": 8.827368,
-        "cpc": 0.161003,
+        "ctr": 8.825722,
+        "cpc": 0.161019,
         "leads": 54,
         "cpl": 5.65,
-        "inversion": 304.94,
+        "inversion": 304.97,
         "alcance": 11456
       }
     ]
