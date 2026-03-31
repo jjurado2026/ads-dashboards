@@ -1,7 +1,10 @@
 {
   "clientId": "harmonices",
   "clientName": "Harmonices",
-  "months": ["2026-02", "2026-03"],
+  "months": [
+    "2026-02",
+    "2026-03"
+  ],
   "latestMonth": "2026-03",
-  "updatedAt": "2026-03-31T08:00:00Z"
+  "updatedAt": "2026-03-31T16:33:44.909607Z"
 }

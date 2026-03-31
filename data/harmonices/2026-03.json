@@ -3,7 +3,7 @@
     "clientId": "harmonices",
     "clientName": "Harmonices",
     "month": "2026-03",
-    "generatedAt": "2026-03-31T16:26:33.020237Z",
+    "generatedAt": "2026-03-31T16:33:44.907532Z",
     "dateRange": {
       "from": "2026-03-01",
       "to": "2026-03-31"
@@ -12,10 +12,10 @@
   "google_ads": {
     "kpis": {
       "impresiones": {
-        "value": 327977
+        "value": 328021
       },
       "clics": {
-        "value": 12623
+        "value": 12624
       },
       "ctr": {
         "value": 3.85
@@ -30,7 +30,7 @@
         "value": 11.52
       },
       "inversion": {
-        "value": 1416.76
+        "value": 1416.83
       }
     },
     "daily": [
@@ -277,10 +277,10 @@
       {
         "date": "2026-03-31",
         "leads": 1,
-        "cpl": 32.32,
-        "impresiones": 4993,
-        "clics": 184,
-        "inversion": 32.32
+        "cpl": 32.39,
+        "impresiones": 5037,
+        "clics": 185,
+        "inversion": 32.39
       }
     ],
     "demographics": {
@@ -639,13 +639,13 @@
     "campaigns": [
       {
         "name": "PMAX-HARMONICES-COLIVING #2",
-        "impresiones": 326360,
-        "clics": 12323,
+        "impresiones": 326404,
+        "clics": 12324,
         "ctr": 3.78,
         "cpc": 0.11,
         "leads": 121,
         "cpl": 10.72,
-        "inversion": 1297.33
+        "inversion": 1297.4
       }
     ],
     "keywords": [],
@@ -792,20 +792,20 @@
       },
       {
         "month": "2026-03-01",
-        "impresiones": 327977,
-        "clics": 12623,
+        "impresiones": 328021,
+        "clics": 12624,
         "ctr": 3.85,
         "cpc": 0.11,
         "leads": 123,
         "cpl": 11.52,
-        "inversion": 1416.76
+        "inversion": 1416.83
       }
     ]
   },
   "meta_ads": {
     "kpis": {
       "impresiones": {
-        "value": 21460
+        "value": 21461
       },
       "clics": {
         "value": 1894
@@ -823,7 +823,7 @@
         "value": 5.65
       },
       "inversion": {
-        "value": 304.97
+        "value": 304.98
       },
       "alcance": {
         "value": 11456
@@ -1073,22 +1073,22 @@
       {
         "date": "2026-03-31",
         "leads": 2,
-        "cpl": 4.28,
-        "impresiones": 606,
+        "cpl": 4.29,
+        "impresiones": 610,
         "clics": 72,
-        "inversion": 8.55
+        "inversion": 8.59
       }
     ],
     "campaigns": [
       {
         "name": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "impresiones": 21460,
+        "impresiones": 21461,
         "clics": 1894,
-        "ctr": 8.825722,
-        "cpc": 0.161019,
+        "ctr": 8.825311,
+        "cpc": 0.161024,
         "leads": 54,
         "cpl": 5.65,
-        "inversion": 304.97,
+        "inversion": 304.98,
         "alcance": 11456
       }
     ],
@@ -1106,19 +1106,19 @@
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "facebook",
         "impresiones": 12880,
-        "clics": 1399,
+        "clics": 1400,
         "leads": 34,
-        "cpl": 5.14,
-        "inversion": 174.9
+        "cpl": 5.15,
+        "inversion": 174.99
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "instagram",
-        "impresiones": 8413,
-        "clics": 439,
+        "impresiones": 8414,
+        "clics": 438,
         "leads": 20,
         "cpl": 6.42,
-        "inversion": 128.42
+        "inversion": 128.44
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
@@ -1143,7 +1143,7 @@
       {
         "name": "Video sept 25",
         "ad_id": "120235373002690407",
-        "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwGU3J9j&_nc_oc=AdpL6ktrCbxtDYZhIIuYe4-xtSFdP-HtWvChanynwnuyv6uECahd3epYI-12KytR76c&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=AAwGEdEEAAAA&_nc_gid=VCyTjfzn5Ukni-ZP3zpi-g&_nc_tpa=Q5bMBQFzBoiIVMf3gE4I_V6xosXjjTAP9CMZyXEOHQR5P8NC8Gfbjz0MXHPTOdXGBse5tzXKz9_bsW7c3w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AfzHh7Ke1i8YnV6yFiRSOt0wqI0Q8Ff8lCD6kY7YlYQkDg&oe=69D1D5AB",
+        "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=c_cu0fdqWoIQ7kNvwGWmtYZ&_nc_oc=AdpEwFZY2h_TWtZS3XDYG_lAfpj0wajwa7CEtgW4iKlKL_sfszixFd75iNREUXuKI5o&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AAwGEdEEAAAA&_nc_gid=aw6WByjy4Md2sFVV25w7sQ&_nc_tpa=Q5bMBQGS10aLZFEArQJfwoZiwTTT7OKiXnTWU7DTl41TYcvf87p5oKbIJE21yNIIj6gKjhiPCMoYI4hICg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AfxlryBpPgUZwxHin_RdfzTZc4MGxMbV8ZzPGH6JnodLvw&oe=69D1D5AB",
         "impresiones": 16571,
         "clics": 1382,
         "ctr": 8.339871,
@@ -1154,18 +1154,18 @@
       {
         "name": "Video nov 25",
         "ad_id": "120235642542760407",
-        "image_url": "https://external-ord5-1.xx.fbcdn.net/emg1/v/t13/3738265619850771864?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJVI7AYWMuZB4ODQ1WYdo6z2w86cfA3xK4YZZLxrMl5sxW_zj_rov_pbOw3GFc7MZWCzRxANL_QY-9tmZd0FSX0E1elPgVSJZHCOeyWJiMhe-ifeWAhDvsFi0NdUTorVwkYrzOAFY0XzAGtDDi9HTaQ&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=tBUkYH-BLGwp1mKx4jRr7Q&_nc_oc=AdqPGdkKhlStRPKVf4YA1dmu-VMeP3QRSKlspX41wdc2K89lBrXmts2C0att2AiCSKU&ccb=13-1&oh=06_Q3-9Ab-dEK4wJ7u1bFIfbtUggJliYSbS9DoEZYqvaSurUPwX&oe=69CDD92B&_nc_sid=58080a",
-        "impresiones": 4307,
+        "image_url": "https://external-iad6-1.xx.fbcdn.net/emg1/v/t13/14160184173235658627?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIqfa5FwaAXLvtYUpLfHK6SfLgTZi9nNe4Sez7igGKMCXZKaK4kmGdot6oDkwfWEFMoOzs35JJx_SiFvri2IoWzFxhw8FAAo6mEuwWSa9JBEt8qIcIjygLpkj9DDH7AybGRvSZ4sAbL6o1hE-X97Wnm&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=2i1-nReNVZw7K0euOzvM_Q&_nc_oc=Adp6RlARWifm1Emka0LZWVi5NFo-YJI-8KUI6BYXWTS50VFWDih0fSyrlZu_pSH_DyU&ccb=13-1&oh=06_Q3-9AVEM1CaoCdmlL2WFGpqPSO_LE3rsLFHYAdpxGw_-4R03&oe=69CDC67E&_nc_sid=58080a",
+        "impresiones": 4308,
         "clics": 460,
-        "ctr": 10.680288,
+        "ctr": 10.677809,
         "leads": 10,
         "cpl": 6.32,
-        "inversion": 63.23
+        "inversion": 63.24
       },
       {
         "name": "Carrusel nov 25",
         "ad_id": "120235643175770407",
-        "image_url": "https://scontent-ord5-3.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwF5EFfF&_nc_oc=AdoTgiSvIkLC5-CXxf8TSK_fAcAkOAfei0vC2RhyULo9ingTMtZove1Z4dAVmu2fTLE&_nc_zt=1&_nc_ht=scontent-ord5-3.xx&edm=AAwGEdEEAAAA&_nc_gid=fZba4s_-TQpQaU59Ysh3MQ&_nc_tpa=Q5bMBQHjuR7JYO54l4hkLd2JhjRI2Td1seJHaSGg2eF8GC-W_TdZeuZLJMxwUDf_c1uYUPB6H5ejMDQL0g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Afzt1wCgNLirBPIw7fTyIIlwyLclB9w4zQ640dgXluWLvg&oe=69D1B84B",
+        "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwH61I2B&_nc_oc=AdrqPKTc36OI6VHYvRxmbyj4ITIarMAYLE_mc9YlcCsSUJMmjAnHmqsjqnsfqV566vo&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=DryEkNDfzObO63PDDZBJFQ&_nc_tpa=Q5bMBQF79o7PcGAAXxHNw9PhI9XUF_TA1se7QW-qkZNqr72wXSXqqUOx1MKcwjh0aaBbXjNIK_V9LsUlDw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_AfxLWZU99dNJe467innedTmslPZq0YHYp3XnjyA37OdRLA&oe=69D1B84B",
         "impresiones": 582,
         "clics": 52,
         "ctr": 8.934708,
@@ -1287,238 +1287,591 @@
       },
       {
         "month": "2026-03",
-        "impresiones": 21460,
+        "impresiones": 21461,
         "clics": 1894,
-        "ctr": 8.825722,
-        "cpc": 0.161019,
+        "ctr": 8.825311,
+        "cpc": 0.161024,
         "leads": 54,
         "cpl": 5.65,
-        "inversion": 304.97,
+        "inversion": 304.98,
         "alcance": 11456
       }
     ]
   },
   "hubspot": {
-    "pipeline": "harmonices",
-    "stages_current_month": {
-      "Interesado futuro": 5,
-      "Exploratorio": 22,
-      "Descartado": 25,
-      "Lead entrante": 96
+    "deals_current_month": {
+      "lead_entrante": 96,
+      "exploratorio": 22,
+      "interesado_futuro": 5,
+      "interesado_caliente": 0,
+      "reservado_pagado": 0,
+      "descartado": 25
     },
-    "stages_total": {
-      "Descartado": 2909,
-      "Interesado futuro": 93,
-      "Reservado (pagado)": 15,
-      "Exploratorio": 232,
-      "Interesado caliente": 6,
-      "Lead entrante": 96
+    "deals_stock_total": {
+      "lead_entrante": 96,
+      "exploratorio": 232,
+      "interesado_futuro": 93,
+      "interesado_caliente": 6,
+      "reservado_pagado": 15,
+      "descartado": 2909
     },
-    "by_source": [
-      {
-        "source": "DIRECT_TRAFFIC",
-        "stages": {
-          "Descartado": 10,
-          "Exploratorio": 5,
-          "Lead entrante": 18,
-          "Interesado futuro": 1
-        }
-      },
-      {
-        "source": "OFFLINE",
-        "stages": {
-          "Exploratorio": 1,
-          "Descartado": 1,
-          "Interesado futuro": 1,
-          "Lead entrante": 1
-        }
-      },
-      {
-        "source": "ORGANIC_SEARCH",
-        "stages": {
-          "Descartado": 2,
-          "Lead entrante": 1
-        }
-      },
-      {
-        "source": "OTHER_CAMPAIGNS",
-        "stages": {
-          "Lead entrante": 6,
-          "Exploratorio": 1
-        }
-      },
-      {
-        "source": "PAID_SEARCH",
-        "stages": {
-          "Interesado futuro": 3,
-          "Exploratorio": 14,
-          "Descartado": 11,
-          "Lead entrante": 60
-        }
-      },
-      {
-        "source": "PAID_SOCIAL",
-        "stages": {
-          "Descartado": 1,
-          "Lead entrante": 9,
-          "Exploratorio": 1
-        }
-      },
-      {
-        "source": "SOCIAL_MEDIA",
-        "stages": {
-          "Lead entrante": 1
-        }
-      }
-    ],
-    "monthly_history": [
+    "visitas_monthly": [],
+    "leads_valid_monthly": [
       {
         "month": "2023-12",
-        "Descartado": 3
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-01",
-        "Descartado": 63,
-        "Interesado futuro": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-02",
-        "Descartado": 50
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-03",
-        "Descartado": 23,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2024-04",
-        "Descartado": 78
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-05",
-        "Descartado": 68
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-06",
-        "Descartado": 56,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2024-07",
-        "Reservado (pagado)": 1,
-        "Descartado": 67
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2024-08",
-        "Descartado": 58,
-        "Interesado futuro": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-09",
-        "Descartado": 65
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-10",
-        "Descartado": 78,
-        "Interesado futuro": 2
+        "interesado_futuro": 2,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2024-11",
-        "Descartado": 100,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2024-12",
-        "Descartado": 58,
-        "Interesado futuro": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2025-01",
-        "Descartado": 59,
-        "Interesado futuro": 2
+        "interesado_futuro": 2,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2025-02",
-        "Descartado": 63,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-03",
-        "Descartado": 69,
-        "Interesado futuro": 1,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-04",
-        "Descartado": 136,
-        "Interesado futuro": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2025-05",
-        "Descartado": 191,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-06",
-        "Descartado": 264,
-        "Reservado (pagado)": 2,
-        "Interesado futuro": 1
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 2
       },
       {
         "month": "2025-07",
-        "Descartado": 294,
-        "Reservado (pagado)": 1
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-08",
-        "Descartado": 249
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2025-09",
-        "Descartado": 264,
-        "Reservado (pagado)": 1,
-        "Interesado futuro": 6,
-        "Exploratorio": 1
+        "interesado_futuro": 6,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-10",
-        "Descartado": 179,
-        "Reservado (pagado)": 1,
-        "Interesado futuro": 3
+        "interesado_futuro": 3,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
       },
       {
         "month": "2025-11",
-        "Descartado": 128,
-        "Interesado futuro": 5
+        "interesado_futuro": 5,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2025-12",
-        "Descartado": 96,
-        "Interesado futuro": 10,
-        "Exploratorio": 49
+        "interesado_futuro": 10,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       },
       {
         "month": "2026-01",
-        "Exploratorio": 69,
-        "Interesado futuro": 28,
-        "Descartado": 90,
-        "Reservado (pagado)": 1,
-        "Interesado caliente": 1
+        "interesado_futuro": 28,
+        "interesado_caliente": 1,
+        "reservado_pagado": 1
       },
       {
         "month": "2026-02",
-        "Exploratorio": 91,
-        "Interesado futuro": 26,
-        "Descartado": 35,
-        "Interesado caliente": 5,
-        "Reservado (pagado)": 2
+        "interesado_futuro": 26,
+        "interesado_caliente": 5,
+        "reservado_pagado": 2
       },
       {
         "month": "2026-03",
-        "Interesado futuro": 5,
-        "Exploratorio": 22,
-        "Descartado": 25,
-        "Lead entrante": 96
+        "interesado_futuro": 5,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      }
+    ],
+    "stage_history": {
+      "interesado_futuro": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 1
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 0
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 0
+        },
+        {
+          "month": "2024-07",
+          "count": 0
+        },
+        {
+          "month": "2024-08",
+          "count": 1
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 2
+        },
+        {
+          "month": "2024-11",
+          "count": 0
+        },
+        {
+          "month": "2024-12",
+          "count": 1
+        },
+        {
+          "month": "2025-01",
+          "count": 2
+        },
+        {
+          "month": "2025-02",
+          "count": 0
+        },
+        {
+          "month": "2025-03",
+          "count": 1
+        },
+        {
+          "month": "2025-04",
+          "count": 1
+        },
+        {
+          "month": "2025-05",
+          "count": 0
+        },
+        {
+          "month": "2025-06",
+          "count": 1
+        },
+        {
+          "month": "2025-07",
+          "count": 0
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 6
+        },
+        {
+          "month": "2025-10",
+          "count": 3
+        },
+        {
+          "month": "2025-11",
+          "count": 5
+        },
+        {
+          "month": "2025-12",
+          "count": 10
+        },
+        {
+          "month": "2026-01",
+          "count": 28
+        },
+        {
+          "month": "2026-02",
+          "count": 26
+        },
+        {
+          "month": "2026-03",
+          "count": 5
+        }
+      ],
+      "interesado_caliente": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 0
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 0
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 0
+        },
+        {
+          "month": "2024-07",
+          "count": 0
+        },
+        {
+          "month": "2024-08",
+          "count": 0
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 0
+        },
+        {
+          "month": "2024-11",
+          "count": 0
+        },
+        {
+          "month": "2024-12",
+          "count": 0
+        },
+        {
+          "month": "2025-01",
+          "count": 0
+        },
+        {
+          "month": "2025-02",
+          "count": 0
+        },
+        {
+          "month": "2025-03",
+          "count": 0
+        },
+        {
+          "month": "2025-04",
+          "count": 0
+        },
+        {
+          "month": "2025-05",
+          "count": 0
+        },
+        {
+          "month": "2025-06",
+          "count": 0
+        },
+        {
+          "month": "2025-07",
+          "count": 0
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 0
+        },
+        {
+          "month": "2025-10",
+          "count": 0
+        },
+        {
+          "month": "2025-11",
+          "count": 0
+        },
+        {
+          "month": "2025-12",
+          "count": 0
+        },
+        {
+          "month": "2026-01",
+          "count": 1
+        },
+        {
+          "month": "2026-02",
+          "count": 5
+        },
+        {
+          "month": "2026-03",
+          "count": 0
+        }
+      ],
+      "reservado_pagado": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 0
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 1
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 1
+        },
+        {
+          "month": "2024-07",
+          "count": 1
+        },
+        {
+          "month": "2024-08",
+          "count": 0
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 0
+        },
+        {
+          "month": "2024-11",
+          "count": 1
+        },
+        {
+          "month": "2024-12",
+          "count": 0
+        },
+        {
+          "month": "2025-01",
+          "count": 0
+        },
+        {
+          "month": "2025-02",
+          "count": 1
+        },
+        {
+          "month": "2025-03",
+          "count": 1
+        },
+        {
+          "month": "2025-04",
+          "count": 0
+        },
+        {
+          "month": "2025-05",
+          "count": 1
+        },
+        {
+          "month": "2025-06",
+          "count": 2
+        },
+        {
+          "month": "2025-07",
+          "count": 1
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 1
+        },
+        {
+          "month": "2025-10",
+          "count": 1
+        },
+        {
+          "month": "2025-11",
+          "count": 0
+        },
+        {
+          "month": "2025-12",
+          "count": 0
+        },
+        {
+          "month": "2026-01",
+          "count": 1
+        },
+        {
+          "month": "2026-02",
+          "count": 2
+        },
+        {
+          "month": "2026-03",
+          "count": 0
+        }
+      ]
+    },
+    "leads_by_source": [
+      {
+        "source": "DIRECT_TRAFFIC",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "OFFLINE",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "ORGANIC_SEARCH",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "OTHER_CAMPAIGNS",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "PAID_SEARCH",
+        "interesado_futuro": 3,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "PAID_SOCIAL",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "source": "SOCIAL_MEDIA",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
       }
     ]
   }
