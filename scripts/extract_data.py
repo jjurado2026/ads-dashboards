@@ -38,6 +38,7 @@ CLIENTS = [
         "id": "trees",
         "name": "Trees Coliving",
         "meta_account_id": "1399636757673175",
+        "meta_token_env": "META_ACCESS_TOKEN_TREES",
         "google_customer_id": "2010567949",
         "google_mcc_id": "7270852417",
         "hubspot_pipeline": "trees_coliving",
@@ -53,6 +54,7 @@ CLIENTS = [
         "id": "harmonices",
         "name": "Harmonices",
         "meta_account_id": "1472128056670313",
+        "meta_token_env": "META_ACCESS_TOKEN_HARMONICES",
         "google_customer_id": "1456796015",
         "google_mcc_id": "7270852417",
         "hubspot_pipeline": "harmonices",
@@ -950,7 +952,6 @@ def main() -> None:
     )
 
     # Read env vars
-    meta_token = os.environ.get("META_ACCESS_TOKEN", "")
     hubspot_token = os.environ.get("HUBSPOT_ACCESS_TOKEN", "")
     google_refresh = os.environ.get("GOOGLE_ADS_REFRESH_TOKEN", "")
 
@@ -975,6 +976,7 @@ def main() -> None:
             "creatives": [],
             "monthly_history": [],
         }
+        meta_token = os.environ.get(client.get("meta_token_env", "META_ACCESS_TOKEN"), "")
         if meta_token:
             try:
                 meta_data = extract_meta_ads(
@@ -984,7 +986,7 @@ def main() -> None:
             except Exception as exc:
                 log.error("Meta extraction failed for %s: %s", client["id"], exc)
         else:
-            log.warning("META_ACCESS_TOKEN not set — skipping Meta extraction.")
+            log.warning("%s not set — skipping Meta extraction for %s.", client.get("meta_token_env"), client["id"])
 
         # --- Google Ads ---
         google_data: dict[str, Any] = {
