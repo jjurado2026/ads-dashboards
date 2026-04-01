@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Histórico — Harmonices</title>
+  <title>Historico — Harmonices</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/styles-base.css">
@@ -68,10 +68,60 @@
       border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-weight: 500;
     }
 
+    /* Table styling */
+    .table-section { margin-top: 8px; }
+    .table-section + .table-section { margin-top: 36px; }
+
+    .table-section h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .table-section h4 .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge.google { background: var(--color-google); }
+    .badge.meta { background: var(--color-meta); }
+
+    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .data-table th { color: #FFFFFF; padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; user-select: none; font-size: 0.78rem; }
+    .data-table th:hover { opacity: 0.9; }
+    .data-table td { padding: 9px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; }
+    .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+
+    .data-table.google th { background: var(--color-google); }
+    .data-table.meta th { background: var(--color-meta); }
+
     /* Inline bars for historical */
-    .inline-bar-wrapper { display: flex; align-items: center; gap: 8px; min-width: 100px; }
-    .inline-bar { height: 8px; border-radius: 4px; display: inline-block; min-width: 2px; }
-    .inline-value { white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .inline-bar-wrapper { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+    .inline-bar { display: inline-block; height: 16px; border-radius: 3px; min-width: 2px; transition: width 0.3s ease; }
+    .inline-value { font-weight: 600; font-size: 0.8rem; white-space: nowrap; }
+
+    /* Footer */
+    .dashboard-footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 2px solid #E5E7EB;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
 
     @media (max-width: 768px) {
       .page-nav {
@@ -108,6 +158,10 @@
         padding: 6px 14px;
       }
     }
+
+    /* PDF */
+    .pdf-mode { width: 1200px !important; max-width: none !important; }
+    .pdf-mode .no-print { display: none !important; }
     @media print { .page-nav { display: none; } }
   </style>
 </head>
@@ -118,7 +172,7 @@
     <div class="nav-links">
       <a href="google.html" class="nav-link">Google Ads</a>
       <a href="meta.html" class="nav-link">Meta Ads</a>
-      <a href="historico.html" class="nav-link active">Histórico</a>
+      <a href="historico.html" class="nav-link active">Historico</a>
       <a href="hubspot.html" class="nav-link">HubSpot</a>
     </div>
     <div class="nav-controls">
@@ -132,24 +186,18 @@
 
     <div class="section-divider" style="margin-top:24px;">
       <span class="section-icon" style="background: var(--color-primary);"></span>
-      <h2>Histórico</h2>
+      <h2>Historico</h2>
     </div>
 
-    <section style="margin-bottom:28px;">
-      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">
-        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-google);margin-right:6px;vertical-align:middle;"></span>
-        Google Ads — Histórico Mensual
-      </h4>
-      <div class="table-wrapper" id="table-history-google"></div>
-    </section>
+    <div class="table-section">
+      <h4>Historico Mensual <span class="badge google">Google Ads</span></h4>
+      <div class="table-wrapper" id="table-google-history"></div>
+    </div>
 
-    <section style="margin-bottom:28px;">
-      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">
-        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--color-meta);margin-right:6px;vertical-align:middle;"></span>
-        Meta Ads — Histórico Mensual
-      </h4>
-      <div class="table-wrapper" id="table-history-meta"></div>
-    </section>
+    <div class="table-section">
+      <h4>Historico Mensual <span class="badge meta">Meta Ads</span></h4>
+      <div class="table-wrapper" id="table-meta-history"></div>
+    </div>
 
     <footer class="dashboard-footer">
       <span id="last-updated"></span> · Datos actualizados diariamente
@@ -158,77 +206,27 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script type="module">
-    import {
-      initDashboard, formatCurrency, formatPct, formatCount, formatMonthLabel
-    } from '../shared/dashboard-v2.js';
+    import { initDashboard, renderHistoricalTable } from '../shared/dashboard-v2.js';
 
-    const GREEN  = '#34A853';
-    const BLUE   = '#1877F2';
     const MONTH_KEY = 'harmonices_selected_month';
 
-    function renderHistoryTable(containerId, history, barCols, barColorMap) {
-      const container = document.getElementById(containerId);
-      if (!container || !history || !history.length) return;
-
-      const maxVals = {};
-      barCols.forEach(key => {
-        maxVals[key] = Math.max(...history.map(h => h[key] || 0), 1);
-      });
-
-      const columns = [
-        { key: 'month',       label: 'Mes',         format: formatMonthLabel },
-        { key: 'impresiones', label: 'Impresiones',  format: formatCount },
-        { key: 'clics',       label: 'Clics',        format: formatCount },
-        { key: 'ctr',         label: 'CTR',           format: v => formatPct(v) },
-        { key: 'cpc',         label: 'CPC',           format: formatCurrency },
-        { key: 'leads',       label: 'Leads',         format: formatCount },
-        { key: 'cpl',         label: 'CPL',            format: formatCurrency },
-        { key: 'inversion',   label: 'Inversión',     format: formatCurrency }
-      ];
-
-      const sorted = [...history]; // Chronological: oldest first, newest last
-      let html = '<table class="data-table"><thead><tr>';
-      columns.forEach(col => {
-        const align = col.key !== 'month' ? 'text-align:right' : '';
-        html += `<th style="${align}">${col.label}</th>`;
-      });
-      html += '</tr></thead><tbody>';
-
-      sorted.forEach(row => {
-        html += '<tr>';
-        columns.forEach(col => {
-          const val = row[col.key];
-          const formatted = col.format ? col.format(val) : (val ?? '\u2014');
-          const align = col.key !== 'month' ? 'text-align:right' : '';
-          if (barCols.includes(col.key) && val != null) {
-            const pct = Math.min((val / maxVals[col.key]) * 100, 100);
-            const color = barColorMap[col.key] || '#143B48';
-            html += `<td style="${align}">
-              <div class="inline-bar-wrapper">
-                <span class="inline-bar" style="width:${pct.toFixed(0)}%;background:${color}"></span>
-                <span class="inline-value">${formatted}</span>
-              </div>
-            </td>`;
-          } else {
-            html += `<td style="${align}">${formatted}</td>`;
-          }
+    function renderHistorico(data) {
+      if (data.google_ads && data.google_ads.monthly_history) {
+        renderHistoricalTable('table-google-history', data.google_ads.monthly_history, {
+          barColumns: ['leads', 'cpl'],
+          barColors: { leads: '#34A853', cpl: '#D97706' }
         });
-        html += '</tr>';
-      });
-
-      html += '</tbody></table>';
-      container.innerHTML = html;
-    }
-
-    function onDataLoaded(data) {
-      if (!data.history) return;
-      if (data.history.google_ads) {
-        renderHistoryTable('table-history-google', data.history.google_ads,
-          ['leads', 'cpl'], { leads: GREEN, cpl: '#D97706' });
+        const googleTable = document.querySelector('#table-google-history .data-table');
+        if (googleTable) googleTable.classList.add('google');
       }
-      if (data.history.meta_ads) {
-        renderHistoryTable('table-history-meta', data.history.meta_ads,
-          ['leads', 'cpl'], { leads: BLUE, cpl: '#D97706' });
+
+      if (data.meta_ads && data.meta_ads.monthly_history) {
+        renderHistoricalTable('table-meta-history', data.meta_ads.monthly_history, {
+          barColumns: ['leads', 'cpl'],
+          barColors: { leads: '#1877F2', cpl: '#D97706' }
+        });
+        const metaTable = document.querySelector('#table-meta-history .data-table');
+        if (metaTable) metaTable.classList.add('meta');
       }
     }
 
@@ -236,7 +234,7 @@
       clientId: 'harmonices',
       clientName: 'Harmonices',
       dataBasePath: '../data/harmonices',
-      onDataLoaded
+      onDataLoaded: renderHistorico
     }).then(() => {
       const selector = document.getElementById('month-selector');
       if (selector) {

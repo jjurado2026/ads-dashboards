@@ -110,16 +110,42 @@
       border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-weight: 500;
     }
 
-    /* Creative thumbnails */
-    .creative-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid var(--color-border); }
-    .creative-cell { display: flex; align-items: center; gap: 10px; }
-    .creative-name { font-size: 0.85rem; line-height: 1.3; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
     /* Platform pills */
-    .platform-pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; color: #fff; }
-    .platform-pill.facebook { background: #1877F2; }
-    .platform-pill.instagram { background: #E1306C; }
-    .platform-pill.audience { background: #6B7280; }
+    .platform-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .platform-pill.facebook { background: #1877F2; color: #FFFFFF; }
+    .platform-pill.instagram { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); color: #FFFFFF; }
+    .platform-pill.messenger { background: #00B2FF; color: #FFFFFF; }
+    .platform-pill.audience_network { background: #4267B2; color: #FFFFFF; }
+    .platform-pill.default { background: #E5E7EB; color: var(--color-text); }
+
+    /* Creative thumbnails */
+    .creative-thumb {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--color-bg);
+    }
+    .creative-thumb-placeholder {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      background: #F3F4F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: 0.65rem;
+      text-align: center;
+    }
 
     @media print {
       .page-nav { display: none; }
@@ -133,7 +159,7 @@
     <div class="nav-links">
       <a href="google.html" class="nav-link">Google Ads</a>
       <a href="meta.html" class="nav-link active">Meta Ads</a>
-      <a href="historico.html" class="nav-link">Histórico</a>
+      <a href="historico.html" class="nav-link">Historico</a>
       <a href="hubspot.html" class="nav-link">HubSpot</a>
     </div>
     <div class="nav-controls">
@@ -151,17 +177,13 @@
     </div>
 
     <section class="kpi-section">
-      <div class="kpi-grid-7" id="kpis-meta"></div>
+      <div class="kpi-grid-7" id="meta-kpis"></div>
     </section>
 
     <div class="charts-grid">
-      <div class="chart-card">
+      <div class="chart-card" style="grid-column: 1 / -1;">
         <h3>Rendimiento Diario: Leads + CPL</h3>
         <div class="chart-container"><canvas id="chart-meta-daily"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h3>Campañas por Plataforma</h3>
-        <div class="chart-container"><canvas id="chart-meta-platforms"></canvas></div>
       </div>
     </div>
 
@@ -188,7 +210,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script type="module">
     import {
-      initDashboard, renderSortableTable,
+      initDashboard, renderKpiCards, renderSortableTable,
       formatCurrency, formatPct, formatCount
     } from '../shared/dashboard-v2.js';
     import { createDailyCombo } from '../shared/charts-v2.js';
@@ -197,9 +219,10 @@
     const GRAY = '#6B7280';
     const MONTH_KEY = 'harmonices_selected_month';
 
-    function destroyChart(id) {
-      const existing = Chart.getChart(id);
-      if (existing) existing.destroy();
+    function platformPill(platform) {
+      const p = (platform || '').toLowerCase().replace(/\s+/g, '_');
+      const cls = ['facebook', 'instagram', 'messenger', 'audience_network'].includes(p) ? p : 'default';
+      return `<span class="platform-pill ${cls}">${platform || '\u2014'}</span>`;
     }
 
     function renderPlatformKpis(containerId, platform) {
@@ -212,7 +235,7 @@
         { key: 'cpc',         label: 'CPC',          fmt: formatCurrency, invert: true },
         { key: 'leads',       label: 'Leads',        fmt: formatCount, invert: false },
         { key: 'cpl',         label: 'CPL',          fmt: formatCurrency, invert: true },
-        { key: 'inversion',   label: 'Inversión',    fmt: formatCurrency, invert: false }
+        { key: 'inversion',   label: 'Inversion',    fmt: formatCurrency, invert: false }
       ];
       container.innerHTML = metrics.map(m => {
         const kpi = platform[m.key];
@@ -238,77 +261,67 @@
       }).join('');
     }
 
-    function renderPlatformChart(canvasId, platformData) {
-      destroyChart(canvasId);
-      const canvas = document.getElementById(canvasId);
-      if (!canvas || !platformData || !platformData.length) return;
-      const colors = { facebook: BLUE, instagram: '#E1306C', audience_network: GRAY, messenger: '#0084FF' };
-      new Chart(canvas, {
-        type: 'bar',
-        data: {
-          labels: platformData.map(p => p.platform),
-          datasets: [{ label: 'Leads', data: platformData.map(p => p.leads),
-            backgroundColor: platformData.map(p => (colors[p.platform.toLowerCase()] || GRAY) + 'CC'), borderRadius: 4 }]
-        },
-        options: {
-          indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.x} leads` } } },
-          scales: {
-            x: { beginAtZero: true, grid: { color: '#E5E7EB' }, ticks: { font: { size: 10 } } },
-            y: { grid: { display: false }, ticks: { font: { size: 11 } } }
-          }
-        }
-      });
-    }
-
-    function renderCreativesTable(containerId, creatives) {
-      const container = document.getElementById(containerId);
-      if (!container || !creatives || !creatives.length) {
-        if (container) container.innerHTML = '<p style="color:var(--color-text-muted);font-size:0.85rem;">Sin datos de creatividades.</p>';
-        return;
-      }
-      renderSortableTable(containerId, [
-        {
-          key: 'name', label: 'Creatividad', unit: 'text',
-          render: row => {
-            const thumb = row.thumbnail_url
-              ? `<img class="creative-thumb" src="${row.thumbnail_url}" alt="" loading="lazy" onerror="this.style.display='none'">`
-              : '';
-            return `<div class="creative-cell">${thumb}<span class="creative-name" title="${row.name || ''}">${row.name || '\u2014'}</span></div>`;
-          }
-        },
-        { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-        { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-        { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-        { key: 'spend', label: 'Inversión', unit: 'eur', align: 'right' }
-      ], creatives, { defaultSortCol: 'leads', defaultSortAsc: false });
-    }
+    const campaignCols = [
+      { key: 'name', label: 'Campaña', unit: 'text' },
+      { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
+      { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
+      { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+      { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
+      { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+      { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+      { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
+    ];
 
     function onDataLoaded(data) {
       if (!data.meta_ads) return;
       const m = data.meta_ads;
-      renderPlatformKpis('kpis-meta', m.kpis);
+
+      renderPlatformKpis('meta-kpis', m.kpis);
+
       if (m.daily) createDailyCombo('chart-meta-daily', m.daily, { barColor: BLUE, lineColor: GRAY });
-      if (m.platforms) renderPlatformChart('chart-meta-platforms', m.platforms);
+
       if (m.campaigns) {
-        renderSortableTable('table-meta-campaigns', [
-          { key: 'name', label: 'Campaña', unit: 'text' },
-          { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
-          { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-          { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
-          { key: 'spend', label: 'Inversión', unit: 'eur', align: 'right' }
-        ], m.campaigns, { defaultSortCol: 'leads', defaultSortAsc: false });
+        renderSortableTable('table-meta-campaigns', campaignCols, m.campaigns, { defaultSortCol: 'leads', defaultSortAsc: false });
       }
-      // Platforms table (by platform breakdown)
-      if (m.platforms) {
+
+      if (m.campaigns_by_platform) {
         renderSortableTable('table-meta-platforms', [
-          { key: 'platform', label: 'Plataforma', unit: 'text' },
+          { key: 'name', label: 'Campaña', unit: 'text' },
+          {
+            key: 'platform', label: 'Plataforma', unit: 'text',
+            render: row => platformPill(row.platform)
+          },
+          { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
+          { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
+          { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+          { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
           { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
           { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
-          { key: 'spend', label: 'Inversión', unit: 'eur', align: 'right' }
-        ], m.platforms, { defaultSortCol: 'leads', defaultSortAsc: false });
+          { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
+        ], m.campaigns_by_platform, { defaultSortCol: 'leads', defaultSortAsc: false });
       }
-      if (m.creatives) renderCreativesTable('table-meta-creatives', m.creatives);
+
+      if (m.creatives) {
+        renderSortableTable('table-meta-creatives', [
+          { key: 'name', label: 'Ad Name', unit: 'text' },
+          {
+            key: 'image_url', label: 'Thumbnail', unit: 'text',
+            render: row => {
+              if (row.image_url) {
+                return `<img src="${row.image_url}" alt="${row.name}" class="creative-thumb" loading="lazy" onerror="this.outerHTML='<div class=\\'creative-thumb-placeholder\\'>Sin imagen</div>'">`;
+              }
+              return '<div class="creative-thumb-placeholder">Sin imagen</div>';
+            }
+          },
+          { key: 'impresiones', label: 'Impresiones', unit: 'count', align: 'right' },
+          { key: 'clics', label: 'Clics', unit: 'count', align: 'right' },
+          { key: 'ctr', label: 'CTR', unit: 'pct', align: 'right' },
+          { key: 'cpc', label: 'CPC', unit: 'eur', align: 'right' },
+          { key: 'leads', label: 'Leads', unit: 'count', align: 'right', defaultDesc: true },
+          { key: 'cpl', label: 'CPL', unit: 'eur', align: 'right' },
+          { key: 'inversion', label: 'Inversion', unit: 'eur', align: 'right' }
+        ], m.creatives, { defaultSortCol: 'leads', defaultSortAsc: false });
+      }
     }
 
     initDashboard({

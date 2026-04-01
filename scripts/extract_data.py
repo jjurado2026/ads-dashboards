@@ -830,6 +830,22 @@ def extract_hubspot(
                     monthly_buckets[m_key].get(stage_label, 0) + 1
                 )
 
+        # Visitas by fecha_visita (Harmonices)
+        visitas_buckets: dict[str, int] = {}
+        for deal in deals:
+            props = deal.get("properties", {})
+            fecha_raw = props.get("fecha_visita", "")
+            if fecha_raw:
+                try:
+                    fecha_dt = datetime.fromisoformat(
+                        fecha_raw.replace("Z", "+00:00")
+                    ).replace(tzinfo=None)
+                    v_key = fecha_dt.strftime("%Y-%m")
+                    visitas_buckets[v_key] = visitas_buckets.get(v_key, 0) + 1
+                except (ValueError, TypeError):
+                    pass
+        result["visitas_buckets"] = visitas_buckets
+
         result["stages_current_month"] = current_month_stages
         result["stages_total"] = total_stages
 
@@ -923,7 +939,7 @@ def _transform_hubspot_for_dashboard(raw: dict, client: dict) -> dict:
         return {
             "deals_current_month": deals_current,
             "deals_stock_total": deals_stock,
-            "visitas_monthly": visitas,  # Empty for now — needs fecha_visita property
+            "visitas_monthly": [{"month": m, "count": c} for m, c in sorted(raw.get("visitas_buckets", {}).items())],
             "leads_valid_monthly": leads_valid,
             "stage_history": stage_hist,
             "leads_by_source": leads_by_source,

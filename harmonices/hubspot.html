@@ -18,12 +18,14 @@
       --color-text-muted: #6B7280;
       --color-positive: #0D6E3F;
       --color-negative: #B91C1C;
+      --color-hubspot: #FF7A59;
       --color-border: #E5E7EB;
       --font-family: 'Montserrat', sans-serif;
       --border-radius: 8px;
     }
 
     .kpi-card { border: 1px solid var(--color-border); box-shadow: none; }
+    .kpi-card:hover { box-shadow: 0 2px 8px rgba(20,59,72,0.08); transform: translateY(-1px); }
     .chart-card { border: 1px solid var(--color-border); box-shadow: none; }
 
     /* Nav bar */
@@ -66,9 +68,93 @@
       border: 1px solid rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 4px; font-weight: 500;
     }
 
-    /* HubSpot grids */
-    .hubspot-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
-    .hubspot-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+    /* Pipeline Stages */
+    .pipeline-stages {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .stage-card {
+      flex: 1;
+      min-width: 120px;
+      background: var(--color-card-bg);
+      border-radius: var(--border-radius);
+      padding: 16px 12px;
+      text-align: center;
+      border: 1px solid var(--color-border);
+      border-top: 4px solid var(--color-hubspot);
+    }
+
+    .stage-card .stage-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: var(--color-text-muted);
+      margin-bottom: 6px;
+    }
+
+    .stage-card .stage-count {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-text);
+    }
+
+    .stage-card.interesado-futuro { border-top-color: #F97316; }
+    .stage-card.interesado-caliente { border-top-color: #0EA5E9; }
+    .stage-card.reservado-pagado { border-top-color: #7C3AED; }
+    .stage-card.exploratorio { border-top-color: #1E5A6B; }
+    .stage-card.lead-entrante { border-top-color: #143B48; }
+    .stage-card.descartado { border-top-color: #DC2626; }
+
+    /* Charts */
+    .chart-row { display: grid; gap: 20px; margin-bottom: 24px; }
+    .chart-row.cols-1 { grid-template-columns: 1fr; }
+    .chart-row.cols-2 { grid-template-columns: 1fr 1fr; }
+    .chart-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .chart-box {
+      background: var(--color-card-bg);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      border: 1px solid var(--color-border);
+    }
+
+    .chart-box h4 { font-size: 0.85rem; font-weight: 700; color: var(--color-hubspot); margin-bottom: 12px; }
+
+    .chart-container { position: relative; height: 280px; }
+    .chart-container.short { height: 200px; }
+    .chart-container.tall { height: 340px; }
+
+    /* Tables */
+    .table-section { margin-top: 28px; }
+    .table-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 12px; }
+    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .data-table th { background: var(--color-hubspot); color: #FFFFFF; padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; user-select: none; font-size: 0.78rem; }
+    .data-table th:hover { opacity: 0.9; }
+    .data-table td { padding: 9px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; }
+    .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+
+    /* Footer */
+    .dashboard-footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 2px solid #E5E7EB;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .chart-row.cols-3 { grid-template-columns: 1fr 1fr; }
+      .pipeline-stages { flex-wrap: wrap; }
+    }
     @media (max-width: 768px) {
       .page-nav {
         flex-direction: column;
@@ -103,10 +189,19 @@
         font-size: 0.8rem;
         padding: 6px 14px;
       }
-      .hubspot-grid-2, .hubspot-grid-3 { grid-template-columns: 1fr; }
+      .chart-row.cols-2, .chart-row.cols-3 { grid-template-columns: 1fr; }
+      .chart-container { height: 220px; }
+      .chart-container.tall { height: 280px; }
+      .pipeline-stages { gap: 8px; }
+      .stage-card { min-width: 80px; padding: 12px 8px; }
+      .stage-card .stage-count { font-size: 1.2rem; }
     }
 
-    @media print { .page-nav { display: none; } }
+    /* PDF */
+    .pdf-mode { width: 1200px !important; max-width: none !important; }
+    .pdf-mode .no-print { display: none !important; }
+    .pdf-mode .chart-box { break-inside: avoid; page-break-inside: avoid; }
+    @media print { .page-nav { display: none; } .chart-box { break-inside: avoid; page-break-inside: avoid; } }
   </style>
 </head>
 <body>
@@ -116,7 +211,7 @@
     <div class="nav-links">
       <a href="google.html" class="nav-link">Google Ads</a>
       <a href="meta.html" class="nav-link">Meta Ads</a>
-      <a href="historico.html" class="nav-link">Histórico</a>
+      <a href="historico.html" class="nav-link">Historico</a>
       <a href="hubspot.html" class="nav-link active">HubSpot</a>
     </div>
     <div class="nav-controls">
@@ -129,55 +224,87 @@
   <div class="dashboard-wrapper" id="dashboard-content">
 
     <div class="section-divider" style="margin-top:24px;">
-      <span class="section-icon" style="background: #F97316;"></span>
+      <span class="section-icon" style="background: var(--color-hubspot);"></span>
       <h2>HubSpot — Pipeline</h2>
     </div>
 
-    <!-- Row 1: Current month deals + Stock total -->
-    <div class="hubspot-grid-2">
-      <div class="chart-card">
-        <h3>Negocios Mes Actual</h3>
+    <!-- Pipeline Stage Cards -->
+    <div class="pipeline-stages" id="pipeline-stages">
+      <div class="stage-card lead-entrante">
+        <div class="stage-name">Lead Entrante</div>
+        <div class="stage-count" id="stage-lead-entrante">--</div>
+      </div>
+      <div class="stage-card exploratorio">
+        <div class="stage-name">Exploratorio</div>
+        <div class="stage-count" id="stage-exploratorio">--</div>
+      </div>
+      <div class="stage-card interesado-futuro">
+        <div class="stage-name">Int. Futuro</div>
+        <div class="stage-count" id="stage-interesado-futuro">--</div>
+      </div>
+      <div class="stage-card interesado-caliente">
+        <div class="stage-name">Int. Caliente</div>
+        <div class="stage-count" id="stage-interesado-caliente">--</div>
+      </div>
+      <div class="stage-card reservado-pagado">
+        <div class="stage-name">Reservado</div>
+        <div class="stage-count" id="stage-reservado-pagado">--</div>
+      </div>
+      <div class="stage-card descartado">
+        <div class="stage-name">Descartado</div>
+        <div class="stage-count" id="stage-descartado">--</div>
+      </div>
+    </div>
+
+    <!-- 1. Stage History Charts: 3 side-by-side -->
+    <div class="chart-row cols-3">
+      <div class="chart-box">
+        <h4>Interesado Futuro Historico</h4>
+        <div class="chart-container short"><canvas id="chart-hs-int-futuro"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h4>Interesado Caliente Historico</h4>
+        <div class="chart-container short"><canvas id="chart-hs-int-caliente"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <h4>Reservado (Pagado) Historico</h4>
+        <div class="chart-container short"><canvas id="chart-hs-reservado"></canvas></div>
+      </div>
+    </div>
+
+    <!-- 2. Leads Validos Mensuales (Stacked Bar, full width) -->
+    <div class="chart-row cols-1">
+      <div class="chart-box">
+        <h4>Leads Validos Mensuales</h4>
+        <div class="chart-container tall"><canvas id="chart-hubspot-stacked"></canvas></div>
+      </div>
+    </div>
+
+    <!-- 3. Leads por Etapa y Fuente (table) -->
+    <div class="table-section">
+      <h4>Leads por Etapa y Fuente</h4>
+      <div class="table-wrapper" id="table-hubspot-sources"></div>
+    </div>
+
+    <!-- 4. Negocios mes en curso + Negocios stock total (2 cols) -->
+    <div class="chart-row cols-2">
+      <div class="chart-box">
+        <h4>Negocios Mes en Curso</h4>
         <div class="chart-container"><canvas id="chart-hs-current"></canvas></div>
       </div>
-      <div class="chart-card">
-        <h3>Negocios Stock Total</h3>
+      <div class="chart-box">
+        <h4>Negocios Stock Total</h4>
         <div class="chart-container"><canvas id="chart-hs-stock"></canvas></div>
       </div>
     </div>
 
-    <!-- Row 2: Visitas + Leads validos -->
-    <div class="hubspot-grid-2">
-      <div class="chart-card">
-        <h3>Visitas Realizadas (Mensual)</h3>
-        <div class="chart-container"><canvas id="chart-hs-visitas"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h3>Leads Válidos Actuales (Mensual)</h3>
-        <div class="chart-container"><canvas id="chart-hs-leads-valid"></canvas></div>
+    <!-- 5. Visitas Realizadas (FULL WIDTH) -->
+    <div class="chart-row cols-1">
+      <div class="chart-box">
+        <h4>Visitas Realizadas (Mensual)</h4>
+        <div class="chart-container tall"><canvas id="chart-hs-visitas"></canvas></div>
       </div>
     </div>
-
-    <!-- Row 3: Individual stage histories -->
-    <div class="hubspot-grid-3">
-      <div class="chart-card">
-        <h3>Interesado Futuro</h3>
-        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-int-futuro"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h3>Interesado Caliente</h3>
-        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-int-caliente"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h3>Reservado (Pagado)</h3>
-        <div class="chart-container" style="height:240px;"><canvas id="chart-hs-reservado"></canvas></div>
-      </div>
-    </div>
-
-    <!-- Table: Leads por etapa y campana -->
-    <section style="margin-bottom:28px;">
-      <h4 style="margin-bottom:14px; color:var(--color-text-muted); font-size:0.85rem; font-weight:600;">Leads por Etapa y Campaña</h4>
-      <div class="table-wrapper" id="table-hs-leads-source"></div>
-    </section>
 
     <footer class="dashboard-footer">
       <span id="last-updated"></span> · Datos actualizados diariamente
@@ -187,7 +314,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <script type="module">
     import {
-      initDashboard, renderSortableTable
+      initDashboard, renderSortableTable, formatCount
     } from '../shared/dashboard-v2.js';
     import { createMonthlyBar, createStackedBar } from '../shared/charts-v2.js';
 
@@ -196,13 +323,14 @@
     const ORANGE   = '#F97316';
     const PURPLE   = '#7C3AED';
     const RED      = '#DC2626';
+    const SKY      = '#0EA5E9';
     const MONTH_KEY = 'harmonices_selected_month';
 
     const stageColors = {
       lead_entrante: TEAL,
       exploratorio: TEAL_MED,
       interesado_futuro: ORANGE,
-      interesado_caliente: '#0EA5E9',
+      interesado_caliente: SKY,
       reservado_pagado: PURPLE,
       descartado: RED
     };
@@ -266,36 +394,24 @@
       if (!data.hubspot) return;
       const hs = data.hubspot;
 
-      if (hs.deals_current_month) renderDealsBar('chart-hs-current', hs.deals_current_month, stageColors);
-      else showEmpty('chart-hs-current');
-
-      if (hs.deals_stock_total) renderDealsBar('chart-hs-stock', hs.deals_stock_total, stageColors);
-      else showEmpty('chart-hs-stock');
-
-      if (hs.visitas_monthly && hs.visitas_monthly.length) {
-        createMonthlyBar('chart-hs-visitas', hs.visitas_monthly, { color: TEAL, label: 'Visitas' });
-      } else {
-        showEmpty('chart-hs-visitas');
+      // Pipeline stage cards from deals_current_month
+      if (hs.deals_current_month) {
+        const d = hs.deals_current_month;
+        document.getElementById('stage-lead-entrante').textContent = formatCount(d.lead_entrante || 0);
+        document.getElementById('stage-exploratorio').textContent = formatCount(d.exploratorio || 0);
+        document.getElementById('stage-interesado-futuro').textContent = formatCount(d.interesado_futuro || 0);
+        document.getElementById('stage-interesado-caliente').textContent = formatCount(d.interesado_caliente || 0);
+        document.getElementById('stage-reservado-pagado').textContent = formatCount(d.reservado_pagado || 0);
+        document.getElementById('stage-descartado').textContent = formatCount(d.descartado || 0);
       }
 
-      if (hs.leads_valid_monthly && hs.leads_valid_monthly.length) {
-        createStackedBar('chart-hs-leads-valid', hs.leads_valid_monthly, {
-          datasets: [
-            { key: 'interesado_futuro',   label: 'Int. futuro',   color: ORANGE },
-            { key: 'interesado_caliente', label: 'Int. caliente', color: TEAL },
-            { key: 'reservado_pagado',    label: 'Reservado',     color: PURPLE }
-          ]
-        });
-      } else {
-        showEmpty('chart-hs-leads-valid');
-      }
-
+      // 1. Stage history charts (3 side-by-side)
       if (hs.stage_history) {
         if (hs.stage_history.interesado_futuro && hs.stage_history.interesado_futuro.length) {
           createMonthlyBar('chart-hs-int-futuro', hs.stage_history.interesado_futuro, { color: ORANGE, label: 'Int. futuro' });
         } else { showEmpty('chart-hs-int-futuro'); }
         if (hs.stage_history.interesado_caliente && hs.stage_history.interesado_caliente.length) {
-          createMonthlyBar('chart-hs-int-caliente', hs.stage_history.interesado_caliente, { color: TEAL, label: 'Int. caliente' });
+          createMonthlyBar('chart-hs-int-caliente', hs.stage_history.interesado_caliente, { color: SKY, label: 'Int. caliente' });
         } else { showEmpty('chart-hs-int-caliente'); }
         if (hs.stage_history.reservado_pagado && hs.stage_history.reservado_pagado.length) {
           createMonthlyBar('chart-hs-reservado', hs.stage_history.reservado_pagado, { color: PURPLE, label: 'Reservado' });
@@ -306,15 +422,43 @@
         showEmpty('chart-hs-reservado');
       }
 
+      // 2. Stacked bar: Leads validos mensuales
+      if (hs.leads_valid_monthly && hs.leads_valid_monthly.length) {
+        createStackedBar('chart-hubspot-stacked', hs.leads_valid_monthly, {
+          datasets: [
+            { key: 'interesado_futuro',   label: 'Int. futuro',   color: ORANGE },
+            { key: 'interesado_caliente', label: 'Int. caliente', color: SKY },
+            { key: 'reservado_pagado',    label: 'Reservado',     color: PURPLE }
+          ]
+        });
+      } else {
+        showEmpty('chart-hubspot-stacked');
+      }
+
+      // 3. Leads por etapa y fuente (table)
       if (hs.leads_by_source && hs.leads_by_source.length) {
-        renderSortableTable('table-hs-leads-source', [
+        renderSortableTable('table-hubspot-sources', [
           { key: 'source', label: 'Fuente / Campaña', unit: 'text' },
           { key: 'interesado_futuro', label: 'Int. Futuro', unit: 'count', align: 'right', defaultDesc: true },
           { key: 'interesado_caliente', label: 'Int. Caliente', unit: 'count', align: 'right' },
           { key: 'reservado_pagado', label: 'Reservado (Pagado)', unit: 'count', align: 'right' }
         ], hs.leads_by_source);
       } else {
-        document.getElementById('table-hs-leads-source').innerHTML = '<p style="color:var(--color-text-muted);font-size:0.85rem;">Sin datos disponibles</p>';
+        document.getElementById('table-hubspot-sources').innerHTML = '<p style="color:var(--color-text-muted);font-size:0.85rem;">Sin datos disponibles</p>';
+      }
+
+      // 4. Negocios mes en curso + stock total
+      if (hs.deals_current_month) renderDealsBar('chart-hs-current', hs.deals_current_month, stageColors);
+      else showEmpty('chart-hs-current');
+
+      if (hs.deals_stock_total) renderDealsBar('chart-hs-stock', hs.deals_stock_total, stageColors);
+      else showEmpty('chart-hs-stock');
+
+      // 5. Visitas realizadas (full width)
+      if (hs.visitas_monthly && hs.visitas_monthly.length) {
+        createMonthlyBar('chart-hs-visitas', hs.visitas_monthly, { color: TEAL, label: 'Visitas' });
+      } else {
+        showEmpty('chart-hs-visitas');
       }
     }
 
