@@ -1,0 +1,1382 @@
+{
+  "meta": {
+    "clientId": "harmonices",
+    "clientName": "Harmonices",
+    "month": "2026-04",
+    "generatedAt": "2026-04-01T07:15:48.913269Z",
+    "dateRange": {
+      "from": "2026-04-01",
+      "to": "2026-04-30"
+    }
+  },
+  "google_ads": {
+    "kpis": {
+      "impresiones": {
+        "value": 2385,
+        "previous": 328187
+      },
+      "clics": {
+        "value": 114,
+        "previous": 12633
+      },
+      "ctr": {
+        "value": 4.78,
+        "previous": 3.85
+      },
+      "cpc": {
+        "value": 0.13,
+        "previous": 0.11
+      },
+      "leads": {
+        "value": 0,
+        "previous": 123
+      },
+      "cpl": {
+        "value": 0.0,
+        "previous": 11.53
+      },
+      "inversion": {
+        "value": 14.82,
+        "previous": 1418.04
+      }
+    },
+    "daily": [
+      {
+        "date": "2026-04-01",
+        "leads": 0,
+        "cpl": 0.0,
+        "impresiones": 2385,
+        "clics": 114,
+        "inversion": 14.82
+      }
+    ],
+    "demographics": {
+      "gender": [
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        },
+        {
+          "label": "10",
+          "leads": 0
+        },
+        {
+          "label": "11",
+          "leads": 0
+        },
+        {
+          "label": "20",
+          "leads": 0
+        }
+      ],
+      "age": []
+    },
+    "campaigns": [
+      {
+        "name": "PMAX-HARMONICES-COLIVING #2",
+        "impresiones": 2385,
+        "clics": 114,
+        "ctr": 4.78,
+        "cpc": 0.13,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 14.82
+      }
+    ],
+    "keywords": [],
+    "monthly_history": [
+      {
+        "month": "2025-01-01",
+        "impresiones": 48651,
+        "clics": 5500,
+        "ctr": 11.31,
+        "cpc": 0.18,
+        "leads": 28,
+        "cpl": 35.47,
+        "inversion": 993.03
+      },
+      {
+        "month": "2025-02-01",
+        "impresiones": 33266,
+        "clics": 3302,
+        "ctr": 9.93,
+        "cpc": 0.34,
+        "leads": 34,
+        "cpl": 32.65,
+        "inversion": 1109.94
+      },
+      {
+        "month": "2025-03-01",
+        "impresiones": 28956,
+        "clics": 3233,
+        "ctr": 11.17,
+        "cpc": 0.42,
+        "leads": 28,
+        "cpl": 48.87,
+        "inversion": 1368.38
+      },
+      {
+        "month": "2025-04-01",
+        "impresiones": 29409,
+        "clics": 2724,
+        "ctr": 9.26,
+        "cpc": 0.51,
+        "leads": 89,
+        "cpl": 15.61,
+        "inversion": 1389.57
+      },
+      {
+        "month": "2025-05-01",
+        "impresiones": 28021,
+        "clics": 4035,
+        "ctr": 14.4,
+        "cpc": 0.38,
+        "leads": 106,
+        "cpl": 14.35,
+        "inversion": 1520.97
+      },
+      {
+        "month": "2025-06-01",
+        "impresiones": 63968,
+        "clics": 6288,
+        "ctr": 9.83,
+        "cpc": 0.2,
+        "leads": 147,
+        "cpl": 8.38,
+        "inversion": 1231.41
+      },
+      {
+        "month": "2025-07-01",
+        "impresiones": 67317,
+        "clics": 6803,
+        "ctr": 10.11,
+        "cpc": 0.18,
+        "leads": 195,
+        "cpl": 6.12,
+        "inversion": 1192.69
+      },
+      {
+        "month": "2025-08-01",
+        "impresiones": 189844,
+        "clics": 8657,
+        "ctr": 4.56,
+        "cpc": 0.14,
+        "leads": 217,
+        "cpl": 5.61,
+        "inversion": 1216.38
+      },
+      {
+        "month": "2025-09-01",
+        "impresiones": 268431,
+        "clics": 8401,
+        "ctr": 3.13,
+        "cpc": 0.14,
+        "leads": 235,
+        "cpl": 5.03,
+        "inversion": 1182.79
+      },
+      {
+        "month": "2025-10-01",
+        "impresiones": 205840,
+        "clics": 8665,
+        "ctr": 4.21,
+        "cpc": 0.14,
+        "leads": 149,
+        "cpl": 7.99,
+        "inversion": 1191.22
+      },
+      {
+        "month": "2025-11-01",
+        "impresiones": 251982,
+        "clics": 9078,
+        "ctr": 3.6,
+        "cpc": 0.14,
+        "leads": 99,
+        "cpl": 12.78,
+        "inversion": 1265.32
+      },
+      {
+        "month": "2025-12-01",
+        "impresiones": 376170,
+        "clics": 10151,
+        "ctr": 2.7,
+        "cpc": 0.13,
+        "leads": 122,
+        "cpl": 10.98,
+        "inversion": 1340.13
+      },
+      {
+        "month": "2026-01-01",
+        "impresiones": 191195,
+        "clics": 10926,
+        "ctr": 5.71,
+        "cpc": 0.13,
+        "leads": 150,
+        "cpl": 9.81,
+        "inversion": 1471.49
+      },
+      {
+        "month": "2026-02-01",
+        "impresiones": 256633,
+        "clics": 11018,
+        "ctr": 4.29,
+        "cpc": 0.12,
+        "leads": 116,
+        "cpl": 11.65,
+        "inversion": 1351.17
+      },
+      {
+        "month": "2026-03-01",
+        "impresiones": 331119,
+        "clics": 12798,
+        "ctr": 3.87,
+        "cpc": 0.11,
+        "leads": 127,
+        "cpl": 11.31,
+        "inversion": 1435.77
+      },
+      {
+        "month": "2026-04-01",
+        "impresiones": 2385,
+        "clics": 114,
+        "ctr": 4.78,
+        "cpc": 0.13,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 14.82
+      }
+    ]
+  },
+  "meta_ads": {
+    "kpis": {
+      "impresiones": {
+        "value": 145,
+        "previous": 21481
+      },
+      "clics": {
+        "value": 20,
+        "previous": 1895
+      },
+      "ctr": {
+        "value": 13.79,
+        "previous": 8.82
+      },
+      "cpc": {
+        "value": 0.11,
+        "previous": 0.16
+      },
+      "leads": {
+        "value": 0,
+        "previous": 56
+      },
+      "cpl": {
+        "value": 0.0,
+        "previous": 5.45
+      },
+      "inversion": {
+        "value": 2.25,
+        "previous": 305.23
+      },
+      "alcance": {
+        "value": 134,
+        "previous": 11467
+      }
+    },
+    "daily": [
+      {
+        "date": "2026-04-01",
+        "leads": 0,
+        "cpl": 0.0,
+        "impresiones": 145,
+        "clics": 20,
+        "inversion": 2.25
+      }
+    ],
+    "campaigns": [
+      {
+        "name": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
+        "impresiones": 145,
+        "clics": 20,
+        "ctr": 13.793103,
+        "cpc": 0.1125,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.25,
+        "alcance": 134
+      }
+    ],
+    "campaigns_by_platform": [
+      {
+        "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
+        "platform": "Facebook",
+        "impresiones": 85,
+        "clics": 17,
+        "ctr": 20.0,
+        "cpc": 0.06,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.06
+      },
+      {
+        "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
+        "platform": "Instagram",
+        "impresiones": 57,
+        "clics": 1,
+        "ctr": 1.75,
+        "cpc": 1.18,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 1.18
+      }
+    ],
+    "creatives": [
+      {
+        "name": "Video nov 25",
+        "ad_id": "120235642542760407",
+        "image_url": "https://external-iad6-1.xx.fbcdn.net/emg1/v/t13/8449837009803080252?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJs3B3mwsT_48upJT1roC0XNWcxJJ6u7fg65wEr2kX4ApKOjxyXJYZyvpsyYrNbv9XIHgE9kZor0t1fIijzfodVQEz-mr7ydZoovLX2_Mb-ObdO5a4dNOXGTTaMurcVRrXDdOknaevwnJRt_j_7YHwO&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=g7eWUn2wTyE8MeEcpl3m7g&_nc_oc=AdpM3qChXQnL_uXqbxrYzqqt1BIOTd5i1NGiOk3ZiuqJnP7Dq967y8HVAzjbiOuOQwY&ccb=13-1&oh=06_Q3-9AaBatIbx4h8cEeov0C5scZ31cxRboeWg-utrjGD2jIhV&oe=69CEA3FC&_nc_sid=58080a",
+        "impresiones": 130,
+        "clics": 20,
+        "ctr": 15.384615,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.01
+      },
+      {
+        "name": "Carrusel nov 25",
+        "ad_id": "120235643175770407",
+        "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=2dLGpgDPNV0Q7kNvwGtrTPW&_nc_oc=Adq-6UJFddw7m-sI8xA6aPHKo5aah7XACJnVTtoNVcusGMlGa7ZsbEtG2Fb_Wvx-XEE&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=MUL1OVfu1RiMPmd1Hs-e3Q&_nc_tpa=Q5bMBQEtj2gao-n4CDSc6kCVECMzVsixld6AHjjWbBaHZQnSQGQ3aS1Zr_Ily3Gzw3sgWvYEeho8KHp8AA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af1sRqdFreahqY_8QH2UW-nTr4WAfKJWGGvBF8O5XYh8bg&oe=69D2994B",
+        "impresiones": 16,
+        "clics": 0,
+        "ctr": 0.0,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 0.25
+      }
+    ],
+    "monthly_history": [
+      {
+        "month": "2025-05",
+        "impresiones": 19412,
+        "clics": 1778,
+        "ctr": 9.159283,
+        "cpc": 0.10243,
+        "leads": 74,
+        "cpl": 2.46,
+        "inversion": 182.12,
+        "alcance": 9890
+      },
+      {
+        "month": "2025-06",
+        "impresiones": 35631,
+        "clics": 3688,
+        "ctr": 10.350537,
+        "cpc": 0.092866,
+        "leads": 92,
+        "cpl": 3.72,
+        "inversion": 342.49,
+        "alcance": 16627
+      },
+      {
+        "month": "2025-07",
+        "impresiones": 36620,
+        "clics": 3824,
+        "ctr": 10.442381,
+        "cpc": 0.101051,
+        "leads": 128,
+        "cpl": 3.02,
+        "inversion": 386.42,
+        "alcance": 17003
+      },
+      {
+        "month": "2025-08",
+        "impresiones": 40610,
+        "clics": 3962,
+        "ctr": 9.756218,
+        "cpc": 0.097723,
+        "leads": 112,
+        "cpl": 3.46,
+        "inversion": 387.18,
+        "alcance": 18420
+      },
+      {
+        "month": "2025-09",
+        "impresiones": 35235,
+        "clics": 3750,
+        "ctr": 10.642827,
+        "cpc": 0.103051,
+        "leads": 114,
+        "cpl": 3.39,
+        "inversion": 386.44,
+        "alcance": 16555
+      },
+      {
+        "month": "2025-10",
+        "impresiones": 33327,
+        "clics": 2719,
+        "ctr": 8.15855,
+        "cpc": 0.147168,
+        "leads": 90,
+        "cpl": 4.45,
+        "inversion": 400.15,
+        "alcance": 16120
+      },
+      {
+        "month": "2025-11",
+        "impresiones": 34272,
+        "clics": 3194,
+        "ctr": 9.319561,
+        "cpc": 0.180858,
+        "leads": 40,
+        "cpl": 14.44,
+        "inversion": 577.66,
+        "alcance": 16126
+      },
+      {
+        "month": "2025-12",
+        "impresiones": 21445,
+        "clics": 2258,
+        "ctr": 10.529261,
+        "cpc": 0.147945,
+        "leads": 80,
+        "cpl": 4.18,
+        "inversion": 334.06,
+        "alcance": 10589
+      },
+      {
+        "month": "2026-01",
+        "impresiones": 20766,
+        "clics": 2034,
+        "ctr": 9.794857,
+        "cpc": 0.151681,
+        "leads": 66,
+        "cpl": 4.67,
+        "inversion": 308.52,
+        "alcance": 10231
+      },
+      {
+        "month": "2026-02",
+        "impresiones": 19454,
+        "clics": 1885,
+        "ctr": 9.689524,
+        "cpc": 0.14835,
+        "leads": 80,
+        "cpl": 3.5,
+        "inversion": 279.64,
+        "alcance": 10712
+      },
+      {
+        "month": "2026-03",
+        "impresiones": 21731,
+        "clics": 1924,
+        "ctr": 8.853711,
+        "cpc": 0.160166,
+        "leads": 56,
+        "cpl": 5.5,
+        "inversion": 308.16,
+        "alcance": 11528
+      },
+      {
+        "month": "2026-04",
+        "impresiones": 145,
+        "clics": 20,
+        "ctr": 13.793103,
+        "cpc": 0.1125,
+        "leads": 0,
+        "cpl": 0.0,
+        "inversion": 2.25,
+        "alcance": 134
+      }
+    ]
+  },
+  "hubspot": {
+    "deals_current_month": {
+      "lead_entrante": 3,
+      "exploratorio": 0,
+      "interesado_futuro": 0,
+      "interesado_caliente": 0,
+      "reservado_pagado": 0,
+      "descartado": 0
+    },
+    "deals_stock_total": {
+      "lead_entrante": 102,
+      "exploratorio": 232,
+      "interesado_futuro": 93,
+      "interesado_caliente": 6,
+      "reservado_pagado": 15,
+      "descartado": 2909
+    },
+    "visitas_monthly": [],
+    "leads_valid_monthly": [
+      {
+        "month": "2023-12",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-01",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-02",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-03",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2024-04",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-05",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-06",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2024-07",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2024-08",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-09",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-10",
+        "interesado_futuro": 2,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2024-11",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2024-12",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2025-01",
+        "interesado_futuro": 2,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2025-02",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-03",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-04",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2025-05",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-06",
+        "interesado_futuro": 1,
+        "interesado_caliente": 0,
+        "reservado_pagado": 2
+      },
+      {
+        "month": "2025-07",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-08",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2025-09",
+        "interesado_futuro": 6,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-10",
+        "interesado_futuro": 3,
+        "interesado_caliente": 0,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2025-11",
+        "interesado_futuro": 5,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2025-12",
+        "interesado_futuro": 10,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2026-01",
+        "interesado_futuro": 28,
+        "interesado_caliente": 1,
+        "reservado_pagado": 1
+      },
+      {
+        "month": "2026-02",
+        "interesado_futuro": 26,
+        "interesado_caliente": 5,
+        "reservado_pagado": 2
+      },
+      {
+        "month": "2026-03",
+        "interesado_futuro": 5,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      },
+      {
+        "month": "2026-04",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      }
+    ],
+    "stage_history": {
+      "interesado_futuro": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 1
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 0
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 0
+        },
+        {
+          "month": "2024-07",
+          "count": 0
+        },
+        {
+          "month": "2024-08",
+          "count": 1
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 2
+        },
+        {
+          "month": "2024-11",
+          "count": 0
+        },
+        {
+          "month": "2024-12",
+          "count": 1
+        },
+        {
+          "month": "2025-01",
+          "count": 2
+        },
+        {
+          "month": "2025-02",
+          "count": 0
+        },
+        {
+          "month": "2025-03",
+          "count": 1
+        },
+        {
+          "month": "2025-04",
+          "count": 1
+        },
+        {
+          "month": "2025-05",
+          "count": 0
+        },
+        {
+          "month": "2025-06",
+          "count": 1
+        },
+        {
+          "month": "2025-07",
+          "count": 0
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 6
+        },
+        {
+          "month": "2025-10",
+          "count": 3
+        },
+        {
+          "month": "2025-11",
+          "count": 5
+        },
+        {
+          "month": "2025-12",
+          "count": 10
+        },
+        {
+          "month": "2026-01",
+          "count": 28
+        },
+        {
+          "month": "2026-02",
+          "count": 26
+        },
+        {
+          "month": "2026-03",
+          "count": 5
+        },
+        {
+          "month": "2026-04",
+          "count": 0
+        }
+      ],
+      "interesado_caliente": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 0
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 0
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 0
+        },
+        {
+          "month": "2024-07",
+          "count": 0
+        },
+        {
+          "month": "2024-08",
+          "count": 0
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 0
+        },
+        {
+          "month": "2024-11",
+          "count": 0
+        },
+        {
+          "month": "2024-12",
+          "count": 0
+        },
+        {
+          "month": "2025-01",
+          "count": 0
+        },
+        {
+          "month": "2025-02",
+          "count": 0
+        },
+        {
+          "month": "2025-03",
+          "count": 0
+        },
+        {
+          "month": "2025-04",
+          "count": 0
+        },
+        {
+          "month": "2025-05",
+          "count": 0
+        },
+        {
+          "month": "2025-06",
+          "count": 0
+        },
+        {
+          "month": "2025-07",
+          "count": 0
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 0
+        },
+        {
+          "month": "2025-10",
+          "count": 0
+        },
+        {
+          "month": "2025-11",
+          "count": 0
+        },
+        {
+          "month": "2025-12",
+          "count": 0
+        },
+        {
+          "month": "2026-01",
+          "count": 1
+        },
+        {
+          "month": "2026-02",
+          "count": 5
+        },
+        {
+          "month": "2026-03",
+          "count": 0
+        },
+        {
+          "month": "2026-04",
+          "count": 0
+        }
+      ],
+      "reservado_pagado": [
+        {
+          "month": "2023-12",
+          "count": 0
+        },
+        {
+          "month": "2024-01",
+          "count": 0
+        },
+        {
+          "month": "2024-02",
+          "count": 0
+        },
+        {
+          "month": "2024-03",
+          "count": 1
+        },
+        {
+          "month": "2024-04",
+          "count": 0
+        },
+        {
+          "month": "2024-05",
+          "count": 0
+        },
+        {
+          "month": "2024-06",
+          "count": 1
+        },
+        {
+          "month": "2024-07",
+          "count": 1
+        },
+        {
+          "month": "2024-08",
+          "count": 0
+        },
+        {
+          "month": "2024-09",
+          "count": 0
+        },
+        {
+          "month": "2024-10",
+          "count": 0
+        },
+        {
+          "month": "2024-11",
+          "count": 1
+        },
+        {
+          "month": "2024-12",
+          "count": 0
+        },
+        {
+          "month": "2025-01",
+          "count": 0
+        },
+        {
+          "month": "2025-02",
+          "count": 1
+        },
+        {
+          "month": "2025-03",
+          "count": 1
+        },
+        {
+          "month": "2025-04",
+          "count": 0
+        },
+        {
+          "month": "2025-05",
+          "count": 1
+        },
+        {
+          "month": "2025-06",
+          "count": 2
+        },
+        {
+          "month": "2025-07",
+          "count": 1
+        },
+        {
+          "month": "2025-08",
+          "count": 0
+        },
+        {
+          "month": "2025-09",
+          "count": 1
+        },
+        {
+          "month": "2025-10",
+          "count": 1
+        },
+        {
+          "month": "2025-11",
+          "count": 0
+        },
+        {
+          "month": "2025-12",
+          "count": 0
+        },
+        {
+          "month": "2026-01",
+          "count": 1
+        },
+        {
+          "month": "2026-02",
+          "count": 2
+        },
+        {
+          "month": "2026-03",
+          "count": 0
+        },
+        {
+          "month": "2026-04",
+          "count": 0
+        }
+      ]
+    },
+    "leads_by_source": [
+      {
+        "source": "PAID_SEARCH",
+        "interesado_futuro": 0,
+        "interesado_caliente": 0,
+        "reservado_pagado": 0
+      }
+    ]
+  }
+}
