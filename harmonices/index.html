@@ -12,22 +12,26 @@
       --color-primary: #143B48;
       --color-primary-light: #1E5A6B;
       --color-bg: #FFFFFF;
-      --color-card-bg: #F8F9FA;
+      --color-card-bg: #FFFFFF;
       --color-text: #1A1A1A;
       --color-text-muted: #6B7280;
-      --color-border: #E5E7EB;
+      --color-meta: #1877F2;
+      --color-google: #34A853;
+      --color-hubspot: #FF7A59;
       --color-historico: #8B7355;
       --font-family: 'Montserrat', sans-serif;
       --border-radius: 8px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 
     body {
       font-family: var(--font-family);
-      background: linear-gradient(160deg, #FFFFFF 0%, #F0F4F6 40%, #E8EEF1 100%);
+      background: linear-gradient(135deg, #EBF0F2 0%, #D9E2E6 50%, #E4EAED 100%);
       background-attachment: fixed;
       color: var(--color-text);
+      line-height: 1.5;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -35,130 +39,57 @@
       justify-content: center;
     }
 
-    .landing {
-      text-align: center;
-      padding: 60px 32px;
-      max-width: 720px;
-    }
+    .landing-wrapper { max-width: 800px; width: 100%; padding: 40px 32px; text-align: center; }
+    .landing-logo { margin-bottom: 8px; }
+    .landing-logo img { height: 80px; }
+    .landing-brand { font-size: 2.4rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px; }
+    .landing-subtitle { font-size: 1rem; color: var(--color-text-muted); font-weight: 500; margin-bottom: 12px; }
+    .landing-month-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 40px; }
+    .landing-month-label { font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .month-selector { padding: 8px 16px; border: 2px solid var(--color-primary); border-radius: 6px; background: var(--color-card-bg); color: var(--color-text); font-family: var(--font-family); font-size: 0.9rem; font-weight: 600; cursor: pointer; }
 
-    .landing-logo {
-      margin-bottom: 12px;
-    }
+    .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .nav-card { background: var(--color-card-bg); border-radius: var(--border-radius); padding: 32px 24px; text-decoration: none; color: var(--color-text); box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease; display: flex; flex-direction: column; align-items: center; gap: 14px; border-top: 5px solid var(--color-primary); position: relative; overflow: hidden; }
+    .nav-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0; transition: height 0.25s ease; opacity: 0.04; }
+    .nav-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.14); }
+    .nav-card:hover::after { height: 100%; }
+    .nav-card.google { border-top-color: var(--color-google); }
+    .nav-card.google::after { background: var(--color-google); }
+    .nav-card.meta { border-top-color: var(--color-meta); }
+    .nav-card.meta::after { background: var(--color-meta); }
+    .nav-card.historico { border-top-color: var(--color-historico); }
+    .nav-card.historico::after { background: var(--color-historico); }
+    .nav-card.hubspot { border-top-color: var(--color-hubspot); }
+    .nav-card.hubspot::after { background: var(--color-hubspot); }
 
-    .landing-logo img {
-      height: 80px;
-    }
+    .nav-card-icon { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; transition: transform 0.25s ease; }
+    .nav-card:hover .nav-card-icon { transform: scale(1.1); }
+    .nav-card-icon svg { width: 48px; height: 48px; }
+    .nav-card-icon img { height: 48px; width: auto; }
+    .nav-card-title { font-size: 1.1rem; font-weight: 700; }
+    .nav-card-desc { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.4; }
+    .landing-footer { margin-top: 48px; font-size: 0.8rem; color: var(--color-text-muted); }
 
-    .landing-title {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--color-primary);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
-    .landing-subtitle {
-      font-size: 1rem;
-      color: var(--color-text-muted);
-      margin-bottom: 48px;
-      font-weight: 500;
-    }
-
-    .nav-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .nav-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      background: var(--color-card-bg);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius);
-      padding: 36px 24px;
-      text-decoration: none;
-      color: var(--color-text);
-      transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 0;
-      transition: height 0.25s ease;
-      opacity: 0.03;
-    }
-
-    .nav-card:hover {
-      box-shadow: 0 8px 24px rgba(20, 59, 72, 0.14);
-      transform: translateY(-4px);
-      border-color: var(--color-primary);
-    }
-
-    .nav-card:hover::after {
-      height: 100%;
-    }
-
-    .nav-card.google::after { background: #34A853; }
-    .nav-card.meta::after { background: #1877F2; }
-    .nav-card.historico::after { background: #8B7355; }
-    .nav-card.hubspot::after { background: #F97316; }
-
-    .nav-card-icon {
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s ease;
-    }
-
-    .nav-card:hover .nav-card-icon {
-      transform: scale(1.1);
-    }
-
-    .nav-card-icon svg {
-      width: 48px;
-      height: 48px;
-    }
-
-    .nav-card-label {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--color-primary);
-    }
-
-    .nav-card-desc {
-      font-size: 0.82rem;
-      color: var(--color-text-muted);
-      line-height: 1.4;
-    }
-
-    @media (max-width: 560px) {
-      .nav-cards { grid-template-columns: 1fr; }
-      .landing-title { font-size: 1.8rem; }
+    @media (max-width: 600px) {
+      .nav-grid { grid-template-columns: 1fr; }
+      .landing-brand { font-size: 1.8rem; }
       .landing-logo img { height: 60px; }
     }
   </style>
 </head>
 <body>
-
-  <div class="landing">
+  <div class="landing-wrapper">
     <div class="landing-logo"><img src="../assets/harmonices-logo.png" alt="Harmonices"></div>
-    <h1 class="landing-title">Harmonices</h1>
-    <p class="landing-subtitle">Dashboard de Publicidad Digital</p>
+    <div class="landing-brand">Harmonices</div>
+    <div class="landing-subtitle">Dashboard de Publicidad Digital</div>
 
-    <div class="nav-cards">
-      <a href="google.html" class="nav-card google">
+    <div class="landing-month-row">
+      <span class="landing-month-label">Mes:</span>
+      <select id="month-selector" class="month-selector"></select>
+    </div>
+
+    <div class="nav-grid">
+      <a href="google.html" class="nav-card google" id="link-google">
         <div class="nav-card-icon">
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
             <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
@@ -167,19 +98,19 @@
             <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.001-.001 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
           </svg>
         </div>
-        <div class="nav-card-label">Google Ads</div>
-        <div class="nav-card-desc">KPIs, rendimiento diario, campanas y keywords</div>
+        <div class="nav-card-title">Google Ads</div>
+        <div class="nav-card-desc">KPIs, tendencias diarias, campañas y keywords</div>
       </a>
-      <a href="meta.html" class="nav-card meta">
+      <a href="meta.html" class="nav-card meta" id="link-meta">
         <div class="nav-card-icon">
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
             <path fill="#1877F2" d="M24 4C12.954 4 4 12.954 4 24c0 9.983 7.314 18.257 16.875 19.757V29.5h-5.078V24h5.078v-4.191c0-5.013 2.986-7.784 7.554-7.784 2.189 0 4.478.39 4.478.39v4.922h-2.522c-2.485 0-3.26 1.542-3.26 3.123V24h5.547l-.887 5.5h-4.66v14.257C36.686 42.257 44 33.983 44 24c0-11.046-8.954-20-20-20z"/>
           </svg>
         </div>
-        <div class="nav-card-label">Meta Ads</div>
-        <div class="nav-card-desc">KPIs, rendimiento diario, campanas y creatividades</div>
+        <div class="nav-card-title">Meta Ads</div>
+        <div class="nav-card-desc">KPIs, campañas, plataformas y creatividades</div>
       </a>
-      <a href="historico.html" class="nav-card historico">
+      <a href="historico.html" class="nav-card historico" id="link-historico">
         <div class="nav-card-icon">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="10" width="36" height="30" rx="3" stroke="#8B7355" stroke-width="3" fill="none"/>
@@ -191,20 +122,70 @@
             <rect x="31" y="24" width="5" height="11" rx="1" fill="#8B7355" opacity="0.8"/>
           </svg>
         </div>
-        <div class="nav-card-label">Historico</div>
-        <div class="nav-card-desc">Evolucion mensual de Google Ads y Meta Ads</div>
+        <div class="nav-card-title">Histórico</div>
+        <div class="nav-card-desc">Evolución mensual de Google Ads y Meta Ads</div>
       </a>
-      <a href="hubspot.html" class="nav-card hubspot">
+      <a href="hubspot.html" class="nav-card hubspot" id="link-hubspot">
         <div class="nav-card-icon">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#FF7A59" d="M34.4 16.2V12.6c1.2-.7 2-2 2-3.4 0-2.2-1.8-4-4-4s-4 1.8-4 4c0 1.5.8 2.8 2 3.4v3.6c-1.8.5-3.4 1.5-4.7 2.8l-12.5-9.7c.1-.4.2-.8.2-1.2 0-2.5-2-4.5-4.5-4.5S4.4 5.6 4.4 8.1s2 4.5 4.5 4.5c.8 0 1.5-.2 2.2-.6l12.2 9.5c-1.1 1.7-1.7 3.7-1.7 5.8 0 6 4.9 10.9 10.9 10.9S43.3 33.3 43.3 27.3c0-5.5-4.1-10-9.4-10.8l.5-.3zM32.4 33.8c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5-2.9 6.5-6.5 6.5z"/>
-          </svg>
+          <img src="../assets/hubspot-logo.png" alt="HubSpot">
         </div>
-        <div class="nav-card-label">HubSpot</div>
-        <div class="nav-card-desc">Pipeline, negocios, visitas y leads por etapa</div>
+        <div class="nav-card-title">HubSpot</div>
+        <div class="nav-card-desc">Pipeline, etapas y leads por fuente</div>
       </a>
     </div>
+
+    <div class="landing-footer">Harmonices &middot; Dashboard de Publicidad</div>
   </div>
 
+  <script type="module">
+    import { formatMonthFull } from '../shared/utils.js';
+
+    const STORAGE_KEY = 'harmonices_selected_month';
+
+    async function init() {
+      let manifest;
+      try {
+        const res = await fetch('../data/harmonices/manifest.json');
+        manifest = await res.json();
+      } catch (e) { console.error('Could not load manifest:', e); return; }
+
+      const selector = document.getElementById('month-selector');
+      manifest.months.slice().reverse().forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m;
+        opt.textContent = formatMonthFull(m);
+        selector.appendChild(opt);
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlMonth = urlParams.get('month');
+      const storedMonth = localStorage.getItem(STORAGE_KEY);
+      const initialMonth = (urlMonth && manifest.months.includes(urlMonth)) ? urlMonth
+                         : (storedMonth && manifest.months.includes(storedMonth)) ? storedMonth
+                         : manifest.latestMonth;
+
+      selector.value = initialMonth;
+      localStorage.setItem(STORAGE_KEY, initialMonth);
+
+      selector.addEventListener('change', () => {
+        localStorage.setItem(STORAGE_KEY, selector.value);
+        const url = new URL(window.location);
+        url.searchParams.set('month', selector.value);
+        history.replaceState(null, '', url);
+      });
+
+      function updateLinks() {
+        const month = selector.value;
+        document.querySelectorAll('.nav-card').forEach(a => {
+          const base = a.getAttribute('href').split('?')[0];
+          a.href = `${base}?month=${month}`;
+        });
+      }
+      updateLinks();
+      selector.addEventListener('change', updateLinks);
+    }
+
+    init();
+  </script>
 </body>
 </html>
