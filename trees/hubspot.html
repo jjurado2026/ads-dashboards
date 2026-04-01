@@ -74,19 +74,6 @@
       cursor: pointer;
     }
     .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
-    .nav-controls .btn-export {
-      padding: 5px 14px;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: var(--border-radius);
-      font-family: var(--font-family);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
 
     /* Section divider */
     .section-divider {
@@ -153,10 +140,6 @@
         font-size: 0.8rem;
         padding: 6px 10px;
       }
-      .btn-export {
-        font-size: 0.8rem;
-        padding: 6px 14px;
-      }
       .dashboard-wrapper { padding: 16px; }
       .chart-row.cols-2, .chart-row.cols-3 { grid-template-columns: 1fr; }
       .chart-container { height: 220px; }
@@ -165,21 +148,6 @@
       .stage-card { min-width: 100px; padding: 12px 8px; }
       .stage-card .stage-count { font-size: 1.3rem; }
     }
-
-    /* ── Page Header ── */
-    .page-header {
-      background: var(--color-hubspot);
-      color: #FFFFFF;
-      padding: 20px 24px;
-      border-radius: var(--border-radius);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .page-header-icon { font-size: 1.4rem; font-weight: 800; }
-    .page-header-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
 
     /* ── Pipeline Stages ── */
     .pipeline-stages {
@@ -287,14 +255,14 @@
     <div class="nav-controls">
       <span class="date-range-badge" id="date-range"></span>
       <select id="month-selector" class="month-selector"></select>
-      <button id="btn-export-pdf" class="btn-export">PDF</button>
     </div>
   </nav>
 
   <div class="dashboard-wrapper" id="dashboard-content">
-    <div class="page-header">
-      <span class="page-header-icon">H</span>
-      <span class="page-header-title">HubSpot &mdash; Pipeline</span>
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: #FF7A59;"></span>
+      <h2>HubSpot — Pipeline</h2>
     </div>
 
     <!-- Pipeline Stage Cards -->

@@ -72,19 +72,6 @@
       cursor: pointer;
     }
     .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
-    .nav-controls .btn-export {
-      padding: 5px 14px;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: var(--border-radius);
-      font-family: var(--font-family);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
 
     /* 7-card KPI grid */
     .kpi-grid-7 {
@@ -122,10 +109,6 @@
       .month-selector {
         font-size: 0.8rem;
         padding: 6px 10px;
-      }
-      .btn-export {
-        font-size: 0.8rem;
-        padding: 6px 14px;
       }
       .kpi-grid-7 { grid-template-columns: repeat(2, 1fr) !important; }
     }
@@ -184,7 +167,6 @@
     <div class="nav-controls">
       <span class="date-range-badge" id="date-range"></span>
       <select id="month-selector" class="month-selector"></select>
-      <button id="btn-export-pdf" class="btn-export">PDF</button>
     </div>
   </nav>
 

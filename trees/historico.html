@@ -74,19 +74,6 @@
       cursor: pointer;
     }
     .nav-controls .month-selector option { color: #1A1A1A; background: #fff; }
-    .nav-controls .btn-export {
-      padding: 5px 14px;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: var(--border-radius);
-      font-family: var(--font-family);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .nav-controls .btn-export:hover { background: rgba(255,255,255,0.25); }
 
     /* Section divider */
     .section-divider {
@@ -149,27 +136,8 @@
         font-size: 0.8rem;
         padding: 6px 10px;
       }
-      .btn-export {
-        font-size: 0.8rem;
-        padding: 6px 14px;
-      }
       .dashboard-wrapper { padding: 16px; }
     }
-
-    /* ── Page Header ── */
-    .page-header {
-      background: #5B6E4F;
-      color: #FFFFFF;
-      padding: 20px 24px;
-      border-radius: var(--border-radius);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .page-header-icon { font-size: 1.4rem; font-weight: 800; }
-    .page-header-title { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
 
     /* ── Tables ── */
     .table-section { margin-top: 8px; }
@@ -248,14 +216,14 @@
     <div class="nav-controls">
       <span class="date-range-badge" id="date-range"></span>
       <select id="month-selector" class="month-selector"></select>
-      <button id="btn-export-pdf" class="btn-export">PDF</button>
     </div>
   </nav>
 
   <div class="dashboard-wrapper" id="dashboard-content">
-    <div class="page-header">
-      <span class="page-header-icon">&#9776;</span>
-      <span class="page-header-title">Histórico</span>
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: #8B7355;"></span>
+      <h2>Histórico</h2>
     </div>
 
     <div class="table-section">
