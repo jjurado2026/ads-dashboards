@@ -286,7 +286,7 @@
 
       if (m.campaigns_by_platform) {
         renderSortableTable('table-meta-platforms', [
-          { key: 'name', label: 'Campaña', unit: 'text' },
+          { key: 'campaign', label: 'Campaña', unit: 'text' },
           {
             key: 'platform', label: 'Plataforma', unit: 'text',
             render: row => platformPill(row.platform)

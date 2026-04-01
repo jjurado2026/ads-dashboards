@@ -337,7 +337,7 @@
       renderSortableTable('table-meta-campaigns', campaignCols, m.campaigns, { defaultSortCol: 'leads', defaultSortAsc: false });
 
       renderSortableTable('table-meta-platforms', [
-        { key: 'name', label: 'Campaña', unit: 'text' },
+        { key: 'campaign', label: 'Campaña', unit: 'text' },
         {
           key: 'platform', label: 'Plataforma', unit: 'text',
           render: row => platformPill(row.platform)

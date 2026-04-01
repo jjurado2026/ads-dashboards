@@ -164,7 +164,7 @@ def _extract_leads(actions: list[dict] | None) -> int:
     """Sum lead-type actions from Meta actions array."""
     if not actions:
         return 0
-    lead_types = {"lead", "offsite_conversion.fb_pixel_lead"}
+    lead_types = {"offsite_conversion.fb_pixel_lead"}
     return sum(parse_int(a.get("value", 0)) for a in actions if a.get("action_type") in lead_types)
 
 

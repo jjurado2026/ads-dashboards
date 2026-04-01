@@ -394,15 +394,32 @@
       if (!data.hubspot) return;
       const hs = data.hubspot;
 
-      // Pipeline stage cards from deals_current_month
-      if (hs.deals_current_month) {
+      // Pipeline stage cards for the selected month
+      const selectedMonth = data.meta.month;
+      function monthVal(arr, key) {
+        if (!arr || !arr.length) return 0;
+        const entry = arr.find(e => e.month === selectedMonth);
+        return entry ? (entry[key] || 0) : 0;
+      }
+      function monthCount(arr) {
+        if (!arr || !arr.length) return 0;
+        const entry = arr.find(e => e.month === selectedMonth);
+        return entry ? (entry.count || 0) : 0;
+      }
+      const sh = hs.stage_history || {};
+      document.getElementById('stage-interesado-futuro').textContent = formatCount(monthCount(sh.interesado_futuro));
+      document.getElementById('stage-interesado-caliente').textContent = formatCount(monthCount(sh.interesado_caliente));
+      document.getElementById('stage-reservado-pagado').textContent = formatCount(monthCount(sh.reservado_pagado));
+      // For stages not in stage_history, use leads_valid_monthly or deals_current_month as fallback
+      if (hs.deals_current_month && data.meta.month === new Date().toISOString().slice(0,7)) {
         const d = hs.deals_current_month;
         document.getElementById('stage-lead-entrante').textContent = formatCount(d.lead_entrante || 0);
         document.getElementById('stage-exploratorio').textContent = formatCount(d.exploratorio || 0);
-        document.getElementById('stage-interesado-futuro').textContent = formatCount(d.interesado_futuro || 0);
-        document.getElementById('stage-interesado-caliente').textContent = formatCount(d.interesado_caliente || 0);
-        document.getElementById('stage-reservado-pagado').textContent = formatCount(d.reservado_pagado || 0);
         document.getElementById('stage-descartado').textContent = formatCount(d.descartado || 0);
+      } else {
+        document.getElementById('stage-lead-entrante').textContent = '--';
+        document.getElementById('stage-exploratorio').textContent = '--';
+        document.getElementById('stage-descartado').textContent = '--';
       }
 
       // 1. Stage history charts (3 side-by-side)

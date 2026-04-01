@@ -347,16 +347,18 @@
       const hs = data.hubspot;
       if (!hs) { document.getElementById('pipeline-stages').innerHTML = '<p style="color:var(--color-text-muted);font-size:0.85rem;text-align:center;">Sin datos disponibles</p>'; return; }
 
-      // Pipeline stage counts from individual history arrays (latest entry)
-      function latestCount(arr) {
+      // Pipeline stage counts for the selected month
+      const selectedMonth = data.meta.month;
+      function monthCount(arr) {
         if (!arr || !arr.length) return 0;
-        return arr[arr.length - 1].count || 0;
+        const entry = arr.find(e => e.month === selectedMonth);
+        return entry ? (entry.count || 0) : 0;
       }
-      document.getElementById('stage-interesado').textContent = formatCount(latestCount(hs.interesados_history));
-      document.getElementById('stage-lista-espera').textContent = formatCount(latestCount(hs.lista_espera_history));
-      document.getElementById('stage-firmado').textContent = formatCount(latestCount(hs.firmados_history));
-      document.getElementById('stage-sin-disponibilidad').textContent = formatCount(latestCount(hs.sin_disponibilidad_history));
-      document.getElementById('stage-descartado').textContent = formatCount(latestCount(hs.descartados_history));
+      document.getElementById('stage-interesado').textContent = formatCount(monthCount(hs.interesados_history));
+      document.getElementById('stage-lista-espera').textContent = formatCount(monthCount(hs.lista_espera_history));
+      document.getElementById('stage-firmado').textContent = formatCount(monthCount(hs.firmados_history));
+      document.getElementById('stage-sin-disponibilidad').textContent = formatCount(monthCount(hs.sin_disponibilidad_history));
+      document.getElementById('stage-descartado').textContent = formatCount(monthCount(hs.descartados_history));
 
       // Stacked bar: Leads válidos mensuales
       if (hs.leads_valid_monthly && hs.leads_valid_monthly.length) {
