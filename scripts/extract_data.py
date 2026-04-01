@@ -9,12 +9,14 @@ and commits them to the repository.
 Runs daily via GitHub Actions.
 """
 
+import argparse
 import json
 import logging
 import os
 import subprocess
 import sys
-from datetime import datetime, timedelta
+import time
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Optional
 
@@ -189,7 +191,8 @@ def _meta_insights_to_kpis(rows: list[dict]) -> dict:
 
 
 def extract_meta_ads(
-    account_id: str, access_token: str, date_from: str, date_to: str
+    account_id: str, access_token: str, date_from: str, date_to: str,
+    *, history_end_override: str | None = None,
 ) -> dict:
     """Full Meta Ads extraction for one account."""
     base = f"{META_BASE}/act_{account_id}"
@@ -359,9 +362,8 @@ def extract_meta_ads(
 
     # --- 6. Monthly history (last 14 months) ---
     try:
-        today = datetime.now()
         history_start = HISTORY_START
-        history_end = today.strftime("%Y-%m-%d")
+        history_end = history_end_override or datetime.now().strftime("%Y-%m-%d")
         history_range = json.dumps({"since": history_start, "until": history_end})
         rows = _meta_get(
             f"{base}/insights",
@@ -453,6 +455,8 @@ def extract_google_ads(
     mcc_id: str,
     date_from: str,
     date_to: str,
+    *,
+    history_end_override: str | None = None,
 ) -> dict:
     """Full Google Ads extraction for one customer."""
     cid = customer_id.replace("-", "")
@@ -617,13 +621,13 @@ def extract_google_ads(
 
     # --- 7. Monthly history ---
     try:
-        today_str = datetime.now().strftime("%Y-%m-%d")
+        history_end = history_end_override or datetime.now().strftime("%Y-%m-%d")
         query = f"""
             SELECT segments.month, metrics.impressions, metrics.clicks,
                    metrics.cost_micros, metrics.conversions, metrics.ctr,
                    metrics.average_cpc
             FROM customer
-            WHERE segments.date BETWEEN '{HISTORY_START}' AND '{today_str}'
+            WHERE segments.date BETWEEN '{HISTORY_START}' AND '{history_end}'
         """
         rows = _google_query(client, cid, query, mcc_id)
         for r in rows:
@@ -1058,14 +1062,31 @@ def git_commit_and_push(month_str: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Single-month extraction (reusable core logic)
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    today = datetime.now()
-    year, month = today.year, today.month
-    month_str = f"{year}-{month:02d}"
+def extract_single_month(month_str: str, *, skip_git: bool = False) -> None:
+    """Extract data for a specific month (format: YYYY-MM) for all clients.
+
+    Parameters
+    ----------
+    month_str : str
+        Target month in ``YYYY-MM`` format.
+    skip_git : bool
+        When *True*, skip the git commit/push step (used during backfill so
+        a single commit is made at the end).
+    """
+    try:
+        year, month = int(month_str[:4]), int(month_str[5:7])
+    except (ValueError, IndexError):
+        log.error("Invalid month format '%s'. Expected YYYY-MM.", month_str)
+        sys.exit(1)
+
     first_day, last_day = month_range(year, month)
+
+    # For the monthly history query we go from HISTORY_START up to the end of
+    # the target month (not today), so each JSON is self-contained.
+    history_end = last_day
 
     log.info(
         "Starting extraction for %s (date range: %s to %s)",
@@ -1103,7 +1124,8 @@ def main() -> None:
         if meta_token:
             try:
                 meta_data = extract_meta_ads(
-                    client["meta_account_id"], meta_token, first_day, last_day
+                    client["meta_account_id"], meta_token, first_day, last_day,
+                    history_end_override=history_end,
                 )
                 log.info("Meta extraction complete for %s.", client["id"])
             except Exception as exc:
@@ -1128,6 +1150,7 @@ def main() -> None:
                     client["google_mcc_id"],
                     first_day,
                     last_day,
+                    history_end_override=history_end,
                 )
                 log.info("Google Ads extraction complete for %s.", client["id"])
             except Exception as exc:
@@ -1187,9 +1210,88 @@ def main() -> None:
         )
         log.info("Updated manifest %s", manifest_path)
 
-    # --- Git commit ---
-    git_commit_and_push(month_str)
-    log.info("Done.")
+    # --- Git commit (unless skipped for backfill) ---
+    if not skip_git:
+        git_commit_and_push(month_str)
+
+    log.info("Done with %s.", month_str)
+
+
+# ---------------------------------------------------------------------------
+# Backfill: generate JSON for every month from Jan 2025 to current month
+# ---------------------------------------------------------------------------
+
+def backfill_all_months() -> None:
+    """Generate one JSON file per month from January 2025 to the current month."""
+    start = date(2025, 1, 1)
+    today = date.today()
+
+    months: list[tuple[int, int]] = []
+    d = start
+    while d <= today:
+        months.append((d.year, d.month))
+        if d.month == 12:
+            d = date(d.year + 1, 1, 1)
+        else:
+            d = date(d.year, d.month + 1, 1)
+
+    log.info("Backfill: %d months to process (%s to %s)",
+             len(months), f"{months[0][0]}-{months[0][1]:02d}",
+             f"{months[-1][0]}-{months[-1][1]:02d}")
+
+    for i, (year, month) in enumerate(months):
+        month_str = f"{year}-{month:02d}"
+        log.info("=== Backfilling %s (%d/%d) ===", month_str, i + 1, len(months))
+        extract_single_month(month_str, skip_git=True)
+
+        # Rate-limit: pause between months to avoid API throttling
+        if i < len(months) - 1:
+            log.info("Sleeping 1 s before next month...")
+            time.sleep(1)
+
+    # Single git commit after all months are generated
+    git_commit_and_push("backfill-2025-to-now")
+    log.info("Backfill complete.")
+
+
+# ---------------------------------------------------------------------------
+# Default behaviour: extract current month (preserves original behaviour)
+# ---------------------------------------------------------------------------
+
+def extract_current_month() -> None:
+    """Extract data for the current calendar month (original default)."""
+    today = datetime.now()
+    month_str = f"{today.year}-{today.month:02d}"
+    extract_single_month(month_str)
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Dashboard Data Extraction Pipeline"
+    )
+    parser.add_argument(
+        "--backfill",
+        action="store_true",
+        help="Backfill all months from Jan 2025 to current month",
+    )
+    parser.add_argument(
+        "--month",
+        type=str,
+        default=None,
+        help="Extract a specific month (YYYY-MM format)",
+    )
+    args = parser.parse_args()
+
+    if args.backfill:
+        backfill_all_months()
+    elif args.month:
+        extract_single_month(args.month)
+    else:
+        extract_current_month()
 
 
 if __name__ == "__main__":

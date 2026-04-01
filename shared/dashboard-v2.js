@@ -265,10 +265,10 @@ export function renderHistoricalTable(containerId, history, options = {}) {
   });
   html += '</tr></thead><tbody>';
 
-  // Show most recent first
-  const reversed = [...history].reverse();
+  // Chronological order: oldest first, newest last
+  const sorted = [...history];
 
-  reversed.forEach(row => {
+  sorted.forEach(row => {
     html += '<tr>';
     columns.forEach(col => {
       const val = row[col.key];

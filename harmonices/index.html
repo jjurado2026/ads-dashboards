@@ -16,6 +16,7 @@
       --color-text: #1A1A1A;
       --color-text-muted: #6B7280;
       --color-border: #E5E7EB;
+      --color-historico: #8B7355;
       --font-family: 'Montserrat', sans-serif;
       --border-radius: 8px;
     }
@@ -24,7 +25,8 @@
 
     body {
       font-family: var(--font-family);
-      background: var(--color-bg);
+      background: linear-gradient(160deg, #FFFFFF 0%, #F0F4F6 40%, #E8EEF1 100%);
+      background-attachment: fixed;
       color: var(--color-text);
       min-height: 100vh;
       display: flex;
@@ -37,6 +39,14 @@
       text-align: center;
       padding: 60px 32px;
       max-width: 720px;
+    }
+
+    .landing-logo {
+      margin-bottom: 12px;
+    }
+
+    .landing-logo img {
+      height: 80px;
     }
 
     .landing-title {
@@ -65,32 +75,60 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       background: var(--color-card-bg);
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius);
       padding: 36px 24px;
       text-decoration: none;
       color: var(--color-text);
-      transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+      transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      transition: height 0.25s ease;
+      opacity: 0.03;
     }
 
     .nav-card:hover {
-      box-shadow: 0 4px 16px rgba(20, 59, 72, 0.12);
-      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(20, 59, 72, 0.14);
+      transform: translateY(-4px);
       border-color: var(--color-primary);
     }
 
+    .nav-card:hover::after {
+      height: 100%;
+    }
+
+    .nav-card.google::after { background: #34A853; }
+    .nav-card.meta::after { background: #1877F2; }
+    .nav-card.historico::after { background: #8B7355; }
+    .nav-card.hubspot::after { background: #F97316; }
+
     .nav-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-card:hover .nav-card-icon {
+      transform: scale(1.1);
+    }
+
+    .nav-card-icon svg {
+      width: 48px;
+      height: 48px;
     }
 
     .nav-card-label {
@@ -108,33 +146,60 @@
     @media (max-width: 560px) {
       .nav-cards { grid-template-columns: 1fr; }
       .landing-title { font-size: 1.8rem; }
+      .landing-logo img { height: 60px; }
     }
   </style>
 </head>
 <body>
 
   <div class="landing">
-    <h1 class="landing-title"><img src="../assets/harmonices-logo.png" alt="Harmonices" style="height:48px;vertical-align:middle;margin-right:12px">Harmonices</h1>
+    <div class="landing-logo"><img src="../assets/harmonices-logo.png" alt="Harmonices"></div>
+    <h1 class="landing-title">Harmonices</h1>
     <p class="landing-subtitle">Dashboard de Publicidad Digital</p>
 
     <div class="nav-cards">
-      <a href="google.html" class="nav-card">
-        <div class="nav-card-icon" style="background:#34A853;">G</div>
+      <a href="google.html" class="nav-card google">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+            <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+            <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+            <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l.001-.001 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+          </svg>
+        </div>
         <div class="nav-card-label">Google Ads</div>
-        <div class="nav-card-desc">KPIs, rendimiento diario, campañas y keywords</div>
+        <div class="nav-card-desc">KPIs, rendimiento diario, campanas y keywords</div>
       </a>
-      <a href="meta.html" class="nav-card">
-        <div class="nav-card-icon" style="background:#1877F2;">M</div>
+      <a href="meta.html" class="nav-card meta">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#1877F2" d="M24 4C12.954 4 4 12.954 4 24c0 9.983 7.314 18.257 16.875 19.757V29.5h-5.078V24h5.078v-4.191c0-5.013 2.986-7.784 7.554-7.784 2.189 0 4.478.39 4.478.39v4.922h-2.522c-2.485 0-3.26 1.542-3.26 3.123V24h5.547l-.887 5.5h-4.66v14.257C36.686 42.257 44 33.983 44 24c0-11.046-8.954-20-20-20z"/>
+          </svg>
+        </div>
         <div class="nav-card-label">Meta Ads</div>
-        <div class="nav-card-desc">KPIs, rendimiento diario, campañas y creatividades</div>
+        <div class="nav-card-desc">KPIs, rendimiento diario, campanas y creatividades</div>
       </a>
-      <a href="historico.html" class="nav-card">
-        <div class="nav-card-icon" style="background:#143B48;">H</div>
-        <div class="nav-card-label">Histórico</div>
-        <div class="nav-card-desc">Evolución mensual de Google Ads y Meta Ads</div>
+      <a href="historico.html" class="nav-card historico">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="36" height="30" rx="3" stroke="#8B7355" stroke-width="3" fill="none"/>
+            <line x1="6" y1="18" x2="42" y2="18" stroke="#8B7355" stroke-width="3"/>
+            <line x1="16" y1="10" x2="16" y2="6" stroke="#8B7355" stroke-width="3" stroke-linecap="round"/>
+            <line x1="32" y1="10" x2="32" y2="6" stroke="#8B7355" stroke-width="3" stroke-linecap="round"/>
+            <rect x="12" y="23" width="5" height="12" rx="1" fill="#8B7355" opacity="0.4"/>
+            <rect x="21.5" y="27" width="5" height="8" rx="1" fill="#8B7355" opacity="0.6"/>
+            <rect x="31" y="24" width="5" height="11" rx="1" fill="#8B7355" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="nav-card-label">Historico</div>
+        <div class="nav-card-desc">Evolucion mensual de Google Ads y Meta Ads</div>
       </a>
-      <a href="hubspot.html" class="nav-card">
-        <div class="nav-card-icon" style="background:#F97316;">HS</div>
+      <a href="hubspot.html" class="nav-card hubspot">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF7A59" d="M34.4 16.2V12.6c1.2-.7 2-2 2-3.4 0-2.2-1.8-4-4-4s-4 1.8-4 4c0 1.5.8 2.8 2 3.4v3.6c-1.8.5-3.4 1.5-4.7 2.8l-12.5-9.7c.1-.4.2-.8.2-1.2 0-2.5-2-4.5-4.5-4.5S4.4 5.6 4.4 8.1s2 4.5 4.5 4.5c.8 0 1.5-.2 2.2-.6l12.2 9.5c-1.1 1.7-1.7 3.7-1.7 5.8 0 6 4.9 10.9 10.9 10.9S43.3 33.3 43.3 27.3c0-5.5-4.1-10-9.4-10.8l.5-.3zM32.4 33.8c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5-2.9 6.5-6.5 6.5z"/>
+          </svg>
+        </div>
         <div class="nav-card-label">HubSpot</div>
         <div class="nav-card-desc">Pipeline, negocios, visitas y leads por etapa</div>
       </a>

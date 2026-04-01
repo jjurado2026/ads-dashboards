@@ -1,0 +1,42 @@
+name: Backfill Historical Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Specific month (YYYY-MM) or "all" for full backfill'
+        required: true
+        default: 'all'
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run backfill
+        run: |
+          if [ "${{ github.event.inputs.month }}" = "all" ]; then
+            python scripts/extract_data.py --backfill
+          else
+            python scripts/extract_data.py --month ${{ github.event.inputs.month }}
+          fi
+        env:
+          META_ACCESS_TOKEN_TREES: ${{ secrets.META_ACCESS_TOKEN_TREES }}
+          META_ACCESS_TOKEN_HARMONICES: ${{ secrets.META_ACCESS_TOKEN_HARMONICES }}
+          GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+          GOOGLE_ADS_CLIENT_ID: ${{ secrets.GOOGLE_ADS_CLIENT_ID }}
+          GOOGLE_ADS_CLIENT_SECRET: ${{ secrets.GOOGLE_ADS_CLIENT_SECRET }}
+          GOOGLE_ADS_REFRESH_TOKEN: ${{ secrets.GOOGLE_ADS_REFRESH_TOKEN }}
+          HUBSPOT_ACCESS_TOKEN: ${{ secrets.HUBSPOT_ACCESS_TOKEN }}
