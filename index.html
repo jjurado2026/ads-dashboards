@@ -5,80 +5,228 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Dashboards de Publicidad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Nunito', sans-serif;
-      background: #F5F0E8;
+      background: linear-gradient(135deg, #F5F0E8 0%, #E8E0D0 40%, #DED4C4 100%);
+      background-attachment: fixed;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 32px 24px;
     }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .page-title h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1A1A1A;
+      letter-spacing: -0.5px;
+    }
+
+    .page-title p {
+      font-size: 0.95rem;
+      color: #6B6B6B;
+      margin-top: 6px;
+    }
+
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
-      max-width: 900px;
+      max-width: 920px;
       width: 100%;
     }
+
     .card {
-      border-radius: 20px;
-      padding: 48px 40px;
+      border-radius: 24px;
+      padding: 48px 36px 40px;
       text-align: center;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 16px;
+      position: relative;
+      overflow: hidden;
     }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      right: -30%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      left: -20%;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      transition: transform 0.4s ease;
+    }
+
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.18);
     }
+
+    .card:hover::before {
+      transform: scale(1.3);
+    }
+
+    .card:hover::after {
+      transform: scale(1.4);
+    }
+
     .card-trees {
-      background: #2D5016;
+      background: linear-gradient(145deg, #2D5016 0%, #3A6B1E 50%, #4A7A2E 100%);
       color: #FFFFFF;
     }
+
     .card-harmonices {
-      background: #143B48;
+      background: linear-gradient(145deg, #143B48 0%, #1A4D5E 50%, #1E5A6B 100%);
       color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
     }
+
+    .card-logo {
+      position: relative;
+      z-index: 1;
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-logo {
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    .card-logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
     .card-name {
+      position: relative;
+      z-index: 1;
       font-size: 1.6rem;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: -0.3px;
     }
+
     .card-desc {
-      font-size: 0.95rem;
-      opacity: 0.85;
+      position: relative;
+      z-index: 1;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      line-height: 1.4;
     }
-    .card-arrow {
-      font-size: 2rem;
+
+    .card-cta {
+      position: relative;
+      z-index: 1;
       margin-top: 8px;
-      opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #fff;
+      transition: background 0.2s;
     }
+
+    .card:hover .card-cta {
+      background: rgba(255,255,255,0.28);
+    }
+
+    .card-cta svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover .card-cta svg {
+      transform: translateX(4px);
+    }
+
+    .footer {
+      margin-top: 48px;
+      font-size: 0.78rem;
+      color: #999;
+      text-align: center;
+    }
+
     @media (max-width: 640px) {
-      .container { grid-template-columns: 1fr; }
+      .container { grid-template-columns: 1fr; gap: 20px; }
+      .page-title h1 { font-size: 1.4rem; }
+      .card { padding: 36px 28px 32px; }
+      .card-name { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
+  <div class="page-title">
+    <h1>Dashboards de Publicidad</h1>
+    <p>Selecciona un cliente para ver su dashboard</p>
+  </div>
+
   <div class="container">
     <a href="trees/" class="card card-trees">
+      <div class="card-logo">
+        <img src="assets/trees-logo.png" alt="Trees Coliving">
+      </div>
       <div class="card-name">Trees Coliving</div>
       <div class="card-desc">Dashboard de Publicidad Digital</div>
-      <div class="card-arrow">&rarr;</div>
+      <div class="card-cta">
+        Acceder
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
     </a>
     <a href="harmonices/" class="card card-harmonices">
+      <div class="card-logo">
+        <img src="assets/harmonices-logo.png" alt="Harmonices">
+      </div>
       <div class="card-name">Harmonices</div>
       <div class="card-desc">Dashboard de Publicidad Digital</div>
-      <div class="card-arrow">&rarr;</div>
+      <div class="card-cta">
+        Acceder
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
     </a>
   </div>
+
+  <div class="footer">Velarque &middot; Marketing Digital</div>
 <script src="shared/auth.js"></script>
 </body>
 </html>
