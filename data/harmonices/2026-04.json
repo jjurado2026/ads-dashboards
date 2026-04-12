@@ -3,7 +3,7 @@
     "clientId": "harmonices",
     "clientName": "Harmonices",
     "month": "2026-04",
-    "generatedAt": "2026-04-11T06:57:48.218302Z",
+    "generatedAt": "2026-04-12T07:09:41.613309Z",
     "dateRange": {
       "from": "2026-04-01",
       "to": "2026-04-30"
@@ -12,15 +12,15 @@
   "google_ads": {
     "kpis": {
       "impresiones": {
-        "value": 80934,
+        "value": 85002,
         "previous": 331153
       },
       "clics": {
-        "value": 4402,
+        "value": 4755,
         "previous": 12804
       },
       "ctr": {
-        "value": 5.44,
+        "value": 5.59,
         "previous": 3.87
       },
       "cpc": {
@@ -28,15 +28,15 @@
         "previous": 0.11
       },
       "leads": {
-        "value": 34,
+        "value": 37,
         "previous": 129
       },
       "cpl": {
-        "value": 17.23,
+        "value": 17.01,
         "previous": 11.14
       },
       "inversion": {
-        "value": 585.73,
+        "value": 629.51,
         "previous": 1436.56
       }
     },
@@ -116,18 +116,26 @@
       {
         "date": "2026-04-10",
         "leads": 5,
-        "cpl": 12.98,
-        "impresiones": 8468,
-        "clics": 464,
-        "inversion": 64.88
+        "cpl": 13.07,
+        "impresiones": 8473,
+        "clics": 470,
+        "inversion": 65.37
       },
       {
         "date": "2026-04-11",
+        "leads": 3,
+        "cpl": 14.64,
+        "impresiones": 4202,
+        "clics": 346,
+        "inversion": 43.91
+      },
+      {
+        "date": "2026-04-12",
         "leads": 0,
         "cpl": 0.0,
-        "impresiones": 476,
-        "clics": 26,
-        "inversion": 3.2
+        "impresiones": 337,
+        "clics": 27,
+        "inversion": 2.58
       }
     ],
     "demographics": {
@@ -486,13 +494,13 @@
     "campaigns": [
       {
         "name": "PMAX-HARMONICES-COLIVING #2",
-        "impresiones": 80934,
-        "clics": 4402,
-        "ctr": 5.44,
+        "impresiones": 85002,
+        "clics": 4755,
+        "ctr": 5.59,
         "cpc": 0.13,
-        "leads": 34,
-        "cpl": 17.23,
-        "inversion": 585.73
+        "leads": 37,
+        "cpl": 17.01,
+        "inversion": 629.51
       }
     ],
     "keywords": [],
@@ -649,28 +657,28 @@
       },
       {
         "month": "2026-04-01",
-        "impresiones": 80934,
-        "clics": 4402,
-        "ctr": 5.44,
+        "impresiones": 85008,
+        "clics": 4756,
+        "ctr": 5.59,
         "cpc": 0.13,
-        "leads": 34,
-        "cpl": 17.23,
-        "inversion": 585.73
+        "leads": 37,
+        "cpl": 17.02,
+        "inversion": 629.58
       }
     ]
   },
   "meta_ads": {
     "kpis": {
       "impresiones": {
-        "value": 8947,
+        "value": 9828,
         "previous": 21732
       },
       "clics": {
-        "value": 861,
+        "value": 915,
         "previous": 1924
       },
       "ctr": {
-        "value": 9.62,
+        "value": 9.31,
         "previous": 8.85
       },
       "cpc": {
@@ -682,15 +690,15 @@
         "previous": 28
       },
       "cpl": {
-        "value": 14.66,
+        "value": 16.17,
         "previous": 11.01
       },
       "inversion": {
-        "value": 102.61,
+        "value": 113.22,
         "previous": 308.16
       },
       "alcance": {
-        "value": 5774,
+        "value": 6204,
         "previous": 11528
       }
     },
@@ -771,83 +779,91 @@
         "date": "2026-04-10",
         "leads": 0,
         "cpl": 0.0,
-        "impresiones": 674,
+        "impresiones": 676,
         "clics": 50,
-        "inversion": 8.36
+        "inversion": 8.39
       },
       {
         "date": "2026-04-11",
         "leads": 0,
         "cpl": 0.0,
-        "impresiones": 141,
-        "clics": 11,
-        "inversion": 1.83
+        "impresiones": 874,
+        "clics": 52,
+        "inversion": 10.24
+      },
+      {
+        "date": "2026-04-12",
+        "leads": 0,
+        "cpl": 0.0,
+        "impresiones": 146,
+        "clics": 13,
+        "inversion": 2.17
       }
     ],
     "campaigns": [
       {
         "name": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
-        "impresiones": 8947,
-        "clics": 861,
-        "ctr": 9.623337,
-        "cpc": 0.119175,
+        "impresiones": 9828,
+        "clics": 915,
+        "ctr": 9.310134,
+        "cpc": 0.123738,
         "leads": 7,
-        "cpl": 14.66,
-        "inversion": 102.61,
-        "alcance": 5774
+        "cpl": 16.17,
+        "inversion": 113.22,
+        "alcance": 6204
       }
     ],
     "campaigns_by_platform": [
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "Facebook",
-        "impresiones": 5946,
-        "clics": 709,
-        "ctr": 11.92,
+        "impresiones": 6246,
+        "clics": 735,
+        "ctr": 11.77,
         "cpc": 0.09,
         "leads": 3,
-        "cpl": 21.61,
-        "inversion": 64.82
+        "cpl": 22.87,
+        "inversion": 68.62
       },
       {
         "campaign": "Harmonices_LeadGen_Madrid_Prospecting - Advantage",
         "platform": "Instagram",
-        "impresiones": 2902,
-        "clics": 126,
-        "ctr": 4.34,
-        "cpc": 0.3,
+        "impresiones": 3477,
+        "clics": 154,
+        "ctr": 4.43,
+        "cpc": 0.29,
         "leads": 4,
-        "cpl": 9.29,
-        "inversion": 37.17
+        "cpl": 10.98,
+        "inversion": 43.94
       }
     ],
     "creatives": [
       {
         "name": "Video sept 25",
         "ad_id": "120235373002690407",
-        "image_url": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=bjfpgL8_790Q7kNvwGewpp2&_nc_oc=AdoWEUotLorcICC5IlLkJ1ECMcNKqe3PVNs7F6VB1_AOpDzAyGa606e-LwgyevAmU9I&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=2j5ZuS7Lu-Jz_G0o6y3smw&_nc_tpa=Q5bMBQE6ZJKb_KrVwTeyKXJDSh3JzseBL9L8i85HxVmx-DVlzasZXl8jo7LDJQv4n6payrHjn8vxmQF2Ig&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_Af2DK87nLVgIl0-RF1Ya4pZhfmJ5WDxOua2uPOXKlyJYSA&oe=69DFAD6B",
-        "impresiones": 582,
-        "clics": 29,
-        "ctr": 4.982818,
+        "image_url": "https://scontent-iad3-2.xx.fbcdn.net/v/t15.5256-10/586645002_2069736890504988_4792398009052276110_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=bjfpgL8_790Q7kNvwGHp0ar&_nc_oc=Adq8z5MqRi2MpP6Jl98h8WLsCyE48rOSsR4CQpfmPDI4NUwvdWeGtZKvBQ2yDpdWUhI&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&edm=AAwGEdEEAAAA&_nc_gid=YgxwYGeHtFmpiQriIOhREw&_nc_tpa=Q5bMBQEF25NvG-0PPU9kYDc58BaEHD_bB0zT6LFyO_MrOw3pJCC_D9yVA3_VlD5NPvu2ebvHTOWGLZ9TBw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_Af0_IVDHhrtoikdLqdmcY1eYxlx7cbOSnBCuIF6hzE60lQ&oe=69E0FEEB",
+        "impresiones": 1439,
+        "clics": 82,
+        "ctr": 5.698402,
         "leads": 0,
         "cpl": 0.0,
-        "inversion": 7.31
+        "inversion": 17.65
       },
       {
         "name": "Video nov 25",
         "ad_id": "120235642542760407",
-        "image_url": "https://external-sjc3-1.xx.fbcdn.net/emg1/v/t13/3548111990048520426?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQKF7nFr0tUUryfGV27HJAmvnF2LgQwWEds6x-S4GyXiyGK1cAZmC0-VsgYwyJQPb6CR8ge3ew-r3uqnezk-kKxVZiZ8m0jGuRDbSwpBhBisXEhyHb40HB0RdF6WbZutiSD2kzOGiOZDKqBmJfbG6az0&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=Me8WX8ASGKFJBp4mh5lfQA&_nc_oc=AdovEl8Z23-fg3y0rq06NeewWnHhHe30YgGfbusyq5bTjB_wpZDhjmbQzzKFP4hY2FM&ccb=13-1&oh=06_Q3--AYKekx9b5oNyVFSMwk9jTe3b_h_yLGTHBOuZ7tL23bLQ&oe=69DBE6C1&_nc_sid=58080a",
-        "impresiones": 6852,
-        "clics": 734,
-        "ctr": 10.712201,
+        "image_url": "https://external-iad3-2.xx.fbcdn.net/emg1/v/t13/5521650290004178141?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJTchVNzqeBmBKBFDZBwQZDWQ_rn0tE0Ji2UdwJbILS9OaG_-gwsAZegWvmEQJo0UiUCFaU0jCLIv1Ec5PPPYoFK7QvR_VH5dY-65H4GCSYWooFHodJ_jFWDsb98MkRZw8QPbaR1iNSBGs2u02ARhJh&fb_obo=1&utld=facebook.com&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&edm=AAwGEdEEAAAA&_nc_gid=nXPQ7TxmeIbgt43PsJQvcQ&_nc_oc=Adrdps2LTOiPsV1MHTUbxBxWnr9pnqF84thBkgMxF3tyO2ZsxvF4h58xsFFdS_gUGcw&ccb=13-1&oh=06_Q3--Ac9uVt385FshWNXOjL2az6kRZSamlMQTF5jzsazqjjXo&oe=69DD2FC7&_nc_sid=58080a",
+        "impresiones": 6876,
+        "clics": 735,
+        "ctr": 10.689354,
         "leads": 7,
-        "cpl": 11.06,
-        "inversion": 77.42
+        "cpl": 11.1,
+        "inversion": 77.69
       },
       {
         "name": "Carrusel nov 25",
         "ad_id": "120235643175770407",
-        "image_url": "https://scontent-sjc6-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=rIVw__Mw-QMQ7kNvwGt0T-C&_nc_oc=AdofVGcy2MRjRkWe3K6Fq_zq8hL2K05FUJF38pM57rWg-ZQ4UR6Zj5_bUxWP49x8Bdc&_nc_zt=1&_nc_ht=scontent-sjc6-1.xx&edm=AAwGEdEEAAAA&_nc_gid=VMHhFjJgqMbgjRCfIXk7Tw&_nc_tpa=Q5bMBQGbnnGTydhHqJeztc8HATJYAgF0b5lHnM_LeaAVG77Tpb2W8sZqQAfsnYj34Re6uKfsO5yt96cNpA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af2rMZWtefl6z0eDz0TkoTPTMkvrjxoimsydT6gYieyBhA&oe=69DFC84B",
+        "image_url": "https://scontent-iad3-1.xx.fbcdn.net/v/t45.1600-4/588793758_857535553892476_4728378291005106974_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=rIVw__Mw-QMQ7kNvwFxeT3w&_nc_oc=Adr_x11XWqDJcF-Qa2oZofzpxszsoqk2pBmLiuz_dxYIqwvjVg14ArcFZzCmEOli71A&_nc_zt=1&_nc_ht=scontent-iad3-1.xx&edm=AAwGEdEEAAAA&_nc_gid=Dh4EgWKEZRolBwDvX4huTQ&_nc_tpa=Q5bMBQEZzF2Nj01RZGeNb0fkOWfDInj72wJgAmZarTGQoqi6LKOquN7W40iejHyi81P1KqS-QyvrVODmUQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=52f3c4&_nc_sid=58080a&oh=00_Af2Qgf5Dfn7ALg07U1kdaBpLP8kVvCO8eTVzdQMXVWnxvw&oe=69E119CB",
         "impresiones": 1513,
         "clics": 98,
         "ctr": 6.477198,
@@ -980,20 +996,20 @@
       },
       {
         "month": "2026-04",
-        "impresiones": 8947,
-        "clics": 861,
-        "ctr": 9.623337,
-        "cpc": 0.119175,
+        "impresiones": 9828,
+        "clics": 915,
+        "ctr": 9.310134,
+        "cpc": 0.123738,
         "leads": 7,
-        "cpl": 14.66,
-        "inversion": 102.61,
-        "alcance": 5774
+        "cpl": 16.17,
+        "inversion": 113.22,
+        "alcance": 6204
       }
     ]
   },
   "hubspot": {
     "deals_current_month": {
-      "lead_entrante": 30,
+      "lead_entrante": 33,
       "exploratorio": 0,
       "interesado_futuro": 1,
       "interesado_caliente": 1,
@@ -1001,7 +1017,7 @@
       "descartado": 0
     },
     "deals_stock_total": {
-      "lead_entrante": 126,
+      "lead_entrante": 129,
       "exploratorio": 195,
       "interesado_futuro": 96,
       "interesado_caliente": 8,
