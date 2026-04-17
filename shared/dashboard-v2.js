@@ -322,11 +322,14 @@ export function renderHistoricalTable(containerId, history, options = {}) {
  * @returns {Array} merged history, sorted chronologically
  */
 export function mergeMonthlyHistories(...histories) {
+  // Normalize month keys to YYYY-MM (some sources use YYYY-MM-DD, others YYYY-MM)
+  const normalizeMonth = m => typeof m === 'string' ? m.substring(0, 7) : String(m);
+
   const merged = {};
   histories.forEach(hist => {
     if (!Array.isArray(hist)) return;
     hist.forEach(row => {
-      const m = row.month;
+      const m = normalizeMonth(row.month);
       if (!merged[m]) {
         merged[m] = { month: m, impresiones: 0, clics: 0, leads: 0, inversion: 0 };
       }
