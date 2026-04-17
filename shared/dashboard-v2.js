@@ -64,7 +64,7 @@ export async function initDashboard(cfg) {
   await loadMonth(manifest.latestMonth);
 }
 
-async function fetchJson(url) {
+export async function fetchJson(url) {
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(res.status);
@@ -125,11 +125,23 @@ export function renderKpiCards(containerId, kpis) {
     { key: 'cpc', label: 'CPC', format: formatCurrency, invert: true },
     { key: 'leads', label: 'LEADS', format: formatCount, invert: false },
     { key: 'cpl', label: 'CPL', format: formatCurrency, invert: true },
+    { key: 'conversion_rate', label: 'TASA CONV.', format: v => formatPct(v), invert: false, computed: true },
     { key: 'inversion', label: 'INVERSIÓN', format: formatCurrency, invert: false }
   ];
 
+  // Compute conversion_rate from leads/clics if not already present
+  const kpisWithCR = { ...kpis };
+  if (!kpisWithCR.conversion_rate && kpisWithCR.leads && kpisWithCR.clics) {
+    const currClics = kpisWithCR.clics.value;
+    const prevClics = kpisWithCR.clics.previous;
+    kpisWithCR.conversion_rate = {
+      value: currClics > 0 ? (kpisWithCR.leads.value / currClics) * 100 : 0,
+      previous: prevClics > 0 ? (kpisWithCR.leads.previous / prevClics) * 100 : 0
+    };
+  }
+
   container.innerHTML = metrics.map(m => {
-    const kpi = kpis[m.key];
+    const kpi = kpisWithCR[m.key];
     if (!kpi) return '';
     const value = m.format(kpi.value);
     const delta = deltaHtml(kpi.value, kpi.previous, m.invert);
@@ -255,6 +267,7 @@ export function renderHistoricalTable(containerId, history, options = {}) {
     { key: 'cpc', label: 'CPC', format: formatCurrency },
     { key: 'leads', label: 'Leads', format: formatCount },
     { key: 'cpl', label: 'CPL', format: formatCurrency },
+    { key: 'conversion_rate', label: 'Tasa Conv.', format: v => formatPct(v), computed: row => row.clics > 0 ? (row.leads / row.clics) * 100 : 0 },
     { key: 'inversion', label: 'Inversión', format: formatCurrency }
   ];
 
@@ -271,7 +284,7 @@ export function renderHistoricalTable(containerId, history, options = {}) {
   sorted.forEach(row => {
     html += '<tr>';
     columns.forEach(col => {
-      const val = row[col.key];
+      const val = col.computed ? col.computed(row) : row[col.key];
       const formatted = col.format ? col.format(val) : (val ?? '\u2014');
       const align = col.key !== 'month' ? 'text-align:right' : '';
 
@@ -293,6 +306,82 @@ export function renderHistoricalTable(containerId, history, options = {}) {
 
   html += '</tbody></table>';
   container.innerHTML = html;
+}
+
+// ──────────────────────────────────────────────
+// Public: Merge monthly histories from multiple clients
+// ──────────────────────────────────────────────
+
+/**
+ * Merge one or more monthly_history arrays into a single combined array.
+ * Additive fields (impresiones, clics, leads, inversion) are summed.
+ * Ratio fields (ctr, cpc, cpl) are recomputed from totals.
+ * Missing months in some sources are handled (only summed where data exists).
+ *
+ * @param {...Array} histories - one or more monthly_history arrays
+ * @returns {Array} merged history, sorted chronologically
+ */
+export function mergeMonthlyHistories(...histories) {
+  const merged = {};
+  histories.forEach(hist => {
+    if (!Array.isArray(hist)) return;
+    hist.forEach(row => {
+      const m = row.month;
+      if (!merged[m]) {
+        merged[m] = { month: m, impresiones: 0, clics: 0, leads: 0, inversion: 0 };
+      }
+      merged[m].impresiones += row.impresiones || 0;
+      merged[m].clics += row.clics || 0;
+      merged[m].leads += row.leads || 0;
+      merged[m].inversion += row.inversion || 0;
+    });
+  });
+  // Recompute ratios from totals
+  return Object.values(merged)
+    .map(row => ({
+      ...row,
+      ctr: row.impresiones > 0 ? (row.clics / row.impresiones) * 100 : 0,
+      cpc: row.clics > 0 ? row.inversion / row.clics : 0,
+      cpl: row.leads > 0 ? row.inversion / row.leads : 0
+    }))
+    .sort((a, b) => a.month.localeCompare(b.month));
+}
+
+/**
+ * Load and merge data for multiple clients for the Agrupado dashboard.
+ * @param {Array<string>} clientPaths - e.g. ['../data/trees', '../data/harmonices']
+ * @param {string} month - YYYY-MM
+ * @returns {Promise<Object>} merged data with google_ads.monthly_history, meta_ads.monthly_history, and combined.monthly_history
+ */
+export async function loadMergedData(clientPaths, month) {
+  const datas = await Promise.all(clientPaths.map(p => fetchJson(`${p}/${month}.json`)));
+  const valid = datas.filter(d => d != null);
+  if (valid.length === 0) return null;
+
+  const googleHistories = valid.map(d => d.google_ads?.monthly_history || []);
+  const metaHistories = valid.map(d => d.meta_ads?.monthly_history || []);
+
+  return {
+    google_ads: { monthly_history: mergeMonthlyHistories(...googleHistories) },
+    meta_ads: { monthly_history: mergeMonthlyHistories(...metaHistories) },
+    combined: { monthly_history: mergeMonthlyHistories(...googleHistories, ...metaHistories) }
+  };
+}
+
+/**
+ * Public helper to fetch the latest manifest from multiple clients
+ * and return the union of available months.
+ */
+export async function loadMergedManifest(clientPaths) {
+  const manifests = await Promise.all(clientPaths.map(p => fetchJson(`${p}/manifest.json`)));
+  const valid = manifests.filter(m => m != null);
+  if (valid.length === 0) return null;
+
+  const allMonths = new Set();
+  valid.forEach(m => (m.months || []).forEach(x => allMonths.add(x)));
+  const months = Array.from(allMonths).sort();
+  const latestMonth = months[months.length - 1];
+  return { months, latestMonth };
 }
 
 // Re-export utils for convenience

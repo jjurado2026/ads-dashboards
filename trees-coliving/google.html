@@ -76,7 +76,7 @@
     /* 7-card KPI grid */
     .kpi-grid-7 {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       gap: 14px;
     }
     @media (max-width: 1200px) { .kpi-grid-7 { grid-template-columns: repeat(4, 1fr); } }
@@ -272,7 +272,7 @@
     function onDataLoaded(data) {
       if (!data.google_ads) return;
       const g = data.google_ads;
-      renderPlatformKpis('google-kpis', g.kpis);
+      renderKpiCards('google-kpis', g.kpis);
       if (g.daily) createDailyCombo('chart-google-daily', g.daily, { barColor: GREEN, lineColor: GRAY });
       if (g.campaigns) {
         renderSortableTable('table-google-campaigns', [

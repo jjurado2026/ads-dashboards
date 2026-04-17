@@ -41,10 +41,14 @@
 
     .container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 920px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      max-width: 1200px;
       width: 100%;
+    }
+
+    @media (max-width: 960px) {
+      .container { grid-template-columns: 1fr 1fr; }
     }
 
     .card {
@@ -107,6 +111,17 @@
       background: linear-gradient(145deg, #143B48 0%, #1A4D5E 50%, #1E5A6B 100%);
       color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
+    }
+
+    .card-agrupado {
+      background: linear-gradient(145deg, #3B2F52 0%, #4A3B6B 50%, #5B4A80 100%);
+      color: #FFFFFF;
+    }
+
+    .card-agrupado .card-logo-icon {
+      width: 52px;
+      height: 52px;
+      color: #fff;
     }
 
     .card-logo {
@@ -188,7 +203,7 @@
     }
 
     @media (max-width: 640px) {
-      .container { grid-template-columns: 1fr; gap: 20px; }
+      .container { grid-template-columns: 1fr !important; gap: 20px; }
       .page-title h1 { font-size: 1.4rem; }
       .card { padding: 36px 28px 32px; }
       .card-name { font-size: 1.3rem; }
@@ -219,6 +234,22 @@
       </div>
       <div class="card-name">Harmonices</div>
       <div class="card-desc">Dashboard de Publicidad Digital</div>
+      <div class="card-cta">
+        Acceder
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+    <a href="agrupado/" class="card card-agrupado">
+      <div class="card-logo">
+        <svg class="card-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+        </svg>
+      </div>
+      <div class="card-name">Agrupado</div>
+      <div class="card-desc">Trees + Harmonices &middot; Histórico Combinado</div>
       <div class="card-cta">
         Acceder
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

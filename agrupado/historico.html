@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Histórico Agrupado — Trees + Harmonices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/styles-base.css">
+  <style>
+    :root {
+      --color-primary: #4A3B6B;
+      --color-primary-light: #6B5B8F;
+      --color-bg: #F5F2FA;
+      --color-card-bg: #FFFFFF;
+      --color-text: #1A1A1A;
+      --color-text-muted: #6B6B6B;
+      --color-positive: #2D5016;
+      --color-negative: #B91C1C;
+      --color-meta: #1877F2;
+      --color-google: #34A853;
+      --color-combined: #4A3B6B;
+      --color-border: #E5E7EB;
+      --font-family: 'Nunito', sans-serif;
+      --border-radius: 16px;
+    }
+
+    .kpi-card { border: 1px solid var(--color-border); box-shadow: none; }
+    .kpi-card:hover { box-shadow: 0 2px 8px rgba(74,59,107,0.08); transform: translateY(-1px); }
+    .chart-card { border: 1px solid var(--color-border); box-shadow: none; }
+
+    .page-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 32px;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-family);
+      flex-wrap: wrap;
+    }
+    .nav-brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      margin-right: 24px;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links { display: flex; gap: 4px; flex: 1; }
+    .nav-link {
+      padding: 6px 16px;
+      border-radius: var(--border-radius);
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-link:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .nav-link.active { background: rgba(255,255,255,0.18); color: #fff; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .nav-info-badge {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .section-divider {
+      margin: 48px 0 32px;
+      padding: 14px 0;
+      border-bottom: 2px solid var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-divider h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section-divider .section-icon {
+      width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+    }
+
+    .page-intro {
+      margin: 24px 0 0;
+      padding: 16px 20px;
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .page-intro strong { color: var(--color-text); }
+
+    @media (max-width: 768px) {
+      .page-nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 16px;
+      }
+      .nav-brand { text-align: center; margin-bottom: 8px; margin-right: 0; justify-content: center; }
+      .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; }
+      .nav-link { padding: 8px 12px; font-size: 0.8rem; }
+      .nav-controls { display: flex; justify-content: center; gap: 8px; }
+      .dashboard-wrapper { padding: 16px; }
+    }
+
+    .table-section { margin-top: 8px; }
+    .table-section + .table-section { margin-top: 36px; }
+
+    .table-section h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .table-section h4 .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge.google { background: var(--color-google); }
+    .badge.meta { background: var(--color-meta); }
+    .badge.combined { background: var(--color-combined); }
+
+    .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .data-table th { color: #FFFFFF; padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; user-select: none; font-size: 0.78rem; }
+    .data-table td { padding: 9px 12px; border-bottom: 1px solid #E5E7EB; white-space: nowrap; }
+    .data-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+    .data-table tbody tr:nth-child(even) { background: rgba(0,0,0,0.015); }
+
+    .data-table.google th { background: var(--color-google); }
+    .data-table.meta th { background: var(--color-meta); }
+    .data-table.combined th { background: var(--color-combined); }
+
+    .inline-bar-wrapper { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+    .inline-bar { display: inline-block; height: 16px; border-radius: 3px; min-width: 2px; transition: width 0.3s ease; }
+    .inline-value { font-weight: 600; font-size: 0.8rem; white-space: nowrap; }
+
+    .dashboard-footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 2px solid #E5E7EB;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="page-nav">
+    <a href="../" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:1.1rem;margin-right:6px;" title="Inicio">←</a>
+    <a href="historico.html" class="nav-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Agrupado
+    </a>
+    <div class="nav-links">
+      <a href="historico.html" class="nav-link active">Histórico Combinado</a>
+    </div>
+    <div class="nav-controls">
+      <span class="nav-info-badge" id="data-info"></span>
+    </div>
+  </nav>
+
+  <div class="dashboard-wrapper" id="dashboard-content">
+
+    <div class="page-intro">
+      <strong>Dashboard agrupado:</strong> Datos combinados de <strong>Trees Coliving</strong> y <strong>Harmonices</strong>. Los totales (impresiones, clics, leads, inversión) se suman entre cuentas, y los ratios (CTR, CPC, CPL, Tasa Conv.) se recalculan desde los totales.
+    </div>
+
+    <div class="section-divider" style="margin-top:24px;">
+      <span class="section-icon" style="background: var(--color-google);"></span>
+      <h2>Google Ads — Histórico Combinado</h2>
+    </div>
+    <div class="table-section">
+      <h4>Histórico Mensual <span class="badge google">Google Ads</span></h4>
+      <div class="table-wrapper" id="table-google-history"></div>
+    </div>
+
+    <div class="section-divider">
+      <span class="section-icon" style="background: var(--color-meta);"></span>
+      <h2>Meta Ads — Histórico Combinado</h2>
+    </div>
+    <div class="table-section">
+      <h4>Histórico Mensual <span class="badge meta">Meta Ads</span></h4>
+      <div class="table-wrapper" id="table-meta-history"></div>
+    </div>
+
+    <div class="section-divider">
+      <span class="section-icon" style="background: var(--color-combined);"></span>
+      <h2>Ambos Canales — Histórico Combinado</h2>
+    </div>
+    <div class="table-section">
+      <h4>Histórico Mensual <span class="badge combined">Google + Meta</span></h4>
+      <div class="table-wrapper" id="table-combined-history"></div>
+    </div>
+
+    <footer class="dashboard-footer">
+      <span id="last-updated"></span> &middot; Datos combinados de Trees Coliving y Harmonices &middot; Actualizados diariamente
+    </footer>
+  </div>
+
+  <script type="module">
+    import { renderHistoricalTable, loadMergedData, loadMergedManifest } from '../shared/dashboard-v2.js';
+
+    const CLIENT_PATHS = ['../data/trees', '../data/harmonices'];
+
+    async function main() {
+      const manifest = await loadMergedManifest(CLIENT_PATHS);
+      if (!manifest) {
+        document.getElementById('dashboard-content').innerHTML =
+          '<div style="padding:40px;text-align:center;color:#B91C1C;">No se pudo cargar el manifiesto de datos.</div>';
+        return;
+      }
+
+      // Load and merge all months of history
+      const latestMonth = manifest.latestMonth;
+      const data = await loadMergedData(CLIENT_PATHS, latestMonth);
+      if (!data) {
+        document.getElementById('dashboard-content').innerHTML =
+          '<div style="padding:40px;text-align:center;color:#B91C1C;">No se pudieron cargar los datos combinados.</div>';
+        return;
+      }
+
+      // Info badge
+      const infoEl = document.getElementById('data-info');
+      if (infoEl) {
+        const firstMonth = data.google_ads.monthly_history[0]?.month || '';
+        const lastMonth = data.google_ads.monthly_history[data.google_ads.monthly_history.length - 1]?.month || '';
+        const fmt = m => m ? new Date(m + '-01').toLocaleDateString('es-ES', { month: 'short', year: 'numeric' }) : '';
+        infoEl.textContent = `${fmt(firstMonth)} — ${fmt(lastMonth)}`;
+      }
+
+      // Render the three historical tables
+      renderHistoricalTable('table-google-history', data.google_ads.monthly_history, {
+        barColumns: ['leads', 'cpl'],
+        barColors: { leads: '#34A853', cpl: '#D97706' }
+      });
+      renderHistoricalTable('table-meta-history', data.meta_ads.monthly_history, {
+        barColumns: ['leads', 'cpl'],
+        barColors: { leads: '#1877F2', cpl: '#D97706' }
+      });
+      renderHistoricalTable('table-combined-history', data.combined.monthly_history, {
+        barColumns: ['leads', 'cpl'],
+        barColors: { leads: '#4A3B6B', cpl: '#D97706' }
+      });
+
+      // Apply color classes
+      const googleTable = document.querySelector('#table-google-history .data-table');
+      if (googleTable) googleTable.classList.add('google');
+      const metaTable = document.querySelector('#table-meta-history .data-table');
+      if (metaTable) metaTable.classList.add('meta');
+      const combinedTable = document.querySelector('#table-combined-history .data-table');
+      if (combinedTable) combinedTable.classList.add('combined');
+
+      // Footer
+      const footerEl = document.getElementById('last-updated');
+      if (footerEl) {
+        footerEl.textContent = `Última actualización: ${new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+      }
+    }
+
+    main();
+  </script>
+<script src="../shared/auth.js"></script>
+</body>
+</html>
